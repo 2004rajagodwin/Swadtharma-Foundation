@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+  html{
+            scroll-behavior:smooth;
+        }
+
+
+/* section{
+    overflow: hidden;
+} */
+
+:root {
+    --hea: #D11A8C;
+    --heablack:#2E2E2E;
+    --button:#CF118B;
+    --para:#4A4A4A;
+    --toppara:#1F1F1F;
+   
+}
+
+
+a{
+    text-decoration: none;
+}
+
+h1,h2,h3,h4,h5,h6{
+       font-family: "Montserrat", sans-serif;
+}
+
+p{
+    font-family: "Mulish", sans-serif;
+}
+
+
+
+/* <!-- our founder section end--> */
+.swat-founders-section{
+    padding:100px 0;
+    background:
+    linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #f8f4fb 100%
+    );
+    position:relative;
+    overflow:hidden;
+}
+
+.swat-founders-section::before{
+    content:"";
+    position:absolute;
+    top:-200px;
+    right:-150px;
+    width:500px;
+    height:500px;
+    background:rgba(198,26,127,.06);
+    border-radius:50%;
+}
+
+.swat-founders-section::after{
+    content:"";
+    position:absolute;
+    bottom:-200px;
+    left:-150px;
+    width:450px;
+    height:450px;
+    background:rgba(12,60,120,.05);
+    border-radius:50%;
+}
+
+.swat-founder-content{
+    position:relative;
+    z-index:2;
+}
+
+.swat-founder-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    
+    border-radius:50px;
+    color: #1F1F1F;
+    font-weight: 500;
+       font-family: "Montserrat", sans-serif;
+   
+   
+    font-weight:600;
+    margin-bottom:15px;
+}
+
+.swat-founder-badge i{
+ color:#c61a7f;
+ 
+}
+.swat-founder-name{
+    font-size:40px;
+    font-weight:600;
+    line-height:1.1;
+    color:#1f2937;
+    margin-bottom:10px;
+}
+
+.swat-founder-role{
+    font-size:20px;
+    font-weight:600;
+    color:#c61a7f;
+    margin-bottom:25px;
+}
+
+.swat-founder-text p{
+    font-size:17px;
+    line-height:1.7;
+    color:var(--para);
+    margin-bottom:18px;
+}
+
+.swat-founder-image-wrapper{
+    position:relative;
+    border-radius:24px;
+    overflow:hidden;
+   cursor: default;
+}
+
+.swat-founder-image{
+    width:90%;
+    display:block;
+    border-radius:24px;
+}
+
+/* Shine Animation */
+
+.swat-founder-image-wrapper::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-150%;
+    width:60%;
+    height:100%;
+    background:linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.8),
+        transparent
+    );
+    transition:.9s;
+    z-index:2;
+}
+
+.swat-founder-image-wrapper:hover::before,
+.swat-founder-image-wrapper:focus::before{
+    left:180%;
+}
+
+/* Accessibility Focus */
+
+.swat-founder-content:focus,
+.swat-founder-content:focus-visible,
+.swat-founder-image-wrapper:focus,
+.swat-founder-image-wrapper:focus-visible{
+    outline:none;
+    outline-offset:5px;
+    border-radius:20px;
+}
+
+.founter-secon-row{
+    margin-top: 100px;
+}
+
+@media(max-width:991px){
+
+ 
+
+    .swat-founder-role{
+        font-size:22px;
+    }
+
+}
+
+@media(max-width:576px){
+
+    .swat-founders-section{
+        padding:70px 0;
+    }
+
+    .swat-founder-name{
+        font-size:32px;
+    }
+
+    .swat-founder-role{
+        font-size:20px;
+    }
+
+    .swat-founder-text p{
+        font-size:16px;
+    }
+
+}
+
+/* <!-- our founder section start--> */

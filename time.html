@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Journey Driven by Passion - Timeline | Swadtharma Foundation</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <style>
+        :root {
+            --primary-teal: #D11A8C;
+            --text-dark: #1a1a1a;
+            --text-gray: #4a4a4a;
+            --light-bg: #F6F3EE;
+        }
+
+        /* Visually hidden but accessible to screen readers */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Visible focus ring for keyboard users */
+        :focus-visible {
+            outline: 3px solid var(--primary-teal);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+     
+
+        /* Skip to content link */
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 0;
+            z-index: 9999;
+            background: var(--primary-teal);
+            color: #fff;
+            padding: 10px 18px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-radius: 0 0 6px 0;
+            text-decoration: none;
+            transition: top 0.2s;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+
+        .nav-time-section {
+            padding: 60px 0 80px;
+            background-color:#F6F3EE;
+        }
+
+        .nav-time-section .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .nav-time-section .section-header h2 {
+            font-size: 40px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 24px;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-time-section .section-header p {
+            font-size: 1.05rem;
+            color: var(--text-gray);
+            line-height: 1.7;
+            max-width: 750px;
+            margin: 0 auto;
+            font-weight: 400;
+        }
+
+        .timeline-slide-wrapper {
+            background: transparent;
+            padding: 0;
+        }
+
+        .timeline-content-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 0;
+            min-height: 450px;
+        }
+
+        .timeline-content {
+            padding: 50px 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .nav-time-section .year-label {
+            color: var(--primary-teal);
+            font-size: 17px;
+            font-weight: 500;
+            margin-bottom: 12px;
+            letter-spacing: 0.3px;
+        }
+
+        .timeline-title {
+            font-size: 2rem;
+            font-weight: 400;
+            color: var(--text-dark);
+            margin-bottom: 22px;
+            line-height: 1.3;
+            letter-spacing: -0.3px;
+        }
+
+        .timeline-description {
+            font-size: 1rem;
+            color: var(--text-gray);
+            line-height: 1.75;
+            font-weight: 400;
+        }
+
+        .timeline-image-wrapper img {
+            width: 80%;
+            border-radius: 12px;
+        
+            display: block;
+        }
+
+        /* ── Tab Navigation ─────────────────────────────────── */
+        .timeline-navigation {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            margin-top: 40px;
+            padding: 0 20px;
+            flex-wrap: wrap;
+        }
+
+        .timeline-year-btn {
+            background: transparent;
+            border: none;
+            border-bottom: 3px solid transparent;
+            color: #2e2e2e;
+            font-size: 20px;
+           font-weight: 500;
+            padding: 12px 4px;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.25s ease;
+            white-space: nowrap;
+        }
+
+        .timeline-year-btn:hover {
+            color: var(--text-dark);
+            border-bottom-color: rgba(26,152,171,0.35);
+        }
+
+        .timeline-year-btn[aria-selected="true"] {
+            color: var(--primary-teal);
+            font-weight: 600;
+            border-bottom-color: var(--primary-teal);
+        }
+
+        .timeline-year-btn:focus-visible {
+            outline: 3px solid var(--primary-teal);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+
+        /* ── Swiper arrows ──────────────────────────────────── */
+        .nav-time-section .swiper {
+            position: relative;
+        }
+
+        .nav-time-section .swiper-button-prev,
+        .nav-time-section .swiper-button-next {
+            width: 44px;
+            height: 44px;
+            background: white;
+            border-radius: 50%;
+            border: 1px solid #e0e0e0;
+            color: #666;
+            transition: all 0.3s ease;
+        }
+
+        .nav-time-section .swiper-button-prev::after,
+        .nav-time-section .swiper-button-next::after {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .nav-time-section .swiper-button-prev {
+            left: 10px;
+        }
+
+        .nav-time-section .swiper-button-next {
+            right: 10px;
+        }
+
+        .nav-time-section .swiper-button-prev:hover,
+        .nav-time-section .swiper-button-next:hover {
+            background: #f5f5f5;
+            border-color: #d0d0d0;
+        }
+
+        .nav-time-section .swiper-button-prev:focus-visible,
+        .nav-time-section .swiper-button-next:focus-visible {
+            outline: 3px solid var(--primary-teal);
+            outline-offset: 2px;
+        }
+
+        /* ── Slide panel (hidden from AT when not active) ───── */
+        .swiper-slide[aria-hidden="true"] {
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .swiper-slide[aria-hidden="false"] {
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        /* ── Live region announcement ───────────────────────── */
+        #timeline-announce {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            clip: rect(0 0 0 0);
+            white-space: nowrap;
+        }
+
+        /* ── Responsive ─────────────────────────────────────── */
+        @media (max-width: 991px) {
+            .timeline-content-wrapper {
+                flex-direction: column;
+            }
+            .timeline-image-wrapper {
+                min-height: 350px;
+                width: 100%;
+            }
+            .nav-time-section .timeline-content {
+                padding: 40px 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-time-section .section-header h2 {
+                font-size: 1.75rem;
+            }
+            .timeline-title {
+                font-size: 1.5rem;
+            }
+            .timeline-navigation {
+                gap: 20px;
+                overflow-x: auto;
+                justify-content: flex-start;
+            }
+            .nav-time-section .swiper {
+                padding: 0 50px;
+            }
+            .nav-time-section .swiper-button-prev,
+            .nav-time-section .swiper-button-next {
+                width: 36px;
+                height: 36px;
+            }
+            .nav-time-section .swiper-button-prev::after,
+            .nav-time-section .swiper-button-next::after {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .nav-time-section .timeline-navigation {
+                gap: 15px;
+            }
+            .nav-time-section .timeline-year-btn {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Skip navigation: bypass nav for keyboard/screen reader users -->
+    <a class="skip-link" href="#timeline-section">Skip to timeline content</a>
+
+    <!-- ARIA live region: announces slide changes to NVDA/JAWS/VoiceOver -->
+    <div
+        id="timeline-announce"
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+    ></div>
+
+   
+    <section
+        id="timeline-section"
+        class="nav-time-section"
+        role="region"
+        aria-labelledby="timeline-region-heading"
+    >
+        <div class="container">
+
+            <!-- Section Header -->
+            <div class="row">
+                <div class="col-12">
+                    <header class="section-header">
+                        <!--
+                            h2 is the region label (referenced by aria-labelledby above).
+                            Heading level h2 is intentional: assumes an h1 exists earlier
+                            on the page. Adjust to h1 if this is the page's first heading.
+                        -->
+                        <h2 id="timeline-region-heading">A Journey Driven by Passion</h2>
+                        <p id="timeline-region-desc">
+                            Swadtharma Foundation was born from a passion for helping people move and live pain-free.
+                            Our founder Mouli Balaraman, driven by this very passion, embarked on a remarkable journey
+                            that led to the creation of a trusted physiotherapy practice serving communities
+                            across multiple locations.
+                        </p>
+                    </header>
+                </div>
+            </div>
+
+            <!-- ====================================================
+                 TABLIST NAVIGATION
+                 role="tablist" + aria-label lets NVDA announce
+                 "Timeline milestones, tab list" when focus enters.
+                 Each button: role="tab", aria-selected, aria-controls.
+            ===================================================== -->
+            <div class="row">
+                <div class="col-12">
+                    <nav aria-label="Timeline milestone navigation">
+                        <div
+                            class="timeline-navigation"
+                            role="tablist"
+                            aria-label="Timeline milestones"
+                            id="timeline-tablist"
+                        >
+                            <button
+                                class="timeline-year-btn"
+                                role="tab"
+                                id="tab-0"
+                                aria-selected="true"
+                                aria-controls="panel-0"
+                                tabindex="0"
+                                data-index="0"
+                            >
+                                <span class="sr-only">Milestone: </span>1998
+                            </button>
+                            <button
+                                class="timeline-year-btn"
+                                role="tab"
+                                id="tab-1"
+                                aria-selected="false"
+                                aria-controls="panel-1"
+                                tabindex="-1"
+                                data-index="1"
+                            >
+                                <span class="sr-only">Milestone: </span>1999 – 2004
+                            </button>
+                            <button
+                                class="timeline-year-btn"
+                                role="tab"
+                                id="tab-2"
+                                aria-selected="false"
+                                aria-controls="panel-2"
+                                tabindex="-1"
+                                data-index="2"
+                            >
+                                <span class="sr-only">Milestone: </span>2005 - 2006
+                            </button>
+                            <button
+                                class="timeline-year-btn"
+                                role="tab"
+                                id="tab-3"
+                                aria-selected="false"
+                                aria-controls="panel-3"
+                                tabindex="-1"
+                                data-index="3"
+                            >
+                                <span class="sr-only">Milestone: </span>2007 - 2010
+                            </button>
+                            <button
+                                class="timeline-year-btn"
+                                role="tab"
+                                id="tab-4"
+                                aria-selected="false"
+                                aria-controls="panel-4"
+                                tabindex="-1"
+                                data-index="4"
+                            >
+                                <span class="sr-only">Milestone: </span>2011 - 2014
+                            </button>
+                            <button
+                                class="timeline-year-btn"
+                                role="tab"
+                                id="tab-5"
+                                aria-selected="false"
+                                aria-controls="panel-5"
+                                tabindex="-1"
+                                data-index="5"
+                            >
+                                <span class="sr-only">Milestone: </span>2015 - 2020
+                            </button>
+                            <button
+                                class="timeline-year-btn"
+                                role="tab"
+                                id="tab-6"
+                                aria-selected="false"
+                                aria-controls="panel-6"
+                                tabindex="-1"
+                                data-index="6"
+                            >
+                                <span class="sr-only">Milestone: </span>2021 - 2025
+                            </button>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- ====================================================
+                 SWIPER CAROUSEL
+                 role="group" + aria-roledescription="carousel" follows
+                 the ARIA Authoring Practices Guide carousel pattern.
+                 Previous/Next buttons: aria-label describes action.
+            ===================================================== -->
+            <div class="row" style="margin-top: 24px;">
+                <div class="col-12">
+                    <div
+                        class="swiper timelineSwiper"
+                        role="group"
+                        aria-roledescription="carousel"
+                        aria-label="Foundation journey timeline"
+                        aria-describedby="timeline-region-desc"
+                    >
+                        <div class="swiper-wrapper">
+
+                            <!-- ── Slide 1: 1998 ──────────────────── -->
+                            <!--
+                                role="tabpanel": paired with tab-0
+                                aria-roledescription="slide": NVDA announces "slide 1 of 7"
+                                aria-labelledby: points to the slide's h3 so NVDA reads
+                                  "Graduation and a Dream in India, tab panel"
+                            -->
+                            <div
+                                class="swiper-slide"
+                                role="tabpanel"
+                                id="panel-0"
+                                aria-labelledby="slide-title-0"
+                                aria-roledescription="slide"
+                                aria-label="Slide 1 of 7: 1998"
+                                tabindex="0"
+                            >
+                                <div class="timeline-slide-wrapper">
+                                    <div class="row g-0 align-items-center timeline-content-wrapper">
+                                        <div class="col-lg-6">
+                                            <div class="timeline-content">
+                                                <!-- aria-hidden: decorative year label; heading carries the year context -->
+                                                <p class="year-label" aria-hidden="true">Year at 1998</p>
+                                                <h3 class="timeline-title" id="slide-title-0">
+                                                    Graduation and a Dream in India
+                                                    <span class="sr-only">(1998)</span>
+                                                </h3>
+                                                <p class="timeline-description">
+                                                    The story begins in India, where our founder graduated with a degree
+                                                    in physiotherapy in 1998. Even during his internship, his vision was
+                                                    clear: to become a private practitioner. He had already secured clinic
+                                                    space and equipment, ready to march on this dream.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="timeline-image-wrapper">
+                                                <img
+                                                    src="images/Best Social-Activist-ward.webp"
+                                                    alt="Founder's graduation in India, 1998 — the start of the Swadtharma Foundation journey"
+                                                    loading="lazy"
+                                                >
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- ── Slide 2: 1999–2004 ─────────────── -->
+                            <div
+                                class="swiper-slide"
+                                role="tabpanel"
+                                id="panel-1"
+                                aria-labelledby="slide-title-1"
+                                aria-roledescription="slide"
+                                aria-label="Slide 2 of 7: 1999 to 2004"
+                                tabindex="-1"
+                                aria-hidden="true"
+                            >
+                                <div class="timeline-slide-wrapper">
+                                    <div class="row g-0 align-items-center timeline-content-wrapper">
+                                        <div class="col-lg-6">
+                                            <div class="timeline-content">
+                                                <p class="year-label" aria-hidden="true">Year 1999 – 2004</p>
+                                                <h3 class="timeline-title" id="slide-title-1">
+                                                    Building Experience and Expertise
+                                                    <span class="sr-only">(1999 to 2004)</span>
+                                                </h3>
+                                                <p class="timeline-description">
+                                                    During this period, our founder dedicated himself to gaining valuable
+                                                    clinical experience, working with diverse patient populations and refining
+                                                    his treatment techniques. These formative years laid the foundation
+                                                    for excellence in patient care.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="timeline-image-wrapper">
+                                                <img
+                                                    src="images/Best Social-Activist-ward.webp"
+                                                    alt="Clinical experience building phase between 1999 and 2004"
+                                                    loading="lazy"
+                                                >
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- ── Slide 3: 2005 ──────────────────── -->
+                            <div
+                                class="swiper-slide"
+                                role="tabpanel"
+                                id="panel-2"
+                                aria-labelledby="slide-title-2"
+                                aria-roledescription="slide"
+                                aria-label="Slide 3 of 7: 2005"
+                                tabindex="-1"
+                                aria-hidden="true"
+                            >
+                                <div class="timeline-slide-wrapper">
+                                    <div class="row g-0 align-items-center timeline-content-wrapper">
+                                        <div class="col-lg-6">
+                                            <div class="timeline-content">
+                                                <p class="year-label" aria-hidden="true">Year at 2005</p>
+                                                <h3 class="timeline-title" id="slide-title-2">
+                                                    New Horizons and Opportunities
+                                                    <span class="sr-only">(2005)</span>
+                                                </h3>
+                                                <p class="timeline-description">
+                                                    A pivotal year that brought new opportunities and challenges. With years
+                                                    of experience under his belt, our founder began exploring innovative
+                                                    treatment approaches and expanding his professional network, setting
+                                                    the stage for future growth.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="timeline-image-wrapper">
+                                                <img
+                                                    src="images/Best Social-Activist-ward.webp"
+                                                    alt="New opportunities and professional growth in 2005"
+                                                    loading="lazy"
+                                                >
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- ── Slide 4: 2005 cont. ────────────── -->
+                            <div
+                                class="swiper-slide"
+                                role="tabpanel"
+                                id="panel-3"
+                                aria-labelledby="slide-title-3"
+                                aria-roledescription="slide"
+                                aria-label="Slide 4 of 7: 2005 continued"
+                                tabindex="-1"
+                                aria-hidden="true"
+                            >
+                                <div class="timeline-slide-wrapper">
+                                    <div class="row g-0 align-items-center timeline-content-wrapper">
+                                        <div class="col-lg-6">
+                                            <div class="timeline-content">
+                                                <p class="year-label" aria-hidden="true">Year at 2005</p>
+                                                <h3 class="timeline-title" id="slide-title-3">
+                                                    Advancing Clinical Practice
+                                                    <span class="sr-only">(2005, continued)</span>
+                                                </h3>
+                                                <p class="timeline-description">
+                                                    Continued growth and development marked this period, with a focus on
+                                                    specialised treatment protocols and patient-centred care. The commitment
+                                                    to excellence became the hallmark of our practice.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="timeline-image-wrapper">
+                                                <img
+                                                    src="images/timee.png"
+                                                    alt="Advancing clinical protocols and patient-centred care in 2005"
+                                                    loading="lazy"
+                                                >
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- ── Slide 5: 2006–2007 ─────────────── -->
+                            <div
+                                class="swiper-slide"
+                                role="tabpanel"
+                                id="panel-4"
+                                aria-labelledby="slide-title-4"
+                                aria-roledescription="slide"
+                                aria-label="Slide 5 of 7: 2006 to 2007"
+                                tabindex="-1"
+                                aria-hidden="true"
+                            >
+                                <div class="timeline-slide-wrapper">
+                                    <div class="row g-0 align-items-center timeline-content-wrapper">
+                                        <div class="col-lg-6">
+                                            <div class="timeline-content">
+                                                <p class="year-label" aria-hidden="true">Year 2006 – 2007</p>
+                                                <h3 class="timeline-title" id="slide-title-4">
+                                                    Expansion and Growth
+                                                    <span class="sr-only">(2006 to 2007)</span>
+                                                </h3>
+                                                <p class="timeline-description">
+                                                    These years marked a period of significant expansion. The practice grew,
+                                                    reaching more patients and establishing itself as a trusted name in
+                                                    physiotherapy. New treatment modalities were introduced and the team
+                                                    began to expand.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="timeline-image-wrapper">
+                                                <img
+                                                    src="images/timee.png"
+                                                    alt="Practice expansion and team growth between 2006 and 2007"
+                                                    loading="lazy"
+                                                >
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- ── Slide 6: 2010 ──────────────────── -->
+                            <div
+                                class="swiper-slide"
+                                role="tabpanel"
+                                id="panel-5"
+                                aria-labelledby="slide-title-5"
+                                aria-roledescription="slide"
+                                aria-label="Slide 6 of 7: 2010"
+                                tabindex="-1"
+                                aria-hidden="true"
+                            >
+                                <div class="timeline-slide-wrapper">
+                                    <div class="row g-0 align-items-center timeline-content-wrapper">
+                                        <div class="col-lg-6">
+                                            <div class="timeline-content">
+                                                <p class="year-label" aria-hidden="true">Year at 2010</p>
+                                                <h3 class="timeline-title" id="slide-title-5">
+                                                    Innovation and Excellence
+                                                    <span class="sr-only">(2010)</span>
+                                                </h3>
+                                                <p class="timeline-description">
+                                                    By 2010, the foundation had become synonymous with quality care and
+                                                    innovative treatment approaches. Investment in advanced equipment and
+                                                    continuing education ensured patients received the best possible outcomes.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="timeline-image-wrapper">
+                                                <img
+                                                    src="images/timee.png"
+                                                    alt="Advanced equipment and clinical innovation achieved by 2010"
+                                                    loading="lazy"
+                                                >
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- ── Slide 7: 2022 ──────────────────── -->
+                            <div
+                                class="swiper-slide"
+                                role="tabpanel"
+                                id="panel-6"
+                                aria-labelledby="slide-title-6"
+                                aria-roledescription="slide"
+                                aria-label="Slide 7 of 7: 2022"
+                                tabindex="-1"
+                                aria-hidden="true"
+                            >
+                                <div class="timeline-slide-wrapper">
+                                    <div class="row g-0 align-items-center timeline-content-wrapper">
+                                        <div class="col-lg-6">
+                                            <div class="timeline-content">
+                                                <p class="year-label" aria-hidden="true">Year at 2022</p>
+                                                <h3 class="timeline-title" id="slide-title-6">
+                                                    Serving Communities Across Locations
+                                                    <span class="sr-only">(2022)</span>
+                                                </h3>
+                                                <p class="timeline-description">
+                                                    Today, Swadtharma Foundation stands as a testament to passion,
+                                                    dedication, and unwavering commitment to patient care. With multiple
+                                                    locations serving diverse communities, we continue to help people move
+                                                    better and live pain-free lives.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="timeline-image-wrapper">
+                                                <img
+                                                    src="images/timee.png"
+                                                    alt="Swadtharma Foundation serving communities across multiple locations in 2022"
+                                                    loading="lazy"
+                                                >
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div><!-- /.swiper-wrapper -->
+
+                        <!-- Previous button: aria-label describes the action clearly -->
+                        <button
+                            class="swiper-button-prev"
+                            aria-label="Go to previous timeline milestone"
+                            aria-controls="timeline-tablist"
+                        ></button>
+
+                        <!-- Next button -->
+                        <button
+                            class="swiper-button-next"
+                            aria-label="Go to next timeline milestone"
+                            aria-controls="timeline-tablist"
+                        ></button>
+
+                    </div><!-- /.swiper -->
+                </div>
+            </div>
+
+        </div><!-- /.container -->
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+    (function () {
+        'use strict';
+
+        // ── Data ────────────────────────────────────────────────────────────
+        const SLIDES = [
+            { year: '1998',           title: 'Graduation and a Dream in India' },
+            { year: '1999 to 2004',   title: 'Building Experience and Expertise' },
+            { year: '2005 to 2006',           title: 'New Horizons and Opportunities' },
+            { year: '2007 to 2010', title: 'Advancing Clinical Practice' },
+            { year: '2011 to 2014',   title: 'Expansion and Growth' },
+            { year: '2015 to 2020',           title: 'Innovation and Excellence' },
+            { year: '2021 to 2025',           title: 'Serving Communities Across Locations' }
+        ];
+
+        const announcer  = document.getElementById('timeline-announce');
+        const tabs       = Array.from(document.querySelectorAll('.timeline-year-btn[role="tab"]'));
+        const panels     = Array.from(document.querySelectorAll('.swiper-slide[role="tabpanel"]'));
+
+        // ── Live-region announcement ────────────────────────────────────────
+        function announce(index) {
+            const s = SLIDES[index];
+            announcer.textContent = '';
+            // Forcing a DOM mutation resets the live region so NVDA re-reads
+            requestAnimationFrame(() => {
+                announcer.textContent =
+                    `Slide ${index + 1} of ${SLIDES.length}: ${s.year} — ${s.title}`;
+            });
+        }
+
+        // ── Activate a slide ────────────────────────────────────────────────
+        function activateSlide(index, moveFocus) {
+            tabs.forEach((tab, i) => {
+                const isActive = i === index;
+                tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+                tab.setAttribute('tabindex', isActive ? '0' : '-1');
+            });
+
+            panels.forEach((panel, i) => {
+                const isActive = i === index;
+                panel.setAttribute('aria-hidden', isActive ? 'false' : 'true');
+                panel.setAttribute('tabindex', isActive ? '0' : '-1');
+            });
+
+            if (moveFocus) {
+                tabs[index].focus();
+            }
+
+            announce(index);
+        }
+
+        // ── Swiper ──────────────────────────────────────────────────────────
+        const swiper = new Swiper('.timelineSwiper', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            a11y: {
+                enabled: false   // we manage all ARIA ourselves
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            on: {
+                slideChange: function () {
+                    activateSlide(this.activeIndex, false);
+                }
+            }
+        });
+
+        // ── Tab click ────────────────────────────────────────────────────────
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function () {
+                const idx = parseInt(this.dataset.index, 10);
+                swiper.slideTo(idx);
+                activateSlide(idx, true);
+            });
+        });
+
+        // ── Keyboard: arrow keys, Home, End (ARIA tablist pattern) ──────────
+        // Left/Up = previous | Right/Down = next | Home = first | End = last
+        document.getElementById('timeline-tablist').addEventListener('keydown', function (e) {
+            const current = parseInt(document.activeElement.dataset.index, 10);
+            if (isNaN(current)) return;
+
+            let next = current;
+
+            switch (e.key) {
+                case 'ArrowRight':
+                case 'ArrowDown':
+                    next = (current + 1) % tabs.length;
+                    break;
+                case 'ArrowLeft':
+                case 'ArrowUp':
+                    next = (current - 1 + tabs.length) % tabs.length;
+                    break;
+                case 'Home':
+                    next = 0;
+                    break;
+                case 'End':
+                    next = tabs.length - 1;
+                    break;
+                default:
+                    return;
+            }
+
+            e.preventDefault();
+            swiper.slideTo(next);
+            activateSlide(next, true);
+        });
+
+        // ── Prev/Next arrow buttons: also move tab focus ─────────────────────
+        document.querySelector('.swiper-button-prev').addEventListener('click', function () {
+            const idx = swiper.activeIndex;
+            activateSlide(idx, false);
+        });
+        document.querySelector('.swiper-button-next').addEventListener('click', function () {
+            const idx = swiper.activeIndex;
+            activateSlide(idx, false);
+        });
+
+        // ── Initialise first slide ────────────────────────────────────────────
+        activateSlide(0, false);
+
+    })();
+    </script>
+
+</body>
+</html>

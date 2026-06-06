@@ -1522,6 +1522,12 @@ RESPONSIVE
     position: relative;
 }
 
+.fea-card-seond-sec{
+
+    margin-top: 50px;
+
+}
+
 /* Keyboard Focus */
 .sawa-featureimpact-card:focus-within {
     box-shadow: 0 0 0 4px rgba(224, 19, 141, 0.25);
@@ -4481,12 +4487,12 @@ animation: none;;
 @media screen and (min-width: 1200px) and (max-width: 1400px) {
 
        .swadhra-donate-btn  {
-        padding: 10px 15px;
+        padding: 10px 15px !important;
        
         
     }
     .swadhra-desktop-menu{
-        gap: 25px;
+        gap: 25px !important;
     }
 
     .swadhra-desktop-menu li a, .swadhra-dropdown-btn {

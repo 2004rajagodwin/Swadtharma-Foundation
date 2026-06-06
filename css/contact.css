@@ -59,7 +59,7 @@ p{
 .swf-breadcrumb-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.3);
+    background: rgba(0,0,0,0.5);
 }
 
 .swf-breadcrumb-container {
@@ -204,6 +204,24 @@ p{
     padding: 0;
     margin: 0;
 }
+
+.Swadharmar-contact-features li a {
+    color: inherit;
+    text-decoration: none;
+    transition: 0.3s ease;
+    font-size: 17px;
+}
+
+.Swadharmar-contact-features li a:hover,
+.Swadharmar-contact-features li a:focus {
+    text-decoration: underline;
+}
+
+.Swadharmar-contact-features li a:focus {
+    outline: 2px solid #005fcc;
+    outline-offset: 3px;
+    border-radius: 4px;
+}   
 
 .Swadharmar-contact-features li {
     display: flex;

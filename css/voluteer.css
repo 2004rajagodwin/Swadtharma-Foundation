@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+  html{
+            scroll-behavior:smooth;
+        }
+
+
+/* section{
+    overflow: hidden;
+} */
+
+:root {
+    --hea: #D11A8C;
+    --heablack:#2E2E2E;
+    --button:#CF118B;
+    --para:#4A4A4A;
+    --toppara:#1F1F1F;
+   
+}
+
+
+a{
+    text-decoration: none;
+}
+
+h1,h2,h3,h4,h5,h6{
+       font-family: "Montserrat", sans-serif;
+}
+
+p{
+    font-family: "Mulish", sans-serif;
+}
+
+/* voluteer card section start */
+.swat-team-section{
+    padding:100px 0;
+    background:#f8f6fb;
+}
+
+.swat-team-subtitle{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+   
+    color:#c61a7f;
+    border-radius:50px;
+    font-weight:600;
+}
+
+.swat-team-title{
+    font-size:40px;
+    font-weight:600;
+    margin:20px 0;
+    color:var(--hea);
+}
+
+.swat-team-description{
+    max-width:700px;
+    margin:auto;
+    color:#666;
+    line-height:1.8;
+}
+
+.swat-team-card{
+    position:relative;
+    background:#fff;
+    border-radius:24px;
+    overflow:hidden;
+    height:100%;
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+    transition:.4s ease;
+}
+
+.swat-team-card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-120%;
+    width:60%;
+    height:100%;
+    background:linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.7),
+        transparent
+    );
+    transition:.8s;
+    z-index:2;
+}
+
+.swat-team-card:hover::before,
+.swat-team-card:focus::before{
+    left:150%;
+}
+
+
+
+.swat-team-card:focus,
+.swat-team-card:focus-visible{
+    outline:2px solid #c61a7f;
+    outline-offset:4px;
+}
+
+.swat-team-image{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+}
+
+.swat-team-content{
+    padding:25px;
+    text-align:center;
+}
+
+.swat-team-name{
+    font-size:24px;
+    font-weight:700;
+    margin-bottom:8px;
+    color:#222;
+}
+
+.swat-team-role{
+    color:#c61a7f;
+    font-size:16px;
+    font-weight:600;
+    margin:0;
+}
+
+@media(max-width:991px){
+
+    .swat-team-title{
+        font-size:38px;
+    }
+
+}
+
+@media(max-width:576px){
+
+    .swat-team-section{
+        padding:70px 0;
+    }
+
+    .swat-team-title{
+        font-size:30px;
+    }
+
+    .swat-team-image{
+        height:280px;
+    }
+
+}
+
+
+/* voluteer card section end */
+

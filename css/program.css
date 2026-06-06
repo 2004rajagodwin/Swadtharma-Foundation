@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+  html{
+            scroll-behavior:smooth;
+        }
+
+
+/* section{
+    overflow: hidden;
+} */
+
+:root {
+    --hea: #D11A8C;
+    --heablack:#2E2E2E;
+    --button:#CF118B;
+    --para:#4A4A4A;
+    --toppara:#1F1F1F;
+   
+}
+
+
+a{
+    text-decoration: none;
+}
+
+h1,h2,h3,h4,h5,h6{
+       font-family: "Montserrat", sans-serif;
+}
+
+p{
+    font-family: "Mulish", sans-serif;
+}
+
+/* <!-- program section start --> */
+.swat-program-detail-section {
+    background: #ffffff;
+}
+
+.swat-program-banner img {
+    max-height: 500px;
+    object-fit: cover;
+}
+
+.swat-program-main-title {
+    font-size: 40px;
+    font-weight: 600;
+    margin: 30px 0 20px;
+    line-height: 1.2;
+    color: var(--hea);
+}
+
+.swat-program-intro {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    margin-bottom: 30px;
+}
+
+.swat-program-subheading {
+    font-size: 1.8rem;
+    font-weight: 600;
+   
+
+    margin-top: 35px;
+    margin-bottom: 15px;
+}
+
+.swat-program-detail-content p {
+    line-height: 1.8;
+    margin-bottom: 50px;
+    color: var(--para);
+    font-size: 17px;
+}
+
+.swat-program-list {
+    padding-left: 1.5rem;
+}
+
+.swat-program-list li {
+    margin-bottom: 12px;
+    line-height: 1.8;
+    font-size: 17px;
+    color: var(--para);
+}
+
+/* Accessibility Focus */
+.swat-program-detail-content:focus-within {
+    outline: none;
+    outline-offset: 5px;
+}
+
+/* <!-- program section start --> */
