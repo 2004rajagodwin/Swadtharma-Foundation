@@ -1,0 +1,805 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Swadharma Accessible Navbar</title>
+
+    <!-- Bootstrap -->
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* =========================================
+           SKIP LINK ACCESSIBILITY
+        ========================================= */
+
+      .skip-link {
+        position: absolute;
+        top: -60px;
+        left: 20px;
+
+        background: #000;
+        color: #fff;
+
+        padding: 12px 20px;
+
+        z-index: 9999;
+
+        text-decoration: none;
+
+        border-radius: 8px;
+
+        transition: 0.3s;
+      }
+
+      .skip-link:focus {
+        top: 20px;
+      }
+
+      /* =========================================
+           DESKTOP NAVBAR
+        ========================================= */
+
+      .swadhra-desktop-nav {
+        width: 100%;
+
+        background: #fff;
+
+        padding: 18px 0;
+
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      }
+
+      .swadhra-logo img {
+        width: 45%;
+      }
+
+      .swadhra-desktop-menu {
+        display: flex;
+
+        justify-content: center;
+
+        align-items: center;
+
+        gap: 30px;
+
+        list-style: none;
+
+        margin: 0;
+
+        padding: 0;
+      }
+
+      .swadhra-desktop-menu li {
+        position: relative;
+      }
+
+      .swadhra-dropdown {
+        position: relative;
+
+        padding: 20px 0;
+      }
+
+      .swadhra-desktop-menu li a,
+      .swadhra-dropdown-btn {
+        text-decoration: none;
+
+        color: #222;
+
+        font-size: 16px;
+
+        font-weight: 600;
+
+        background: none;
+
+        border: none;
+
+        cursor: pointer;
+
+        transition: 0.3s;
+      }
+
+      .swadhra-desktop-menu li a:hover,
+      .swadhra-dropdown-btn:hover {
+        color: #c40084;
+      }
+
+      /* =========================================
+           DROPDOWN
+        ========================================= */
+
+      .swadhra-dropdown-menu {
+        position: absolute;
+
+        top: 100%;
+
+        left: 0;
+
+        background: #fff;
+
+        min-width: 240px;
+
+        list-style: none;
+
+        padding: 15px 0;
+
+        border-radius: 12px;
+
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        transform: translateY(10px);
+
+        transition: 0.3s ease;
+
+        z-index: 999;
+      }
+
+      /* ACTIVE */
+
+      .swadhra-dropdown.active .swadhra-dropdown-menu {
+        opacity: 1;
+
+        visibility: visible;
+
+        transform: translateY(0);
+      }
+
+      .swadhra-dropdown-menu li a {
+        display: block;
+
+        padding: 12px 20px;
+
+        font-size: 15px;
+
+        width: 100%;
+      }
+
+      .swadhra-dropdown-menu li a:hover {
+        background: #f8f8f8;
+      }
+
+      /* =========================================
+           ARROW ROTATE
+        ========================================= */
+
+      .swadhra-dropdown-btn {
+        display: flex;
+
+        align-items: center;
+
+        gap: 8px;
+      }
+
+      .swadhra-dropdown-btn i {
+        font-size: 13px;
+
+        transition: 0.3s ease;
+      }
+
+      .swadhra-dropdown.active .swadhra-dropdown-btn i {
+        transform: rotate(180deg);
+      }
+
+      /* =========================================
+           DONATE BUTTON
+        ========================================= */
+
+      .swadhra-donate-wrapper {
+        display: flex;
+
+        justify-content: end;
+      }
+
+      /* button code st */
+
+      /* =========================================
+   PROFESSIONAL DONATE BUTTON
+========================================= */
+
+      .swadhra-donate-btn {
+        position: relative;
+
+        overflow: hidden;
+
+        background-color: #cf118b;
+
+        color: #fff;
+
+        border: 2px solid #cf118b;
+
+        text-decoration: none;
+
+        padding: 14px 30px;
+
+        border-radius: 50px;
+
+        font-weight: 600;
+
+        display: inline-flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 10px;
+
+        transition:
+          background-color 0.3s ease,
+          color 0.3s ease,
+          border-color 0.3s ease;
+      }
+
+      /* SHINE EFFECT */
+
+      .swadhra-donate-btn::before {
+        content: "";
+
+        position: absolute;
+
+        top: 0;
+
+        left: -120%;
+
+        width: 60%;
+
+        height: 100%;
+
+        background: linear-gradient(
+          120deg,
+          transparent,
+          rgba(255, 255, 255, 0.5),
+          transparent
+        );
+
+        transform: skewX(-25deg);
+      }
+
+      /* HOVER ANIMATION */
+
+      .swadhra-donate-btn:hover::before {
+        animation: swadhraShine 0.9s ease;
+      }
+
+      /* BUTTON HOVER */
+
+      /* SHINE KEYFRAMES */
+
+      @keyframes swadhraShine {
+        100% {
+          left: 150%;
+        }
+      }
+      /* end button code * /
+
+      /* =========================================
+           MOBILE NAVBAR
+        ========================================= */
+
+      .swadhra-mobile-nav {
+        display: none;
+
+        width: 100%;
+
+        background: #fff;
+
+        padding: 15px 0;
+
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      }
+
+      .swadhra-mobile-wrapper {
+        display: flex;
+
+        justify-content: space-between;
+
+        align-items: center;
+      }
+
+      .swadhra-mobile-logo img {
+        width: 60%;
+      }
+
+      .swadhra-mobile-toggle {
+        width: 50px;
+
+        height: 50px;
+
+        border: none;
+
+        background: #c40084;
+
+        color: #fff;
+
+        border-radius: 10px;
+
+        font-size: 22px;
+
+        cursor: pointer;
+      }
+
+      /* =========================================
+           MOBILE MENU
+        ========================================= */
+
+      .swadhra-mobile-menu {
+        display: none;
+
+        margin-top: 20px;
+      }
+
+      .swadhra-mobile-menu.active {
+        display: block;
+      }
+
+      .swadhra-mobile-menu ul {
+        list-style: none;
+
+        padding: 0;
+      }
+
+      .swadhra-mobile-menu ul li {
+        border-bottom: 1px solid #eee;
+      }
+
+      .swadhra-mobile-menu ul li a,
+      .mobile-dropdown-btn {
+        width: 100%;
+
+        display: flex;
+
+        justify-content: space-between;
+
+        align-items: center;
+
+        text-decoration: none;
+
+        color: #222;
+
+        background: none;
+
+        border: none;
+
+        padding: 16px 0;
+
+        font-size: 17px;
+
+        font-weight: 600;
+      }
+
+      /* =========================================
+           MOBILE DROPDOWN
+        ========================================= */
+
+      .mobile-dropdown-menu {
+        display: none;
+
+        padding-left: 20px;
+      }
+
+      .mobile-dropdown-menu.active {
+        display: block;
+      }
+
+      .mobile-dropdown-menu li {
+        border: none !important;
+      }
+
+      .mobile-dropdown-menu li a {
+        padding: 12px 0;
+
+        font-size: 15px;
+      }
+
+      /* MOBILE ARROW */
+
+      .mobile-dropdown-btn i {
+        transition: 0.3s ease;
+      }
+
+      .mobile-dropdown-btn.active i {
+        transform: rotate(180deg);
+      }
+
+      /* =========================================
+           MOBILE DONATE
+        ========================================= */
+
+      .swadhra-mobile-donate {
+        background: #c40084 !important;
+
+        color: #fff !important;
+
+        justify-content: center !important;
+
+        border-radius: 8px;
+
+        margin-top: 15px;
+
+        padding: 14px !important;
+      }
+
+      /* =========================================
+           ACCESSIBILITY FOCUS
+        ========================================= */
+
+      a:focus,
+      button:focus {
+        outline: 3px solid #c40084;
+
+        outline-offset: 5px;
+
+        border-radius: 6px;
+      }
+
+      /* =========================================
+           RESPONSIVE
+        ========================================= */
+
+      @media (max-width: 991px) {
+        .swadhra-desktop-nav {
+          display: none;
+        }
+
+        .swadhra-mobile-nav {
+          display: block;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+   
+
+    <a href="#main-content" class="skip-link"> Skip to Main Content </a>
+
+    <nav class="swadhra-desktop-nav" aria-label="Desktop Navigation">
+      <div class="container">
+        <div class="row align-items-center">
+          <!-- LOGO -->
+
+          <div class="col-md-2">
+            <div class="swadhra-logo">
+              <a href="#" aria-label="Swadharma Foundation Home">
+                <img
+                  src="images/swadharma-foundation-logo.webp"
+                  alt="Swadharma Foundation Logo"
+                />
+              </a>
+            </div>
+          </div>
+
+          <!-- MENU -->
+
+          <div class="col-md-8">
+            <ul class="swadhra-desktop-menu">
+              <li>
+                <a href="#"> Home </a>
+              </li>
+
+              <!-- ABOUT -->
+
+              <li class="swadhra-dropdown">
+                <button class="swadhra-dropdown-btn" aria-expanded="false">
+                  About Us
+
+                  <i class="fa-solid fa-angle-down" aria-hidden="true"></i>
+                </button>
+
+                <ul class="swadhra-dropdown-menu">
+                  <li>
+                    <a href="#"> Our Mission </a>
+                  </li>
+
+                  <li>
+                    <a href="#"> Our Vision </a>
+                  </li>
+                </ul>
+              </li>
+
+              <!-- PROGRAMS -->
+
+              <li class="swadhra-dropdown">
+                <button class="swadhra-dropdown-btn" aria-expanded="false">
+                  Programs
+
+                  <i class="fa-solid fa-angle-down" aria-hidden="true"></i>
+                </button>
+
+                <ul class="swadhra-dropdown-menu">
+                  <li>
+                    <a href="#"> Education </a>
+                  </li>
+
+                  <li>
+                    <a href="#"> Health Care </a>
+                  </li>
+
+                  <li>
+                    <a href="#"> Food Donation </a>
+                  </li>
+                </ul>
+              </li>
+
+              <!-- MEDIA -->
+
+              <li class="swadhra-dropdown">
+                <button class="swadhra-dropdown-btn" aria-expanded="false">
+                  Media
+
+                  <i class="fa-solid fa-angle-down" aria-hidden="true"></i>
+                </button>
+
+                <ul class="swadhra-dropdown-menu">
+                  <li>
+                    <a href="#"> Gallery </a>
+                  </li>
+
+                  <li>
+                    <a href="#"> Videos </a>
+                  </li>
+                </ul>
+              </li>
+
+              <li class="swadhra-dropdown">
+                <button class="swadhra-dropdown-btn" aria-expanded="false">
+                  Get Involved
+
+                  <i class="fa-solid fa-angle-down" aria-hidden="true"></i>
+                </button>
+
+                <ul class="swadhra-dropdown-menu">
+                  <li>
+                    <a href="#"> Gallery </a>
+                  </li>
+
+                  <li>
+                    <a href="#"> Videos </a>
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                <a href="#"> Achievements </a>
+              </li>
+
+              <li>
+                <a href="#"> Contact Us </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- BUTTON -->
+
+          <div class="col-md-2">
+            <div class="swadhra-donate-wrapper">
+              <a href="#" class="swadhra-donate-btn">
+                Donate Now
+
+                <i class="fa-solid fa-heart" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+   
+
+    <nav class="swadhra-mobile-nav" aria-label="Mobile Navigation">
+      <div class="container">
+        <div class="swadhra-mobile-wrapper">
+          <!-- LOGO -->
+
+          <div class="swadhra-mobile-logo">
+            <a href="#">
+              <img
+                src="images/swadharma-foundation-logo.webp"
+                alt="Swadharma Foundation Logo"
+              />
+            </a>
+          </div>
+
+          <!-- TOGGLE -->
+
+          <button class="swadhra-mobile-toggle" aria-expanded="false">
+            <i class="fa-solid fa-bars" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <!-- MOBILE MENU -->
+
+        <div class="swadhra-mobile-menu">
+          <ul>
+            <li>
+              <a href="#"> Home </a>
+            </li>
+
+            <!-- ABOUT -->
+
+            <li>
+              <button class="mobile-dropdown-btn" aria-expanded="false">
+                About Us
+
+                <i class="fa-solid fa-angle-down" aria-hidden="true"></i>
+              </button>
+
+              <ul class="mobile-dropdown-menu">
+                <li>
+                  <a href="#"> Our Mission </a>
+                </li>
+
+                <li>
+                  <a href="#"> Our Vision </a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- PROGRAMS -->
+
+            <li>
+              <button class="mobile-dropdown-btn" aria-expanded="false">
+                Programs
+
+                <i class="fa-solid fa-angle-down" aria-hidden="true"></i>
+              </button>
+
+              <ul class="mobile-dropdown-menu">
+                <li>
+                  <a href="#"> Education </a>
+                </li>
+
+                <li>
+                  <a href="#"> Health Care </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <button class="mobile-dropdown-btn" aria-expanded="false">
+                Media
+
+                <i class="fa-solid fa-angle-down" aria-hidden="true"></i>
+              </button>
+
+              <ul class="mobile-dropdown-menu">
+                <li>
+                  <a href="#"> Education </a>
+                </li>
+
+                <li>
+                  <a href="#"> Health Care </a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <button class="mobile-dropdown-btn" aria-expanded="false">
+                Get Involved
+
+                <i class="fa-solid fa-angle-down" aria-hidden="true"></i>
+              </button>
+
+              <ul class="mobile-dropdown-menu">
+                <li>
+                  <a href="#"> Education </a>
+                </li>
+
+                <li>
+                  <a href="#"> Health Care </a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="#"> Contact Us </a>
+            </li>
+
+            <li>
+              <a href="#" class="swadhra-mobile-donate"> Donate Now </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main id="main-content"></main>
+
+    <script>
+      const desktopDropdowns = document.querySelectorAll(".swadhra-dropdown");
+
+      desktopDropdowns.forEach((dropdown) => {
+        const button = dropdown.querySelector(".swadhra-dropdown-btn");
+
+        button.addEventListener("click", (e) => {
+          e.stopPropagation();
+
+          /* CLOSE OTHER DROPDOWNS */
+
+          desktopDropdowns.forEach((item) => {
+            if (item !== dropdown) {
+              item.classList.remove("active");
+
+              item
+                .querySelector(".swadhra-dropdown-btn")
+                .setAttribute("aria-expanded", "false");
+            }
+          });
+
+          /* CURRENT */
+
+          dropdown.classList.toggle("active");
+
+          const expanded = button.getAttribute("aria-expanded") === "true";
+
+          button.setAttribute("aria-expanded", !expanded);
+        });
+      });
+
+      /* CLICK OUTSIDE */
+
+      document.addEventListener("click", () => {
+        desktopDropdowns.forEach((dropdown) => {
+          dropdown.classList.remove("active");
+
+          dropdown
+            .querySelector(".swadhra-dropdown-btn")
+            .setAttribute("aria-expanded", "false");
+        });
+      });
+
+      
+
+      const mobileToggle = document.querySelector(".swadhra-mobile-toggle");
+
+      const mobileMenu = document.querySelector(".swadhra-mobile-menu");
+
+      mobileToggle.addEventListener("click", () => {
+        mobileMenu.classList.toggle("active");
+
+        const expanded = mobileToggle.getAttribute("aria-expanded") === "true";
+
+        mobileToggle.setAttribute("aria-expanded", !expanded);
+      });
+
+      
+
+      const mobileDropdowns = document.querySelectorAll(".mobile-dropdown-btn");
+
+      mobileDropdowns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const dropdownMenu = btn.nextElementSibling;
+
+          dropdownMenu.classList.toggle("active");
+
+          btn.classList.toggle("active");
+
+          const expanded = btn.getAttribute("aria-expanded") === "true";
+
+          btn.setAttribute("aria-expanded", !expanded);
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Swadharma Foundation – What We Believe</title>
+
+  <!-- =========================================================
+       ROOT VARIABLES
+       Change full website color & radius from here only
+  ========================================================== -->
+  <style>
+  
+
+
+  </style>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"/>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+
+  <style>
+
+ 
+    .swatha-main-tab-section img{
+      max-width:100%;
+      display:block;
+    }
+
+ 
+
+  .swatha-main-tab-section :focus-visible{
+      outline:  3px solid #C8115E !important;
+      outline-offset:3px;
+      border-radius:8px;
+    }
+
+
+
+    /* =========================================================
+       MAIN SECTION
+    ========================================================== */
+
+        .swatha-skip-link{
+      position:absolute;
+      top:-60px;
+      left:20px;
+      background:#C8115E;
+      color:#fff;
+      padding:12px 18px;
+      text-decoration:none;
+      border-radius:8px;
+      z-index:9999;
+      font-weight:700;
+      transition:0.3s;
+    }
+
+      :root{
+
+ 
+      --swatha-section-padding: 90px;
+
+    }
+
+  .swatha-main-tab-section  .swatha-skip-link:focus{
+      top:15px;
+    }
+
+    .swatha-main-tab-section{
+      padding:var(--swatha-section-padding) 0;
+      background:
+      linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #fff5fa 100%
+      );
+      overflow:hidden;
+    }
+
+    /* =========================================================
+       EYEBROW
+    ========================================================== */
+
+    .swatha-eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      color:var(--swatha-label-color);
+      font-size:14px;
+      font-weight:700;
+      text-transform:uppercase;
+      letter-spacing:1px;
+      margin-bottom:18px;
+    }
+
+    .swatha-heart-icon{
+      color:#C8115E;
+      font-size:18px;
+      line-height:1;
+    }
+
+    /* =========================================================
+       HEADING
+    ========================================================== */
+
+    .swatha-section-heading{
+      font-family:'Playfair Display',serif;
+      font-size:clamp(2rem,4vw,3rem);
+      line-height:1.2;
+      font-weight:700;
+      color:#C8115E;
+      margin-bottom:45px;
+    }
+
+    /* =========================================================
+       TAB WRAPPER
+    ========================================================== */
+
+    .swatha-tab-pill-wrapper{
+      display:inline-flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:8px;
+      background:#ede8ec;
+      padding:8px;
+      border-radius:100px;
+      margin-bottom:55px;
+    }
+
+    /* =========================================================
+       TAB BUTTON
+    ========================================================== */
+
+    .swatha-tab-btn{
+      border:none;
+      background:transparent;
+      color:#4a4a5a;
+      padding:14px 30px;
+      border-radius:100px;
+      font-size:15px;
+      font-weight:600;
+      transition:0.35s ease;
+      cursor:pointer;
+      min-height:48px;
+      white-space:nowrap;
+    }
+
+    .swatha-tab-btn:hover{
+      background:#fdeef6;
+      color:#C8115E;
+    }
+
+    .swatha-tab-btn[aria-selected="true"]{
+      background:#C8115E;
+      color:#fff;
+      box-shadow:
+      0 8px 25px rgba(200,17,94,0.25);
+    }
+
+    /* =========================================================
+       PANELS
+    ========================================================== */
+
+    .swatha-tab-panel{
+      display:none;
+    }
+
+    .swatha-tab-panel.swatha-active-panel{
+      display:flex;
+      flex-wrap:wrap;
+      animation:swathaFade 0.4s ease;
+    }
+
+    @keyframes swathaFade{
+      from{
+        opacity:0;
+        transform:translateY(20px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    /* =========================================================
+       IMAGE
+    ========================================================== */
+
+    .swatha-img-col{
+      padding-right:35px;
+    }
+
+    .swatha-img-wrapper{
+      overflow:hidden;
+      border-radius:24px;
+      box-shadow:  0 12px 40px rgba(0,0,0,0.10);
+      background:#f5f5f5;
+      aspect-ratio:4/3;
+    }
+
+    .swatha-img-wrapper img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:0.5s ease;
+    }
+
+    @media (hover:hover){
+
+      .swatha-img-wrapper:hover img{
+        transform:scale(1.05);
+      }
+
+    }
+
+    /* =========================================================
+       CONTENT
+    ========================================================== */
+
+    .swatha-content-col{
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+
+    .swatha-content-title{
+      font-size:clamp(1.5rem,2vw,2rem);
+      font-weight:700;
+      line-height:1.3;
+      color:#1a1a2e;
+      margin-bottom:20px;
+    }
+
+    .swatha-content-para{
+      font-size:16px;
+      line-height:1.9;
+      color:#4a4a5a;
+      margin-bottom:16px;
+      max-width:58ch;
+    }
+
+    /* =========================================================
+       BUTTON
+    ========================================================== */
+
+    .swatha-learn-btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+
+      background:transparent;
+      color: #C8115E;
+
+      border:2px solid #C8115E;
+
+      padding:14px 34px;
+
+      border-radius:50px;
+
+      font-size:15px;
+      font-weight:700;
+
+      transition:0.35s ease;
+
+      min-height:48px;
+
+      width:fit-content;
+      margin-top:10px;
+    }
+
+    .swatha-learn-btn:hover{
+      background:#C8115E;
+      color:#fff;
+      box-shadow:
+      0 8px 25px rgba(200,17,94,0.25);
+    }
+
+    .swatha-btn-arrow{
+      transition:0.3s ease;
+      font-size:18px;
+    }
+
+    .swatha-learn-btn:hover .swatha-btn-arrow{
+      transform:translateX(4px);
+    }
+
+    /* =========================================================
+       SCREEN READER
+    ========================================================== */
+
+    .swatha-sr-live{
+      position:absolute;
+      width:1px;
+      height:1px;
+      overflow:hidden;
+      clip:rect(0,0,0,0);
+      white-space:nowrap;
+    }
+
+    /* =========================================================
+       MOBILE
+    ========================================================== */
+
+    @media(max-width:767px){
+
+      .swatha-main-tab-section{
+        padding:70px 0;
+      }
+
+      .swatha-img-col{
+        padding-right:calc(var(--bs-gutter-x) * .5);
+        margin-bottom:30px;
+      }
+
+      .swatha-content-para{
+        max-width:100%;
+      }
+
+      .swatha-learn-btn{
+        width:100%;
+        justify-content:center;
+      }
+
+      .swatha-tab-pill-wrapper{
+        border-radius:30px;
+      }
+
+    }
+
+    /* =========================================================
+       HIGH CONTRAST
+    ========================================================== */
+
+    @media (forced-colors: active){
+
+      .swatha-tab-btn[aria-selected="true"]{
+        forced-color-adjust:none;
+        background:Highlight;
+        color:HighlightText;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+<!-- Skip Link -->
+<a href="#swatha-tab-content" class="swatha-skip-link">
+  Skip to content
+</a>
+
+<!-- Screen Reader Live -->
+<div
+  id="swatha-sr-live"
+  class="swatha-sr-live"
+  role="status"
+  aria-live="polite"
+  aria-atomic="true"
+></div>
+
+<!-- =========================================================
+     MAIN SECTION
+========================================================== -->
+
+<section
+class="swatha-main-tab-section"
+aria-labelledby="swatha-section-title"
+>
+
+  <div class="container">
+
+    <!-- Heading -->
+    <div class="row">
+
+      <div class="col-12 text-center">
+
+        <div class="swatha-eyebrow">
+
+          <span
+          class="swatha-heart-icon"
+          aria-hidden="true"
+          >
+            ♥
+          </span>
+
+          What We Believe
+
+        </div>
+
+        <h2
+        class="swatha-section-heading"
+        id="swatha-section-title"
+        >
+          Together We Create Meaningful Change
+        </h2>
+
+      </div>
+
+    </div>
+
+    <!-- Tabs -->
+    <div class="row">
+
+      <div class="col-12 text-center">
+
+        <div
+        class="swatha-tab-pill-wrapper"
+        role="tablist"
+        aria-label="Foundation Sections"
+        >
+
+          <button
+          class="swatha-tab-btn"
+          role="tab"
+          aria-selected="true"
+          aria-controls="swatha-panel-about"
+          id="swatha-tab-about"
+          tabindex="0"
+          >
+            About Us
+          </button>
+
+          <button
+          class="swatha-tab-btn"
+          role="tab"
+          aria-selected="false"
+          aria-controls="swatha-panel-mission"
+          id="swatha-tab-mission"
+          tabindex="-1"
+          >
+            Our Mission
+          </button>
+
+          <button
+          class="swatha-tab-btn"
+          role="tab"
+          aria-selected="false"
+          aria-controls="swatha-panel-vision"
+          id="swatha-tab-vision"
+          tabindex="-1"
+          >
+            Our Vision
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Panels -->
+    <div id="swatha-tab-content">
+
+      <!-- ABOUT -->
+      <div
+      class="swatha-tab-panel swatha-active-panel row align-items-center"
+      id="swatha-panel-about"
+      role="tabpanel"
+      aria-labelledby="swatha-tab-about"
+      >
+
+        <div class="col-md-6 swatha-img-col">
+
+          <div class="swatha-img-wrapper">
+
+            <img
+            src="../images/Empowering-Communities.webp"
+            alt="Swadharma Foundation volunteers helping community people"
+            loading="lazy"
+            >
+
+          </div>
+
+        </div>
+
+        <div class="col-md-6 swatha-content-col">
+
+          <h3 class="swatha-content-title">
+            Empowering Communities Through
+            Purpose & Compassion
+          </h3>
+
+          <p class="swatha-content-para">
+            Swadharma Foundation is a non-governmental organization established in Coimbatore, Tamil Nadu with a mission to create meaningful social change.
+          </p>
+
+          <p class="swatha-content-para">
+            Inspired by the Sanskrit philosophy of Swadharma meaning true purpose, the foundation focuses on uplifting underserved communities through compassion and action.
+          </p>
+
+          <p class="swatha-content-para">
+            The organization actively supports differently abled individuals and tribal communities through healthcare, education, and sustainable livelihood programs.
+          </p>
+
+          <a
+          href="#"
+          class="swatha-learn-btn"
+          aria-label="Learn more about Swadharma Foundation"
+          >
+
+            Learn More
+
+
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- MISSION -->
+      <div
+      class="swatha-tab-panel row align-items-center"
+      id="swatha-panel-mission"
+      role="tabpanel"
+      aria-labelledby="swatha-tab-mission"
+      hidden
+      >
+
+        <div class="col-md-6 swatha-img-col">
+
+          <div class="swatha-img-wrapper">
+
+            <img
+            src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=1200"
+            alt="Community outreach medical camp"
+            loading="lazy"
+            >
+
+          </div>
+
+        </div>
+
+        <div class="col-md-6 swatha-content-col">
+
+          <h3 class="swatha-content-title">
+            Our Mission
+          </h3>
+
+          <p class="swatha-content-para">
+            Our mission is to create equal opportunities through education, healthcare, and sustainable development for marginalized communities.
+          </p>
+
+          <p class="swatha-content-para">
+            We work closely with volunteers, local organizations, and communities to build impactful programs that create long-term transformation.
+          </p>
+
+          <a
+          href="#"
+          class="swatha-learn-btn"
+          aria-label="Learn more about our mission"
+          >
+
+            Learn More
+
+        
+
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- VISION -->
+      <div
+      class="swatha-tab-panel row align-items-center"
+      id="swatha-panel-vision"
+      role="tabpanel"
+      aria-labelledby="swatha-tab-vision"
+      hidden
+      >
+
+        <div class="col-md-6 swatha-img-col">
+
+          <div class="swatha-img-wrapper">
+
+            <img
+            src="https://images.unsplash.com/photo-1470115636492-6d2b56f9146d?w=1200"
+            alt="Beautiful sunrise representing hope and equality"
+            loading="lazy"
+            >
+
+          </div>
+
+        </div>
+
+        <div class="col-md-6 swatha-content-col">
+
+          <h3 class="swatha-content-title">
+            Our Vision
+          </h3>
+
+          <p class="swatha-content-para">
+            We envision an inclusive society where every individual can live with dignity, independence, and equal opportunities.
+          </p>
+
+          <p class="swatha-content-para">
+            Swadharma Foundation strives to become a model of compassionate social development and inspire meaningful change across communities.
+          </p>
+
+          <a
+          href="#"
+          class="swatha-learn-btn"
+          aria-label="Learn more about our vision"
+          >
+
+            Learn More
+
+         
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- Bootstrap -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+
+<!-- =========================================================
+     ACCESSIBLE TAB SCRIPT
+========================================================== -->
+
+<script>
+
+(function(){
+
+  "use strict";
+
+  const tabs =
+  document.querySelectorAll('[role="tab"]');
+
+  const panels =
+  document.querySelectorAll('[role="tabpanel"]');
+
+  const liveRegion =
+  document.getElementById('swatha-sr-live');
+
+  function activateTab(tab){
+
+    tabs.forEach(item=>{
+
+      item.setAttribute(
+        'aria-selected',
+        'false'
+      );
+
+      item.setAttribute(
+        'tabindex',
+        '-1'
+      );
+
+    });
+
+    panels.forEach(panel=>{
+
+      panel.classList.remove(
+        'swatha-active-panel'
+      );
+
+      panel.setAttribute(
+        'hidden',
+        true
+      );
+
+    });
+
+    tab.setAttribute(
+      'aria-selected',
+      'true'
+    );
+
+    tab.setAttribute(
+      'tabindex',
+      '0'
+    );
+
+    const target =
+    document.getElementById(
+      tab.getAttribute('aria-controls')
+    );
+
+    target.removeAttribute('hidden');
+
+    target.classList.add(
+      'swatha-active-panel'
+    );
+
+    if(liveRegion){
+
+      liveRegion.textContent =
+      tab.textContent.trim() +
+      ' selected';
+
+    }
+
+  }
+
+  tabs.forEach((tab,index)=>{
+
+    tab.addEventListener('click',()=>{
+
+      activateTab(tab);
+
+    });
+
+    tab.addEventListener('keydown',(e)=>{
+
+      let newIndex = index;
+
+      if(e.key === 'ArrowRight'){
+
+        newIndex =
+        (index + 1) % tabs.length;
+
+      }
+
+      else if(e.key === 'ArrowLeft'){
+
+        newIndex =
+        (index - 1 + tabs.length)
+        % tabs.length;
+
+      }
+
+      else if(e.key === 'Home'){
+
+        newIndex = 0;
+
+      }
+
+      else if(e.key === 'End'){
+
+        newIndex = tabs.length - 1;
+
+      }
+
+      else{
+
+        return;
+
+      }
+
+      e.preventDefault();
+
+      tabs[newIndex].focus();
+
+      activateTab(tabs[newIndex]);
+
+    });
+
+  });
+
+})();
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,516 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+  html{
+            scroll-behavior:smooth;
+        }
+
+
+/* section{
+    overflow: hidden;
+} */
+
+:root {
+    --hea: #D11A8C;
+    --heablack:#2E2E2E;
+    --button:#CF118B;
+    --para:#4A4A4A;
+    --toppara:#1F1F1F;
+   
+}
+
+
+a{
+    text-decoration: none;
+}
+
+h1,h2,h3,h4,h5,h6{
+       font-family: "Montserrat", sans-serif;
+}
+
+p{
+    font-family: "Mulish", sans-serif;
+}
+
+/* brudcrum section start */
+/* ===========================
+   BREADCRUMB BANNER
+=========================== */
+
+.swf-breadcrumb-banner {
+    position: relative;
+    min-height: 450px;
+    display: flex;
+    align-items: center;
+    border-radius: 40px;
+    overflow: hidden;
+    margin: 30px;
+    margin-top: 10px;
+ 
+    background-size: cover;
+    background-position: center;
+}
+
+.swf-breadcrumb-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.3);
+}
+
+.swf-breadcrumb-container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 50px;
+}
+
+.swf-breadcrumb-list {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.swf-breadcrumb-item {
+    color: #fff;
+    font-size: 20px;
+}
+
+.swf-breadcrumb-item:not(:last-child)::after {
+    content: "»";
+    margin-left: 15px;
+    font-size: 32px;
+}
+
+.swf-breadcrumb-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.swf-breadcrumb-link:hover,
+.swf-breadcrumb-link:focus {
+    text-decoration: underline;
+    color: #CF118B;
+    transition: 0.3s;
+}
+
+.swf-breadcrumb-title {
+    color: #fff;
+    font-size: 60px;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* Keyboard Focus */
+
+.swf-breadcrumb-link:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 4px;
+}
+
+/* Responsive */
+
+@media (max-width:768px){
+
+    .swf-breadcrumb-banner{
+        min-height:300px;
+        margin:15px;
+        border-radius:25px;
+    }
+
+    .swf-breadcrumb-container{
+        padding:0 25px;
+    }
+
+    .swf-breadcrumb-title{
+        font-size:38px;
+    }
+
+    .swf-breadcrumb-item{
+        font-size:16px;
+    }
+}
+/* brudcrum section end */
+
+/* <!-- cotact us form section start--> */
+
+
+
+
+.Swadharmar-contact-image {
+   
+    height: auto;
+    display: block;
+    border-radius: 25px;
+    
+    
+}
+
+.Swadharmar-contact-content {
+    padding-top: 30px;
+}
+
+.Swadharmar-contact-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #fbe4f2;
+    color: #e63a92;
+       padding: 5px 12px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.Swadharmar-contact-form-section{
+    margin: 80px 0px;
+}
+.Swadharmar-contact-tag::before {
+    content: "•";
+    font-size: 20px;
+}
+
+.Swadharmar-contact-title {
+    margin-top: 25px;
+    margin-bottom: 20px;
+    font-size: 35px;
+    line-height: 1.2;
+    font-weight: 600;
+    color: #08142e;
+}
+
+.Swadharmar-contact-title span {
+    color: var(--hea);
+}
+
+.Swadharmar-contact-description {
+    font-size: 17px;
+    line-height: 1.8;
+    color:var(--para);
+    margin-bottom: 28px;
+}
+
+.Swadharmar-contact-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.Swadharmar-contact-features li {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 14px;
+}
+
+.Swadharmar-contact-features i {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #fbe4f2;
+    color: #e63a92;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.Swadharmar-contact-features span {
+    color: #667085;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+
+/* <!-- cotact us form section end--> */
+
+
+/* <!-- faq section start-->*/
+.swf-faq-section {
+    padding: 80px 0;
+   
+    background: #FBF7F7;
+}
+
+.swf-faq-header {
+    text-align: center;
+    margin-bottom: 50px;
+ 
+}
+
+.swf-faq-subtitle {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #1F1F1F;;
+    font-size: 14px;
+    margin-bottom: 15px;
+    font-weight: 600;
+       font-family: "Montserrat", sans-serif;
+}
+
+.swf-faq-subtitle i {
+    color: #d81b88;
+}
+
+.swf-faq-title {
+    color: var(--hea);
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.swf-faq-item {
+    margin-bottom: 20px;
+}
+
+.swf-faq-button {
+    width: 100%;
+    border: 0;
+    background: #fff;
+    border-radius: 24px;
+    padding: 17px;
+    display: flex;
+    color: #101010;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.swf-faq-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #d81b88;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    flex-shrink: 0;
+}
+.swf-faq-accordion{
+    width: 84%;
+    margin: 0 auto;
+}
+
+.swf-faq-answer {
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 0 0 24px 24px;
+    margin-top: -10px;
+}
+
+.swf-faq-answer p {
+    margin: 0;
+    color: #555;
+    line-height: 1.8;
+}
+
+.swf-faq-button:focus-visible {
+    outline: 3px solid #d81b88;
+    outline-offset: 4px;
+}
+
+.swf-faq-button[aria-expanded="true"] .swf-faq-icon {
+    transform: rotate(45deg);
+}
+
+@media (max-width: 768px) {
+
+  
+
+    .swf-faq-button {
+        font-size: 18px;
+        padding: 20px;
+    }
+
+    .swf-faq-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 22px;
+    }
+}
+/* <!-- faq section eed-->*/
+
+/* <!-- google map section start--> */
+.swf-map-section {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.swf-map-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.swf-google-map {
+    width: 100%;
+    height: 400px;
+    border: 0;
+    display: block;
+}
+
+
+
+.swf-map-overlay p {
+    color: #fff;
+    font-size: 40px;
+    font-weight: 600;
+    text-align: center;
+    margin: 0;
+    
+    padding: 20px;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+
+    .swf-google-map {
+        height: 400px;
+    }
+
+    .swf-map-overlay p {
+        font-size: 28px;
+    }
+}
+/* <!-- google map section start--> */
+
+/* media query contactus page */
+
+   @media (max-width: 767px){
+
+
+    .Swadharmar-contact-image{
+        width: 100%;
+    }
+   }
+
+
+
+   /* media page css start */
+
+   .swaa-media-section{
+    padding:80px 0;
+    background:#FBF7F7;
+}
+
+.swaa-media-title{
+   font-size: 40px;
+    line-height: 1.1;
+    font-weight: 600;
+    color: var(--hea);
+    margin-bottom:12px;
+}
+
+.swaa-media-subtitle{
+    font-size:16px;
+    color:#666;
+}
+
+.swaa-media-card{
+    background:#fff;
+    border:1px solid #e5e5e5;
+    border-radius:18px;
+    overflow:hidden;
+    
+    text-align:center;
+    transition:0.3s;
+}
+
+.swaa-media-card:hover{
+    transform:translateY(-5px);
+}
+
+.swaa-media-image{
+    width:100%;
+    height:350px;
+    object-fit:cover;
+}
+
+.swaa-media-content{
+    padding:20px;
+}
+
+.swaa-media-name{
+    font-size:24px;
+    font-weight:600;
+    margin-bottom:8px;
+}
+
+.swaa-media-role{
+    font-size:18px;
+    color:#6b7280;
+    margin:0;
+}
+
+/* .swaa-media-card-link:focus-visible{
+    outline:3px solid #0c3c78;
+    outline-offset:4px;
+    border-radius:12px;
+} */
+
+.swaa-media-card:focus-within{
+    outline:3px solid #0c3c78;
+    outline-offset:3px;
+}
+
+.secon-crd-media{
+    margin-top: 60px;
+}
+
+.team-banner-image-Swadharma-Foundation{
+    width: 100%;
+}
+
+.swa-meda-team-banner-section{
+    margin-top: 60px;
+}
+
+.swa-meda-team-banner-section:focus,
+.swa-meda-team-banner-section:focus-visible{
+    outline: none;
+    box-shadow: none;
+}
+.swaa-media-card:focus,
+.swaa-media-card:focus-visible {
+    outline: 2px solid #D11A8C;
+    border-radius: 12px;
+}
+
+@media (max-width:991px){
+
+    .swaa-media-title{
+        font-size:32px;
+    }
+
+    .swaa-media-image{
+        height:300px;
+    }
+
+    .swaa-media-name{
+        font-size:24px;
+    }
+}
+   /* media page css end */

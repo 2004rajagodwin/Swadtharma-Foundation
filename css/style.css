@@ -1,0 +1,4520 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+  html{
+            scroll-behavior:smooth;
+        }
+
+
+/* section{
+    overflow: hidden;
+} */
+
+:root {
+    --hea: #D11A8C;
+    --heablack:#2E2E2E;
+    --button:#CF118B;
+    --para:#4A4A4A;
+    --toppara:#1F1F1F;
+   
+}
+
+
+a{
+    text-decoration: none;
+}
+
+h1,h2,h3,h4,h5,h6{
+       font-family: "Montserrat", sans-serif;
+}
+
+p{
+    font-family: "Mulish", sans-serif;
+}
+
+
+/* nav code st */
+
+   .skip-link {
+        position: absolute;
+        top: -60px;
+        left: 20px;
+
+        background: #000;
+        color: #fff;
+
+        padding: 12px 20px;
+
+        z-index: 9999;
+
+        text-decoration: none;
+
+        border-radius: 8px;
+
+        transition: 0.3s;
+      }
+
+      .skip-link:focus {
+        top: 20px;
+      }
+
+      /* =========================================
+           DESKTOP NAVBAR
+        ========================================= */
+
+      .swadhra-desktop-nav {
+        width: 100%;
+
+        background: #fff;
+
+        padding: 18px 0;
+
+       
+      }
+
+      .main-logo-swadharma {
+        width: 45%;
+      }
+
+      .swadhra-desktop-menu {
+        display: flex;
+
+        justify-content: center;
+
+        align-items: center;
+
+        gap: 30px;
+
+        list-style: none;
+
+        margin: 0;
+
+        padding: 0;
+      }
+
+      .swadhra-desktop-menu li {
+        position: relative;
+      }
+
+      .swadhra-dropdown {
+        position: relative;
+
+        padding: 20px 0;
+      }
+      .swadhra-desktop-menu a[aria-current="page"],
+.swadhra-mobile-menu a[aria-current="page"]{
+    font-weight:600;
+}
+
+      .swadhra-desktop-menu li a,
+      .swadhra-dropdown-btn {
+        text-decoration: none;
+          font-family: "Montserrat", sans-serif;
+
+        color: #2E2E2E;
+
+        font-size: 15px;
+
+        font-weight: 600;
+
+        background: none;
+
+        border: none;
+
+        cursor: pointer;
+
+        transition: 0.3s;
+      }
+
+      .swadhra-desktop-menu li a:hover,
+      .swadhra-dropdown-btn:hover {
+        color: #CF118B;
+      }
+
+      /* =========================================
+           DROPDOWN
+        ========================================= */
+
+      .swadhra-dropdown-menu {
+        position: absolute;
+
+        top: 100%;
+
+        left: 0;
+
+        background: #fff;
+
+        min-width: 240px;
+
+        list-style: none;
+
+        padding: 15px 0;
+
+        border-radius: 12px;
+
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        transform: translateY(10px);
+
+        transition: 0.3s ease;
+
+        z-index: 999;
+      }
+
+      /* ACTIVE */
+
+      .swadhra-dropdown.active .swadhra-dropdown-menu {
+        opacity: 1;
+
+        visibility: visible;
+
+        transform: translateY(0);
+      }
+
+      .swadhra-dropdown-menu li a {
+        display: block;
+
+        padding: 12px 20px;
+
+        font-size: 15px;
+
+        width: 100%;
+      }
+
+      .swadhra-dropdown-menu li a:hover {
+        background: #f8f8f8;
+      }
+
+      /* =========================================
+           ARROW ROTATE
+        ========================================= */
+
+      .swadhra-dropdown-btn {
+        display: flex;
+
+        align-items: center;
+
+        gap: 8px;
+      }
+
+      .swadhra-dropdown-btn i {
+        font-size: 13px;
+
+        transition: 0.3s ease;
+      }
+
+      .swadhra-dropdown.active .swadhra-dropdown-btn i {
+        transform: rotate(180deg);
+      }
+
+      /* =========================================
+           DONATE BUTTON
+        ========================================= */
+
+    
+      /* button code st */
+
+      /* =========================================
+   PROFESSIONAL DONATE BUTTON
+========================================= */
+
+      .swadhra-donate-btn {
+        position: relative;
+
+        overflow: hidden;
+
+        background-color: #cf118b   !important;
+
+        color: #fff !important;
+
+        border: 2px solid #cf118b !important;
+
+        text-decoration: none;
+
+        padding: 14px 30px !important;
+
+        border-radius: 50px;
+
+        font-weight: 600;
+
+        display: inline-flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 10px;
+
+        transition:
+          background-color 0.3s ease,
+          color 0.3s ease,
+          border-color 0.3s ease;
+      }
+
+      /* SHINE EFFECT */
+
+      .swadhra-donate-btn::before {
+        content: "";
+
+        position: absolute;
+
+        top: 0;
+
+        left: -120%;
+
+        width: 60%;
+
+        height: 100%;
+
+        background: linear-gradient(
+          120deg,
+          transparent,
+          rgba(255, 255, 255, 0.5),
+          transparent
+        );
+
+        transform: skewX(-25deg);
+      }
+
+      /* HOVER ANIMATION */
+
+      .swadhra-donate-btn:hover::before {
+        animation: swadhraShine 0.9s ease;
+      }
+
+      /* BUTTON HOVER */
+
+      /* SHINE KEYFRAMES */
+
+      @keyframes swadhraShine {
+        100% {
+          left: 150%;
+        }
+      }
+      /* end button code * /
+
+      /* =========================================
+           MOBILE NAVBAR
+        ========================================= */
+
+      .swadhra-mobile-nav {
+        display: none;
+
+        width: 100%;
+
+        background: #fff;
+
+        padding: 15px 0;
+
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      }
+
+      .swadhra-mobile-wrapper {
+        display: flex;
+
+        justify-content: space-between;
+
+        align-items: center;
+      }
+
+      .swadhra-mobile-logo img {
+        width: 60%;
+      }
+
+      .swadhra-mobile-toggle {
+        width: 50px;
+
+        height: 50px;
+
+        border: none;
+
+        background: #c40084;
+
+        color: #fff;
+
+        border-radius: 10px;
+
+        font-size: 22px;
+
+        cursor: pointer;
+      }
+
+      /* =========================================
+           MOBILE MENU
+        ========================================= */
+
+      .swadhra-mobile-menu {
+        display: none;
+
+        margin-top: 20px;
+      }
+
+      .swadhra-mobile-menu.active {
+        display: block;
+      }
+
+      .swadhra-mobile-menu ul {
+        list-style: none;
+
+        padding: 0;
+      }
+
+      .swadhra-mobile-menu ul li {
+        border-bottom: 1px solid #eee;
+      }
+
+      .swadhra-mobile-menu ul li a,
+      .mobile-dropdown-btn {
+        width: 100%;
+
+        display: flex;
+
+        justify-content: space-between;
+
+        align-items: center;
+
+        text-decoration: none;
+
+        color: #222;
+
+        background: none;
+
+        border: none;
+
+        padding: 16px 0;
+
+        font-size: 17px;
+
+        font-weight: 600;
+      }
+
+      /* =========================================
+           MOBILE DROPDOWN
+        ========================================= */
+
+      .mobile-dropdown-menu {
+        display: none;
+
+        padding-left: 20px;
+      }
+
+      .mobile-dropdown-menu.active {
+        display: block;
+      }
+
+      .mobile-dropdown-menu li {
+        border: none !important;
+      }
+
+      .mobile-dropdown-menu li a {
+        padding: 12px 0;
+
+        font-size: 15px;
+      }
+
+      /* MOBILE ARROW */
+
+      .mobile-dropdown-btn i {
+        transition: 0.3s ease;
+      }
+
+      .mobile-dropdown-btn.active i {
+        transform: rotate(180deg);
+      }
+
+      /* =========================================
+           MOBILE DONATE
+        ========================================= */
+
+      .swadhra-mobile-donate {
+        background: #c40084 !important;
+
+        color: #fff !important;
+
+        justify-content: center !important;
+
+        border-radius: 8px;
+
+        margin-top: 15px;
+
+        padding: 14px !important;
+      }
+
+      /* =========================================
+           ACCESSIBILITY FOCUS
+        ========================================= */
+
+      a:focus,
+      button:focus {
+        outline: 3px solid #c40084;
+
+        outline-offset: 5px;
+
+        border-radius: 6px;
+      }
+
+      /* =========================================
+           RESPONSIVE
+        ========================================= */
+
+      @media (max-width: 991px) {
+        .swadhra-desktop-nav {
+          display: none;
+        }
+
+        .swadhra-mobile-nav {
+          display: block;
+        }
+      }
+
+      /* nav code end */
+
+
+      /* banner slider section start */
+
+/* banner aos animation css */
+
+
+.swa-banner-heading-h2{
+        font-size: 55px;
+    line-height: 1.05;
+    font-weight: 800;
+    margin-bottom: 25px;
+}
+
+#carousel-toggle{
+    position:absolute;
+    left:-9999px;
+}
+.swa-banner-fade-right {
+  opacity: 0;
+  transform: translateX(-80px);
+  animation: swaBannerFadeRight 1.2s ease forwards;
+}
+
+@keyframes swaBannerFadeRight {
+  from {
+    opacity: 0;
+    transform: translateX(-80px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+
+
+
+
+
+/* banner aos animation css */
+
+
+
+
+
+
+  .swadharma-sr-only{
+            position:absolute;
+            width:1px;
+            height:1px;
+            padding:0;
+            margin:-1px;
+            overflow:hidden;
+            clip:rect(0,0,0,0);
+            border:0;
+        }
+
+        /* ===================================================
+           BANNER
+        =================================================== */
+
+        .swadharma-banner-sec{
+            position: relative;
+            padding-bottom: 50px;
+            overflow: hidden;
+        }
+
+        .swadharma-banner-box{
+            position: relative;
+            min-height: 720px;
+            overflow: hidden;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .swadharma-banner-img{
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .swadharma-banner-img img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .swadharma-banner-overlay{
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                90deg,
+                rgba(0,0,0,0.78) 0%,
+                rgba(0,0,0,0.48) 45%,
+                rgba(0,0,0,0.20) 100%
+            );
+            z-index: 1;
+        }
+
+        .swadharma-banner-content{
+            position: relative;
+            z-index: 2;
+            color: #fff;
+            max-width: 700px;
+            padding: 80px 0;
+        }
+
+        .swadharma-banner-content h1{
+            font-size: 55px;
+            line-height: 1.05;
+            font-weight: 800;
+            margin-bottom: 25px;
+        }
+
+        .swadharma-banner-content p{
+            font-size: 18px;
+            line-height: 32px;
+            color: #f3f3f3;
+            max-width: 580px;
+            margin-bottom: 35px;
+        }
+
+        /* ===================================================
+           BUTTONS
+        =================================================== */
+
+        .swadharma-btn-wrap{
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            flex-wrap: wrap;
+            margin-bottom: 60px;
+        }
+
+        a{
+            text-decoration: none;
+        }
+
+        .swadharma-btn-primary{
+            min-width: 170px;
+            min-height: 52px;
+            padding: 14px 28px;
+            border-radius: 50px;
+            background: #CF118B;
+            color: #fff;
+            border: 2px solid #CF118B;
+            font-size: 15px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: 0.3s;
+        }
+
+        .swadharma-btn-primary:hover{
+            background: transparent;
+            border-color: #CF118B;
+            color: #fff;
+        }
+
+        .swadharma-btn-outline{
+            min-width: 220px;
+            min-height: 52px;
+            padding: 14px 28px;
+            border-radius: 50px;
+            background: #fff;
+            color: #CF118B;
+            border: 2px solid #fff;
+            font-size: 15px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+        }
+
+        .swadharma-btn-outline:hover{
+            background: transparent;
+            color: #fff;
+        }
+
+        /* ===================================================
+           ACCESSIBILITY FOCUS
+        =================================================== */
+
+        .swadharma-btn-primary:focus-visible,
+        .swadharma-btn-outline:focus-visible,
+        .swadharma-feature-item:focus-visible,
+        .owl-prev:focus-visible,
+        .owl-next:focus-visible{
+            outline: 3px solid #ffffff;
+            outline-offset: 4px;
+        }
+
+        /* ===================================================
+           FEATURE TABS
+        =================================================== */
+
+        .swadharma-feature-slider{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+            padding-top: 25px;
+            flex-wrap: wrap;
+        }
+
+        .swadharma-feature-item{
+            position: relative;
+            color: rgba(255,255,255,0.60);
+            font-size: 15px;
+            font-weight: 500;
+            padding-bottom: 14px;
+            transition: 0.4s;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.35);
+            background: transparent;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            cursor: pointer;
+        }
+
+        .swadharma-feature-item img{
+            width:20px !important;
+            margin-right: 20px;
+        }
+
+        .swadharma-feature-item::before{
+            content: "";
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: transparent;
+            border-radius: 30px;
+            transition: 0.4s;
+        }
+
+        .swadharma-feature-item.active{
+            color: #ffffff;
+        }
+
+        .swadharma-feature-item.active::before{
+            background: #d4148e;
+        }
+
+        /* ===================================================
+           OWL NAV
+        =================================================== */
+
+        .swadharma-banner-slider .owl-nav{
+            margin-top: 0;
+        }
+
+        .swadharma-banner-slider .owl-prev,
+        .swadharma-banner-slider .owl-next{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 52px;
+            height: 52px;
+            border-radius: 50% !important;
+            background: rgba(255,255,255,0.18) !important;
+            color: #fff !important;
+            font-size: 28px !important;
+            transition: 0.3s;
+        }
+
+        .swadharma-banner-slider .owl-prev:hover,
+        .swadharma-banner-slider .owl-next:hover{
+            background: #d4148e !important;
+        }
+
+        .swadharma-banner-slider .owl-prev{
+            left: 20px;
+        }
+
+        .swadharma-banner-slider .owl-next{
+            right: 20px;
+        }
+
+        .swadharma-banner-slider .owl-dots{
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .swadharma-banner-slider .owl-dot span{
+            width: 12px;
+            height: 12px;
+            background: rgba(255,255,255,0.5) !important;
+        }
+
+        .swadharma-banner-slider .owl-dot.active span{
+            background: #d4148e !important;
+        }
+
+        /* ===================================================
+           REDUCED MOTION
+        =================================================== */
+
+        @media (prefers-reduced-motion: reduce){
+
+            *{
+                animation: none !important;
+                transition: none !important;
+                scroll-behavior: auto !important;
+            }
+
+        }
+
+        /* ===================================================
+           RESPONSIVE
+        =================================================== */
+
+        @media (max-width: 991px){
+
+            .swadharma-banner-box{
+                min-height: auto;
+            }
+
+            .swadharma-banner-content{
+                text-align: center;
+                padding: 120px 20px 70px;
+                margin: auto;
+            }
+
+            .swadharma-banner-content h1{
+                font-size: 46px;
+            }
+
+            .swadharma-btn-wrap{
+                justify-content: center;
+            }
+
+            .swadharma-feature-slider{
+                justify-content: center;
+            }
+
+        }
+
+        @media (max-width: 767px){
+
+            .swadharma-banner-content{
+                padding: 100px 15px 60px;
+            }
+
+            .swadharma-banner-content h1{
+                font-size: 38px;
+                line-height: 1.15;
+            }
+
+            .swadharma-banner-content p{
+                font-size: 16px;
+                line-height: 28px;
+            }
+
+            .swadharma-btn-primary,
+            .swadharma-btn-outline{
+                width: 100%;
+            }
+
+            .swadharma-feature-slider{
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 18px;
+            }
+
+            .swadharma-feature-item{
+                width: 100%;
+            }
+
+        }
+       /* banner slider section end */
+
+
+/* our community section start */
+
+ .swa-testi-link-a {
+        color: #A30472;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        transition: 0.4s;
+        margin-top: 20px;
+         font-family: "Montserrat", sans-serif;
+      }
+
+      .swa-testi-link-a:hover {
+        color: #b40076;
+        gap: 18px;
+      }
+
+      .swadharma-program-sec {
+        position: relative;
+        padding: 60px 0;
+        background: #F6F3EE;
+
+      }
+
+      /* ===================================================
+LEFT CONTENT
+==================================================== */
+
+      .swadharma-program-content {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .swadharma-program-subtitle {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 18px;
+         font-family: "Montserrat", sans-serif;
+        color: #000;
+        font-size: 16px;
+        font-weight: 500;
+      }
+
+      /* Icon Circle */
+
+      .swadharma-program-subtitle i {
+      
+      font-size: 18px;
+        color: #d4148e;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+       
+      }
+
+      /* Heading */
+
+      .swadharma-program-content h2 {
+        font-size: 40px;
+        line-height: 1.2;
+        font-weight: 600;
+        color:var(--hea);
+        margin-bottom: 20px;
+      }
+
+      /* Paragraph */
+
+      .swadharma-program-content p {
+        font-size: 17px;
+        line-height: 30px;
+        color: #555;
+        margin: 0;
+      }
+
+      /* ===================================================
+CARD
+==================================================== */
+
+      .swadharma-pro-items {
+        height: 100%;
+      }
+
+      /* Card Box */
+
+      /* .swadharma-pro-items-content {
+        height: 100%;
+        padding: 15px 10px 20px 20px;
+        border-radius: 24px;
+        background: #ffffff;
+        transition: 0.3s;
+        border: 1px solid transparent;
+      } */
+
+      /* Hover */
+
+      /* .swadharma-pro-items-content:hover {
+        transform: translateY(-5px);
+        border-color: rgba(212, 20, 142, 0.18);
+      }
+
+ */
+
+/* =====================================
+   Premium Hover Animation Effect
+===================================== */
+
+.swadharma-pro-items-content{
+    position:relative;
+    overflow:hidden;
+    padding:30px;
+    border-radius:20px;
+    background:#ffffff;
+    transition:0.6s ease;
+    z-index:1;
+}
+
+/* Animated Background */
+.swadharma-pro-items-content::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    /* background:linear-gradient(135deg,#00a859,#006644); */
+
+    background: linear-gradient(
+    135deg,
+    #ff7ac6 0%,
+    #f04aa9 25%,
+    #d4148e 55%,
+    #9b0f68 100%
+);
+    transform:scale(0) rotate(45deg);
+    transform-origin:center;
+    opacity:0;
+    transition:all 0.7s ease;
+    z-index:-1;
+    border-radius:20px;
+}
+
+/* Hover Animation */
+.swadharma-pro-items:hover 
+.swadharma-pro-items-content::before{
+    transform:scale(2) rotate(45deg);
+    opacity:1;
+}
+
+/* Text Color Change */
+.swadharma-pro-items-content h3,
+.swadharma-pro-items-content p,
+.swadharma-pro-items-content .swa-testi-link-a{
+    transition:0.5s ease;
+}
+
+.swadharma-pro-items:hover h3,
+.swadharma-pro-items:hover p,
+.swadharma-pro-items:hover .swa-testi-link-a{
+    color:#ffffff;
+}
+
+/* Arrow Animation */
+.swadharma-pro-items:hover .swa-testi-link-a i{
+    transform:translateX(6px);
+    color:#ffffff;
+}
+
+.swa-testi-link-a i{
+    transition:0.5s ease;
+}
+
+/* Icon Animation */
+.swadharma-pro-items-icon img{
+    transition:0.6s ease;
+}
+
+.swadharma-pro-items:hover 
+.swadharma-pro-items-icon img{
+    transform:scale(1.1) rotate(5deg);
+}
+
+/* Accessibility Focus */
+.swadharma-pro-items:focus-within 
+.swadharma-pro-items-content::before{
+    transform:scale(2) rotate(45deg);
+    opacity:1;
+}
+
+.swadharma-pro-items:focus-within h3,
+.swadharma-pro-items:focus-within p,
+.swadharma-pro-items:focus-within .swa-testi-link-a{
+    color:#ffffff;
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+      /* ===================================================
+TOP AREA
+==================================================== */
+
+      .swadharma-pro-items-content-head {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        margin-bottom: 22px;
+      }
+
+      /* ===================================================
+ICON
+==================================================== */
+
+      .swadharma-pro-items-icon {
+        width: 70px;
+        height: 70px;
+        min-width: 70px;
+        border-radius: 50%;
+        background: rgba(212, 20, 142, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      /* Image */
+
+      .swadharma-pro-items-icon img {
+        width: 42px;
+        height: 42px;
+        object-fit: contain;
+         transition:0.6s ease;
+      }
+
+/* hover icon */
+.swadharma-pro-items:hover 
+.swadharma-pro-items-icon{
+    background:rgba(255,255,255,0.22);
+    border-color:rgba(255,255,255,0.4);
+
+   
+}
+
+/* White Icon Filter */
+.swadharma-pro-items:hover 
+.swadharma-pro-items-icon img{
+    filter:
+        brightness(0)
+        invert(1);
+
+  
+}
+
+/* Accessibility */
+.swadharma-pro-items:focus-within 
+.swadharma-pro-items-icon{
+    background:rgba(255,255,255,0.22);
+    border-color:rgba(255,255,255,0.4);
+}
+
+.swadharma-pro-items:focus-within 
+.swadharma-pro-items-icon img{
+    filter:
+        brightness(0)
+        invert(1);
+}
+
+/* hover iocn */
+
+
+      
+      /* ===================================================
+TITLE
+==================================================== */
+
+      .swadharma-pro-items-con h3 {
+        font-size: 18px;
+        line-height: 1.3;
+        font-weight: 600;
+        color:var(--heablack);
+        margin: 0;
+        text-transform: capitalize;
+      }
+
+      /* ===================================================
+PARAGRAPH
+==================================================== */
+
+      .swadharma-pro-items-content p {
+        font-size: 17px;
+        line-height: 30px;
+        color: var(--para);
+        margin: 0;
+      }
+
+      /* ===================================================
+ACCESSIBILITY
+==================================================== */
+
+      /* Keyboard Focus */
+
+      .swadharma-pro-items-content:focus-within {
+        outline: 3px solid #005fcc;
+        outline-offset: 4px;
+      }
+
+      /* ===================================================
+RESPONSIVE
+==================================================== */
+
+      @media (max-width: 1199px) {
+        .swadharma-program-content h2 {
+          font-size: 38px;
+        }
+      }
+
+      @media (max-width: 991px) {
+        .swadharma-program-sec {
+          padding: 80px 0;
+        }
+
+        .swadharma-program-content {
+          margin-bottom: 20px;
+        }
+      }
+
+      @media (max-width: 767px) {
+        .swadharma-program-sec {
+          padding: 70px 0;
+        }
+
+        .swadharma-program-content h2 {
+          font-size: 32px;
+        }
+
+        .swadharma-pro-items-content {
+          padding: 28px;
+        }
+
+        .swadharma-pro-items-content-head {
+          align-items: flex-start;
+        }
+
+        .swadharma-pro-items-con h3 {
+          font-size: 22px;
+        }
+      }
+
+      @media (max-width: 575px) {
+        .swadharma-program-content h2 {
+          font-size: 28px;
+        }
+
+        .swadharma-pro-items-content-head {
+          flex-direction: column;
+        }
+
+        .swadharma-pro-items-icon {
+          width: 70px;
+          height: 70px;
+          min-width: 70px;
+        }
+      }
+
+/* our community section end */
+
+
+
+       /*  achievement section start */
+
+
+.sawa-achiev-section{
+    padding: 80px 0;
+    background: #f7f7f7;
+    overflow: hidden;
+}
+
+/* =========================================================
+   SUBTITLE
+========================================================= */
+
+.sawa-achiev-subtitle{
+    color:#2E2E2E;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    letter-spacing: 0.3px;
+      font-family: "Montserrat", sans-serif;
+}
+
+.sawa-achiev-subtitle i {
+    color: #CF118B;
+    font-size: 18px;
+}
+/* =========================================================
+   TITLE
+========================================================= */
+
+.sawa-achiev-title{
+    font-size: 40px;
+    font-weight: 600;
+    color: var(--hea);
+    margin: 0;
+    line-height: 1.2;
+}
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.sawa-achiev-btn{
+    background: linear-gradient(90deg,#d81b90,#c21884);
+    color: #fff;
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-weight: 600;
+    transition: 0.4s ease;
+    min-height: 52px;
+}
+
+/* Hover */
+.sawa-achiev-btn:hover{
+    transform: translateY(-3px);
+    color: #fff;
+    box-shadow: 0 10px 25px rgba(216,27,144,0.25);
+}
+
+/* Keyboard Focus */
+.sawa-achiev-btn:focus-visible{
+    outline: 3px solid #111;
+    outline-offset: 4px;
+    box-shadow: 0 0 0 5px rgba(216,27,144,0.25);
+}
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.sawa-achiev-card{
+    background: #fff;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid #e8e8e8;
+    transition: 0.4s ease;
+   
+    cursor: pointer;
+}
+
+/* Hover */
+.sawa-achiev-card:hover{
+   
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+}
+
+.sawa-achiev-card:hover  .sawa-achiev-content h3 {
+    color: var(--hea);
+    transition: 0.3s;
+}
+/* Keyboard Focus */
+.sawa-achiev-card:focus-visible{
+    outline: 3px solid #d81b90;
+    outline-offset: 4px;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.10);
+}
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.sawa-achiev-img{
+    overflow: hidden;
+}
+
+.sawa-achiev-img img{
+    width: 100%;
+
+    object-fit: cover;
+    transition: 0.5s ease;
+    display: block;
+}
+
+/* Zoom Effect */
+.sawa-achiev-card:hover img,
+.sawa-achiev-card:focus-visible img{
+    transform: scale(1.08);
+}
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.sawa-achiev-content{
+    padding: 20px;
+}
+
+.sawa-achiev-content h3{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color:var(--heablack);
+    line-height: 1.4;
+}
+
+.sawa-achiev-content p{
+    margin: 0;
+    color: #4A4A4A;
+    font-size: 16px;
+
+}
+
+/* =========================================================
+   SCREEN READER ONLY
+========================================================= */
+
+.sr-only{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* =========================================================
+   REDUCE MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce){
+
+    *{
+        scroll-behavior: auto !important;
+        transition: none !important;
+        animation: none !important;
+    }
+
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:991px){
+
+    .sawa-achiev-title{
+        font-size: 34px;
+    }
+
+}
+
+@media(max-width:767px){
+
+    .sawa-achiev-section{
+        padding: 60px 0;
+    }
+
+    .sawa-achiev-title{
+        font-size: 28px;
+    }
+
+    .sawa-achiev-btn{
+        width: 100%;
+    }
+
+    .sawa-achiev-img img{
+        height: 220px;
+    }
+
+    .sawa-achiev-content h3{
+        font-size: 20px;
+    }
+
+}
+         /*  achievement section end */
+
+/* <!-- feature impact section start--> */
+
+
+         /* Better readable text */
+.sawa-featureimpact-section {
+    background: #f7f7f7;
+ padding-bottom: 60px;
+    color: #222;
+}
+
+/* Screen Reader Hidden Text */
+.sawa-sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Heading */
+.sawa-featureimpact-subtitle {
+    color:#2E2E2E;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 10px;
+      font-family: "Montserrat", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+   
+}
+
+.sawa-featureimpact-subtitle i{
+    font-size: 18px;
+    color: #CF118B;
+
+}
+.sawa-featureimpact-title {
+    font-size: 40px;
+    font-weight: 600;
+    color: var(--hea);
+    margin: 0;
+    line-height: 1.3;
+}
+
+/* Card */
+.sawa-featureimpact-card {
+    background: #fff;
+    border: 1px solid #ece3ea;
+    border-radius: 18px;
+    overflow: hidden;
+    transition: 0.35s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+}
+
+/* Keyboard Focus */
+.sawa-featureimpact-card:focus-within {
+    box-shadow: 0 0 0 4px rgba(224, 19, 141, 0.25);
+}
+
+/* Hover */
+.sawa-featureimpact-card:hover {
+  
+    box-shadow: 0 12px 35px rgba(0,0,0,0.08);
+}
+
+.sawa-featureimpact-card:hover  .sawa-featureimpact-card-title{
+    color: var(--hea);
+    transition: 0.3s;
+}
+/* Image */
+.sawa-featureimpact-image {
+    overflow: hidden;
+    position: relative;
+}
+
+.sawa-featureimpact-image img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: 0.5s ease;
+    display: block;
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .sawa-featureimpact-card:hover {
+        transform: none;
+    }
+
+    .sawa-featureimpact-card:hover img {
+        transform: none;
+    }
+}
+
+/* Image Hover */
+.sawa-featureimpact-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Content */
+.sawa-featureimpact-content {
+    padding: 24px;
+}
+
+.sawa-featureimpact-card-title {
+    font-size: 22px;
+    font-weight: 600;
+    color:var(--heablack);
+    margin-bottom: 16px;
+    line-height: 1.5;
+}
+
+.sawa-featureimpact-text {
+    color: var(--para);
+    font-size: 17px;
+  
+    margin-bottom: 22px;
+}
+
+/* Read More */
+.sawa-featureimpact-link {
+    color: #CF118B;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s ease;
+    min-height: 44px;
+    font-size: 18px;
+}
+
+/* Hover + Focus */
+.sawa-featureimpact-link:hover,
+.sawa-featureimpact-link:focus {
+    color: #b60072;
+    gap: 12px;
+    text-decoration: underline;
+    outline: none;
+}
+
+/* Main Button */
+.sawa-featureimpact-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #d4148e;
+    color: #fff;
+    text-decoration: none;
+    padding: 14px 34px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: 0.35s ease;
+    border: 2px solid #d4148e;
+    min-height: 50px;
+    min-width: 160px;
+}
+
+/* Button Hover */
+.sawa-featureimpact-btn:hover,
+.sawa-featureimpact-btn:focus {
+    background: #b70076;
+    border-color: #b70076;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(212,20,142,0.3);
+    outline: none;
+}
+
+/* Strong Keyboard Focus */
+.sawa-featureimpact-link:focus-visible,
+.sawa-featureimpact-btn:focus-visible {
+    outline: 3px solid #000;
+    outline-offset: 4px;
+    border-radius: 8px;
+}
+
+/* Better Text Selection */
+::selection {
+    background: #e0138d !important;
+    color: #fff;
+}
+
+.swatha-impact-list{
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+
+/* High Contrast Support */
+@media (prefers-contrast: more) {
+
+    .sawa-featureimpact-card {
+        border: 2px solid #000;
+    }
+
+    .sawa-featureimpact-title,
+    .sawa-featureimpact-link {
+        color: #a00062;
+    }
+
+    .sawa-featureimpact-text {
+        color: #222;
+    }
+
+    .sawa-featureimpact-btn {
+        border-width: 3px;
+    }
+}
+
+/* Mobile Responsive */
+@media (max-width: 991px) {
+
+    .sawa-featureimpact-title {
+        font-size: 34px;
+    }
+
+    .sawa-featureimpact-card-title {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .sawa-featureimpact-section {
+        padding: 60px 0;
+    }
+
+    .sawa-featureimpact-title {
+        font-size: 28px;
+        line-height: 1.4;
+    }
+
+    .sawa-featureimpact-image img {
+        height: 220px;
+    }
+
+    .sawa-featureimpact-content {
+        padding: 20px;
+    }
+
+    .sawa-featureimpact-card-title {
+        font-size: 18px;
+    }
+
+    .sawa-featureimpact-text {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .sawa-featureimpact-btn {
+        width: 100%;
+        max-width: 280px;
+    }
+}
+
+/* <!-- feature impact section end--> */
+
+      
+
+
+/*<!-- contact form section start--> */
+
+.sawa-form-instruction{
+ margin-bottom: 18px;
+  font-size:14px;
+ 
+  color: var(--para);
+}
+
+.sawa-contactform-section {
+    padding: 60px 0;
+    background: #ffff;
+    overflow: hidden;
+}
+
+/* Screen Reader Hidden */
+.visually-hidden {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Left Side */
+.sawa-contact-left {
+    padding-right: 20px;
+}
+
+.sawa-contact-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    color: #2E2E2E;
+    margin-bottom: 18px;
+    font-weight: 500;
+     font-family: "Montserrat", sans-serif;
+
+}
+
+.sawa-contact-tag i {
+    color: #CF118B;
+    font-size: 18px;
+}
+
+.sawa-contact-title {
+    font-size: 40px;
+    line-height: 1.2;
+    font-weight: 600;
+    color: var(--hea);
+    margin-bottom: 35px;
+    max-width: 700px;
+}
+
+.sawa-contact-image {
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+.sawa-contact-image img {
+    width: 90%;
+  margin: 0 auto;
+    object-fit: cover;
+    display: block;
+    border-radius: 24px;
+}
+
+/* Form */
+.sawa-contact-form-wrapper {
+    background: #fff;
+    padding: 31px;
+    border-radius: 22px;
+    border: 1px solid #efd9eb;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.sawa-form-title {
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--heablack);
+    margin-bottom: 10px;
+}
+
+.sawa-form-text {
+    font-size: 17px;
+   
+    color: var(--para);
+    margin-bottom: 28px;
+}
+
+.sawa-form-label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #2E2E2E;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.sawa-form-control {
+    height: 50px;
+    border-radius: 6px;
+    border: 1px solid #D0D5DD;
+    box-shadow: none !important;
+    padding: 12px 16px;
+    font-size: 14px;
+    color: #222;
+    transition: 0.3s ease;
+    background-color: #F7F7F7;
+    font-family: "Mulish", sans-serif;
+}
+
+/* Accessibility Focus */
+.sawa-form-control:focus {
+    border-color: #d10c8c;
+    outline: 3px solid rgba(209, 12, 140, 0.25);
+    outline-offset: 2px;
+}
+
+/* Placeholder */
+.sawa-form-control::placeholder {
+    color: #777;
+    opacity: 1;
+}
+
+.sawa-textarea {
+    height: 140px !important;
+    resize: vertical;
+    padding-top: 15px;
+}
+
+/* Button */
+.sawa-submit-btn {
+    width: 100%;
+    border: none;
+    background: #d10c8c;
+    color: #fff;
+    height: 58px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+/* Hover */
+.sawa-submit-btn:hover {
+    background: #b40076;
+    transform: translateY(-2px);
+}
+
+/* Keyboard Accessibility */
+.sawa-submit-btn:focus-visible {
+    outline: 4px solid rgba(209, 12, 140, 0.3);
+    outline-offset: 4px;
+}
+
+/* Icon */
+.sawa-submit-btn i {
+    font-size: 15px;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+
+    * {
+        scroll-behavior: auto !important;
+        transition: none !important;
+        animation: none !important;
+    }
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+
+    .sawa-contact-left {
+        padding-right: 0;
+    }
+
+    .sawa-contact-title {
+        font-size: 36px;
+    }
+
+    .sawa-contact-image img {
+        height: 450px;
+    }
+
+    .sawa-contact-form-wrapper {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 767px) {
+
+
+
+    .sawa-contact-title {
+        font-size: 34px;
+    }
+
+    .sawa-contact-image img {
+        height: 350px;
+    }
+
+    .sawa-contact-form-wrapper {
+        padding: 24px;
+    }
+
+    .sawa-form-title {
+        font-size: 26px;
+    }
+
+    .sawa-submit-btn {
+        height: 54px;
+        font-size: 16px;
+    }
+}
+
+
+/* <!-- contact form section end--> */
+
+
+
+
+/* -- mesurable impact section start--> */
+.swatha-mesurable-section{
+    background:#f3f3f3;
+    padding:90px 0;
+    overflow:hidden;
+    position:relative;
+}
+
+/* =========================
+   TOP ROW
+========================= */
+
+.swatha-measureable-top-row{
+    margin-bottom:45px;
+    align-items:center;
+}
+
+/* =========================
+   SUB TITLE
+========================= */
+
+.swatha-measureable-subtitle{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-size:16px;
+    font-weight:500;
+    color:#444;
+    margin-bottom:15px;
+      font-family: "Montserrat", sans-serif;
+}
+
+.swatha-measureable-subtitle i{
+    color:#d61b8c;
+    font-size:18px;
+}
+
+/* =========================
+   MAIN HEADING
+========================= */
+
+.swatha-measureable-heading{
+    font-size:40px;
+    line-height:1.15;
+    font-weight:600;
+    color:var(--hea);
+    margin:0;
+    max-width:650px;
+    letter-spacing:-1px;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.swatha-measureable-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    background:#d61b8c;
+    color:#fff;
+    text-decoration:none;
+    padding:16px 34px;
+    border-radius:60px;
+    font-weight:700;
+    font-size:16px;
+    border:2px solid #d61b8c;
+    transition:
+    background 0.4s ease,
+    color 0.4s ease,
+    transform 0.4s ease,
+    border-color 0.4s ease;
+    position:relative;
+    overflow:hidden;
+    min-height:56px;
+}
+
+/* Hover */
+.swatha-measureable-btn:hover{
+    background:#fff;
+    color:#d61b8c;
+    transform:translateY(-2px);
+}
+
+/* Accessibility Focus */
+.swatha-measureable-btn:focus-visible{
+    outline:4px solid #111;
+    outline-offset:4px;
+}
+
+/* =========================
+   GALLERY CARD
+========================= */
+
+.swatha-mesurable-coldiv{
+    position:relative;
+    border-radius:24px;
+    overflow:hidden;
+       outline:none;
+    transition:all 0.3s ease;
+    background:#fff;
+    box-shadow:0 10px 25px rgba(0,0,0,0.06);
+    transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+    isolation:isolate;
+}
+
+/* Hover Card */
+.swatha-mesurable-coldiv:hover{
+  
+    box-shadow:0 18px 40px rgba(0,0,0,0.12);
+}
+
+/* Keyboard Accessibility */
+.swatha-mesurable-coldiv:focus-within{
+    outline:1px solid transparent;
+    outline-offset:4px;
+}
+
+/* =========================
+   IMAGE
+========================= */
+
+.swatha-mesurable-coldiv img{
+    width:100%;
+   
+    object-fit:cover;
+    display:block;
+    transition:transform 0.5s ease;
+}
+
+/* Image Zoom */
+.swatha-mesurable-coldiv:hover img,
+.swatha-mesurable-coldiv:focus-within img{
+    transform:scale(1.06);
+}
+
+/* =========================
+   OVERLAY
+========================= */
+
+.swatha-measureable-overlay{
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:flex-end;
+    padding:24px;
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,0.82),
+        rgba(0,0,0,0.18),
+        transparent
+    );
+
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(20px);
+
+    transition:
+    opacity 0.4s ease,
+    transform 0.4s ease,
+    visibility 0.4s ease;
+}
+
+/* Show Overlay on Hover */
+.swatha-mesurable-coldiv:hover .swatha-measureable-overlay,
+.swatha-mesurable-coldiv:focus-within .swatha-measureable-overlay{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+}
+
+/* Overlay Text */
+.swatha-measureable-overlay h3{
+    color:#fff;
+    font-size:22px;
+    font-weight:700;
+    margin:0;
+    line-height:1.4;
+}
+
+/* =========================
+   ACCESSIBILITY
+========================= */
+
+/* Screen Reader Utility */
+.visually-hidden{
+    position:absolute;
+    width:1px;
+    height:1px;
+    padding:0;
+    margin:-1px;
+    overflow:hidden;
+    clip:rect(0,0,0,0);
+    white-space:nowrap;
+    border:0;
+}
+
+/* Better Keyboard Navigation */
+a,
+button{
+    touch-action:manipulation;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width:1199px){
+
+    .swatha-measureable-heading{
+        font-size:38px;
+    }
+}
+
+@media (max-width:991px){
+
+    .swatha-measureable-heading{
+        font-size:40px;
+    }
+
+    .swatha-measureable-btn{
+        margin-top:25px;
+    }
+
+    .swatha-mesurable-coldiv img{
+        min-height:300px;
+    }
+}
+
+@media (max-width:767px){
+
+    .sepa-padd-quick{
+        padding-left: 0px;
+    }
+    .swatha-mesurable-section{
+        padding:70px 0;
+    }
+
+    .swatha-measureable-top-row{
+        margin-bottom:35px;
+    }
+
+    .swatha-measureable-heading{
+        font-size:32px;
+        line-height:1.25;
+    }
+
+    .swatha-measureable-btn{
+        width:100%;
+        justify-content:center;
+        padding:15px 20px;
+    }
+
+    .swatha-mesurable-coldiv img{
+        min-height:260px;
+    }
+
+    .swatha-measureable-overlay{
+        opacity:1;
+        visibility:visible;
+        transform:none;
+        padding:18px;
+        background:linear-gradient(
+            to top,
+            rgba(0,0,0,0.72),
+            rgba(0,0,0,0.08),
+            transparent
+        );
+    }
+
+    .swatha-measureable-overlay h3{
+        font-size:20px;
+    }
+}
+
+@media (max-width:575px){
+
+    .swatha-measureable-heading{
+        font-size:28px;
+    }
+
+    .swatha-mesurable-coldiv{
+        border-radius:20px;
+    }
+
+    .swatha-mesurable-coldiv img{
+        min-height:240px;
+    }
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce){
+
+    *,
+    *::before,
+    *::after{
+        animation:none !important;
+        transition:none !important;
+        scroll-behavior:auto !important;
+    }
+
+    .swatha-measureable-overlay{
+        opacity:1 !important;
+        visibility:visible !important;
+        transform:none !important;
+    }
+}
+
+/*-- mesurable impact section end-->  */
+
+
+
+
+
+
+
+
+
+/*   <!-- Together we create tab section start--> */
+
+    .swatha-main-tab-section img{
+      max-width:100%;
+      display:block;
+    }
+
+ 
+
+  .swatha-main-tab-section :focus-visible{
+      outline:  3px solid #C8115E !important;
+      outline-offset:3px;
+      border-radius:8px;
+    }
+
+
+
+    /* =========================================================
+       MAIN SECTION
+    ========================================================== */
+
+        .swatha-skip-link{
+      position:absolute;
+      top:-60px;
+      left:20px;
+      background:#C8115E;
+      color:#fff;
+      padding:12px 18px;
+      text-decoration:none;
+      border-radius:8px;
+      z-index:9999;
+      font-weight:700;
+      transition:0.3s;
+    }
+
+      :root{
+
+ 
+      --swatha-section-padding: 90px;
+
+    }
+
+  .swatha-main-tab-section  .swatha-skip-link:focus{
+      top:15px;
+    }
+
+    .swatha-main-tab-section{
+        margin-top: 20px;
+margin-bottom: 80px;
+      /* background:
+      linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #fff5fa 100%
+      ); */
+      overflow:hidden;
+    }
+
+    /* =========================================================
+       EYEBROW
+    ========================================================== */
+
+    .swatha-eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+     color: #1F1F1F;
+      font-size:14px;
+      font-weight:600;
+      font-family: "Montserrat", sans-serif;
+      letter-spacing:1px;
+      margin-bottom:18px;
+    }
+
+    .swatha-eyebrow i {
+        font-size: 18px;
+        color: #CF118B;
+    }
+
+    /* =========================================================
+       HEADING
+    ========================================================== */
+
+    .swatha-section-heading{
+    
+   font-size: 40px;
+     
+      font-weight:600;
+      color:var(--hea);
+      margin-bottom:45px;
+    }
+
+
+    .swatha-tab-pill-wrapper{
+      display:inline-flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:8px;
+      background:#ede8ec;
+      padding:8px;
+      border-radius:100px;
+      margin-bottom:55px;
+    }
+
+
+    .swatha-tab-btn{
+      border:none;
+      background:transparent;
+      color:#4a4a5a;
+      padding:14px 30px;
+      border-radius:100px;
+      font-size:15px;
+      font-weight:600;
+      transition:0.35s ease;
+      cursor:pointer;
+      min-height:48px;
+      white-space:nowrap;
+    }
+
+    .swatha-tab-btn:hover{
+      background:#fdeef6;
+      color:#C8115E;
+    }
+
+    .swatha-tab-btn[aria-selected="true"]{
+      background:#CF118B;
+      color:#fff;
+      box-shadow:
+      0 8px 25px rgba(200,17,94,0.25);
+      border-radius: 100px;
+    }
+
+
+    .swatha-tab-panel{
+      display:none;
+    }
+
+    .swatha-tab-panel.swatha-active-panel{
+      display:flex;
+      flex-wrap:wrap;
+      animation:swathaFade 0.4s ease;
+    }
+
+    @keyframes swathaFade{
+      from{
+        opacity:0;
+        transform:translateY(20px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    /* =========================================================
+       IMAGE
+    ========================================================== */
+
+    .swatha-img-col{
+      padding-right:35px;
+    }
+
+    .swatha-img-wrapper{
+      overflow:hidden;
+      border-radius:24px;
+      box-shadow:  0 12px 40px rgba(0,0,0,0.10);
+      background:#f5f5f5;
+      aspect-ratio:4/3;
+    }
+
+    .swatha-img-wrapper img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:0.5s ease;
+    }
+
+    @media (hover:hover){
+
+      .swatha-img-wrapper:hover img{
+        transform:scale(1.05);
+      }
+
+    }
+
+    /* =========================================================
+       CONTENT
+    ========================================================== */
+
+    .swatha-content-col{
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+
+    .swatha-content-title{
+    font-size: 30px;
+      font-weight:600;
+      line-height:1.3;
+      color:var(--heablack);
+      margin-bottom:20px;
+    }
+
+    .swatha-content-para{
+      font-size:17px;
+      line-height:1.9;
+      color:var(--para);
+      margin-bottom:16px;
+      max-width:58ch;
+    }
+
+    /* =========================================================
+       BUTTON
+    ========================================================== */
+
+    .swatha-learn-btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+
+      background:transparent;
+      color: #CF118B;
+
+      border:1px solid #CF118B;
+
+      padding:14px 46px;
+
+      border-radius:50px;
+
+      font-size:16px;
+      font-weight:500;
+
+      transition:0.35s ease;
+
+      min-height:48px;
+
+      width:fit-content;
+      margin-top:10px;
+    }
+
+    .swatha-learn-btn:hover{
+      background:#CF118B;
+      color:#fff;
+
+    }
+
+    .swatha-btn-arrow{
+      transition:0.3s ease;
+      font-size:18px;
+    }
+
+    .swatha-learn-btn:hover .swatha-btn-arrow{
+      transform:translateX(4px);
+    }
+
+    /* =========================================================
+       SCREEN READER
+    ========================================================== */
+
+    .swatha-sr-live{
+      position:absolute;
+      width:1px;
+      height:1px;
+      overflow:hidden;
+      clip:rect(0,0,0,0);
+      white-space:nowrap;
+    }
+
+    /* =========================================================
+       MOBILE
+    ========================================================== */
+
+    @media(max-width:767px){
+
+      .swatha-main-tab-section{
+        padding:70px 0;
+      }
+
+      .swatha-img-col{
+        padding-right:calc(var(--bs-gutter-x) * .5);
+        margin-bottom:30px;
+      }
+
+      .swatha-content-para{
+        max-width:100%;
+      }
+
+      .swatha-learn-btn{
+        width:100%;
+        justify-content:center;
+      }
+
+      .swatha-tab-pill-wrapper{
+        border-radius:30px;
+      }
+
+    }
+
+    /* =========================================================
+       HIGH CONTRAST
+    ========================================================== */
+
+    @media (forced-colors: active){
+
+      .swatha-tab-btn[aria-selected="true"]{
+        forced-color-adjust:none;
+        background:Highlight;
+        color:HighlightText;
+      }
+
+    }
+
+/*   <!-- Together we create tab section end--> */
+
+
+/* Recent Activity Section start */
+   /* SCREEN READER ONLY */
+        .swa-sr-only{
+            position:absolute;
+            width:1px;
+            height:1px;
+            padding:0;
+            margin:-1px;
+            overflow:hidden;
+            clip:rect(0,0,0,0);
+            white-space:nowrap;
+            border:0;
+        }
+
+        /* FOCUS ACCESSIBILITY */
+        a:focus-visible,
+        button:focus-visible{
+            outline:4px solid #111;
+            outline-offset:4px;
+            border-radius:10px;
+        }
+
+        .swa-testi-section{
+            position:relative;
+          margin-top: 60px;
+            overflow:hidden;
+           
+        }
+
+        .swa-testi-section::before{
+            content:"";
+            position:absolute;
+            left:-40px;
+            top:80px;
+            width:160px;
+            height:160px;
+            background:url('../images/flower-1.png');
+            background-size:contain;
+            background-repeat:no-repeat;
+           
+            pointer-events:none;
+        }
+
+        .swa-testi-section::after{
+            content:"";
+            position:absolute;
+            right:-20px;
+            bottom:50px;
+            width:160px;
+            height:160px;
+            background:url('../images/flower-2.png');
+            background-size:contain;
+            background-repeat:no-repeat;
+           
+            transform:rotate(180deg);
+            pointer-events:none;
+        }
+
+        .swa-testi-top{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            margin-bottom:45px;
+            gap:20px;
+        }
+
+        .swa-testi-subtitle{
+            display:flex;
+            align-items:center;
+            gap:12px;
+            font-size:16px;
+            color:#222;
+            margin-bottom:10px;
+            font-weight:500;
+             font-family: "Montserrat", sans-serif;
+        }
+
+        .swa-testi-subtitle i{
+            color:#d3118d;
+            font-size:18px;
+        }
+
+        .swa-testi-title{
+            font-size:40px;
+            line-height:1.1;
+            font-weight:600;
+            color:var(--hea);
+            margin:0;
+        }
+
+        .swa-testi-nav{
+            display:flex;
+            gap:18px;
+        }
+
+        .swa-testi-btn{
+            width:52px;
+            height:52px;
+            border:none;
+            border-radius:50%;
+            background:var(--button);
+            color:#fff;
+            font-size:22px;
+            transition:0.4s;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            cursor:pointer;
+        }
+
+        .swa-testi-btn:hover{
+            background:#b40076;
+            transform:translateY(-4px);
+        }
+
+        .swa-testi-card{
+            background:#fff;
+            border:1px solid #eed7ea;
+            border-radius:28px;
+            padding:18px;
+            transition:0.4s;
+            height:100%;
+        }
+
+        .swa-testi-card:hover{
+          
+            box-shadow:0 15px 40px rgba(0,0,0,0.08);
+        }
+.swa-testi-card:hover h3{
+    color: var(--hea);
+    transition: 0.3s ease;
+}   .swa-testi-img{
+            border-radius:20px;
+            overflow:hidden;
+            margin-bottom:22px;
+        }
+
+        .swa-testi-img img{
+            width:100%;
+            height:300px;
+            object-fit:cover;
+            transition:0.5s;
+        }
+
+        .swa-testi-card:hover .swa-testi-img img{
+            transform:scale(1.05);
+        }
+
+        .swa-testi-tags{
+            display:flex;
+            flex-wrap:wrap;
+            gap:10px;
+            margin-bottom:20px;
+        }
+
+        .swa-testi-tags span{
+            background:#FDF2F8;
+            color:#A30472;
+            padding:8px 16px;
+            border-radius:50px;
+            font-size:12px;
+            font-weight:500;
+               font-family: "Mulish", sans-serif;
+        }
+
+        .swa-testi-card h3{
+            font-size:20px;
+            line-height:1.4;
+            margin-bottom:12px;
+            color:var(--heablack);
+            font-weight:700;
+        }
+
+        .swa-testi-card p{
+            color:var(--para);
+            font-size:16px;
+            line-height:1.8;
+            margin-bottom:20px;
+        }
+
+        .swa-testi-line{
+            border-bottom:2px dashed #cfcfcf;
+            margin-bottom:24px;
+        }
+
+        .swa-testi-link{
+            color:#CF118B;
+            text-decoration:none;
+            font-size:18px;
+            font-weight:600;
+            display:inline-flex;
+            align-items:center;
+            gap:12px;
+            transition:0.4s;
+
+        }
+
+        .swa-testi-link:hover{
+            color:#b40076;
+            gap:18px;
+        }
+
+        .owl-stage{
+            display:flex;
+        }
+
+        .owl-item{
+            height:auto;
+        }
+
+        .owl-item .item{
+            height:100%;
+        }
+
+        .owl-carousel .owl-stage-outer{
+            padding-bottom:10px;
+        }
+
+        /* ACCESSIBILITY REDUCED MOTION */
+        @media (prefers-reduced-motion: reduce){
+
+            *{
+                animation:none !important;
+                transition:none !important;
+                scroll-behavior:auto !important;
+            }
+
+            .swa-testi-card:hover{
+                transform:none;
+            }
+
+            .swa-testi-card:hover .swa-testi-img img{
+                transform:none;
+            }
+        }
+
+
+        @media(max-width:991px){
+
+            .swa-testi-section{
+                padding:70px 0;
+            }
+
+            .swa-testi-top{
+                flex-direction:column;
+                align-items:flex-start;
+            }
+
+            .swa-testi-title{
+                font-size:40px;
+            }
+
+            .swa-testi-btn{
+                width:55px;
+                height:55px;
+                font-size:18px;
+            }
+
+            .swa-testi-card h3{
+                font-size:26px;
+            }
+        }
+
+        @media(max-width:767px){
+
+            .swa-testi-title{
+                font-size:34px;
+            }
+
+
+            .swa-testi-subtitle{
+                font-size:17px;
+            }
+
+            .swa-testi-card{
+                border-radius:22px;
+            }
+
+            .swa-testi-img img{
+                height:240px;
+            }
+
+            .swa-testi-card h3{
+                font-size:22px;
+            }
+
+            .swa-testi-card p{
+                font-size:16px;
+                line-height:1.7;
+            }
+
+            .swa-testi-link{
+                font-size:20px;
+            }
+        }
+/* Recent Activity Section end */
+
+
+
+
+
+
+/* cta section start */
+
+.swatha-cta-section {
+    background-color: #A30472;
+  
+}
+
+.swatha-cta-section .container-fluid {
+   
+    padding: 0px !important;
+}
+
+
+.swatha-cta-section .row{
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.08);
+}
+
+/* ==========================================
+   LEFT SIDE
+========================================== */
+.swatha-cta-section-left{
+  
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+ padding-left: 120px;
+ padding-bottom: 50px;
+  padding-top: 50px;
+background-color: #A30472;
+    
+}
+
+.swatha-cta-content{
+    position: relative;
+    z-index: 2;
+    width: 95%;
+}
+
+.swatha-cta-content h2{
+    font-size:40px;
+    line-height: 1.2;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 25px;
+   
+}
+
+.swatha-cta-content p{
+    font-size: 17px;
+   
+    color: #f9f9f9;
+    margin-bottom: 35px;
+   width: 90%;
+}
+
+/* ==========================================
+   BUTTON
+========================================== */
+.swatha-cta-btn{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #ffffff;
+    color: #b4007f;
+    text-decoration: none;
+    padding: 15px 32px;
+    border-radius: 60px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: 0.4s ease;
+    border: 1px solid transparent;
+    min-height: 52px;
+}
+
+.swatha-cta-btn:hover{
+    background: transparent;
+    color: #ffffff;
+    border-color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.swatha-cta-btn:focus-visible{
+    outline: 4px solid #ffffff;
+    outline-offset: 4px;
+}
+
+/* ==========================================
+   DECORATIVE ELEMENT
+========================================== */
+.swatha-cta-decorative{
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    font-size: 2rem;
+    opacity: 0.18;
+    color: #ffffff;
+    pointer-events: none;
+}
+
+/* ==========================================
+   RIGHT SIDE IMAGE
+========================================== */
+
+
+.swatha-cta-section-right img{
+    width: 100%;
+    height: 100%;
+      object-fit: cover;
+    display: block;
+
+}
+
+.swatha-cta-section-right {
+      height: 100%;
+}
+
+/* ==========================================
+   ACCESSIBILITY
+========================================== */
+.swatha-cta-content p,
+.swatha-cta-content h2{
+    text-rendering: optimizeLegibility;
+}
+
+@media (prefers-reduced-motion: reduce){
+
+    .swatha-cta-btn,
+    .swatha-cta-section-right img{
+        transition: none !important;
+    }
+
+    .swatha-cta-section:hover .swatha-cta-section-right img{
+        transform: none;
+    }
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+@media (max-width:991px){
+
+    .swatha-cta-content h2{
+        font-size: 2.4rem;
+    }
+
+    .swatha-cta-section-left{
+        padding: 50px 40px;
+    }
+}
+
+@media (max-width:767px){
+
+    .swatha-cta-section{
+        padding: 50px 0;
+    }
+
+    .swatha-cta-section .row{
+        border-radius: 18px;
+    }
+
+    .swatha-cta-section-left{
+        padding: 45px 25px;
+    }
+
+    .swatha-cta-content h2{
+        font-size: 2rem;
+    }
+
+    .swatha-cta-content p{
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+
+  
+
+    .swatha-cta-btn{
+        width: 100%;
+        justify-content: center;
+    }
+}
+/* cta section end */
+
+
+
+
+
+/*-- livelyhood section start--> */
+.livehood-main-section{
+    
+    padding: 80px 0px;
+    overflow:hidden;
+}
+
+/* Top Row */
+.livehood-top-row{
+    margin-bottom:2.8125rem;
+}
+
+/* Subtitle */
+.livehood-subtitle{
+    display:inline-flex;
+    align-items:center;
+    gap:0.5rem;
+    font-size:16px;
+    font-weight:500;
+    color:#2E2E2E;
+    margin-bottom:0.9375rem;
+     font-family: "Montserrat", sans-serif;
+}
+
+.livehood-heart-icon{
+    color:#c6007e;
+    font-size:1rem;
+}
+
+/* Heading */
+.livehood-section-heading h2{
+ font-size: 40px;
+    line-height:1.2;
+    font-weight:600;
+    color:var(--hea);
+    margin:0;
+}
+
+/* Button */
+.livehood-btn-wrapper{
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+    height:100%;
+}
+
+.livehood-view-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:0.625rem;
+    background:#c6007e;
+    color:#ffffff;
+    text-decoration:none;
+    padding:1rem 2rem;
+    border-radius:3.125rem;
+    font-size:1rem;
+    font-weight:600;
+    transition:all 0.3s ease;
+    min-height:52px;
+}
+
+.livehood-view-btn:hover{
+    background:#99005f;
+    color:#ffffff;
+}
+
+.livehood-view-btn:focus-visible{
+    outline:3px solid #000000;
+    outline-offset:4px;
+}
+
+/* Story Card */
+.livehood-story-card{
+    position:relative;
+    border-radius:1.5rem;
+    overflow:hidden;
+    background:#ffffff;
+    transition:all 0.4s ease;
+    height:100%;
+    box-shadow:0 0.375rem 1.5rem rgba(0,0,0,0.08);
+}
+
+
+
+
+/* =====================================
+   Livehood Story Card Hover Effects
+===================================== */
+
+/* Card */
+.livehood-story-card{
+    transition:0.5s ease;
+    overflow:hidden;
+    position:relative;
+}
+
+/* Heading Transition */
+.livehood-story-card h3{
+    transition:0.4s ease;
+}
+
+/* Hover Heading Pink */
+.livehood-story-card:hover h3{
+    color:#CF118B;
+}
+
+/* Icon Box */
+.livehood-story-card-icon{
+    overflow:hidden;
+    border-radius:50%;
+}
+
+/* Icon */
+.livehood-story-image-wrapper img{
+    transition:0.5s ease;
+}
+
+/* Icon Light Zoom */
+.livehood-story-card:hover 
+.livehood-story-image-wrapper img{
+    transform:scale(1.12);
+    filter:brightness(1.1);
+}
+
+/* Main Image Wrapper */
+.livehood-story-card-image{
+    overflow:hidden;
+    
+}
+
+/* Main Image */
+.livehood-story-image-wrapperimg{
+    transition:0.6s ease;
+}
+
+/* Image Light Zoom */
+.livehood-story-card:hover 
+.livehood-story-image-wrapper img{
+    transform:scale(1.06);
+    filter:brightness(1.08);
+}
+
+
+
+.livehood-story-card:hover 
+.livehood-arrow-btn{
+    background:#CF118B;
+
+    transform:translateY(-5px);
+}
+
+/* Icon Animation */
+.livehood-story-card:hover 
+.livehood-arrow-btn i{
+    color:#ffffff;
+
+    transform:
+        rotate(12deg)
+        scale(1.15);
+}
+
+
+
+
+.livehood-story-card:focus-visible{
+    outline:4px solid #000000;
+    outline-offset:4px;
+}
+
+/* Image */
+.livehood-story-image-wrapper{
+    position:relative;
+}
+
+.livehood-story-image{
+    width:100%;
+   
+    object-fit:cover;
+    display:block;
+}
+
+/* Arrow Button */
+.livehood-arrow-btn{
+    position:absolute;
+    top:1.25rem;
+    right:1.25rem;
+    width:3.5rem;
+    height:3.5rem;
+    border-radius:50%;
+    background:#ffffff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    color:#c6007e;
+    font-size:1.5rem;
+    font-weight:700;
+    transition:all 0.3s ease;
+    box-shadow:0 0.25rem 0.9375rem rgba(0,0,0,0.12);
+}
+
+
+
+.livehood-arrow-btn:focus-visible{
+    outline:3px solid #000000;
+    outline-offset:4px;
+}
+
+/* Content Box */
+.livehood-story-content{
+    position:absolute;
+    left:1.25rem;
+    right:1.25rem;
+    bottom:1.25rem;
+    background:#ffffff;
+    border-radius:1.25rem;
+    padding:1.5rem;
+    box-shadow:0 0.25rem 1rem rgba(0,0,0,0.08);
+}
+
+/* Title */
+.livehood-story-content h3{
+    font-size:22px;
+    line-height:1.3;
+    font-weight:600;
+    color:var(--heablack);
+    margin-bottom:0.75rem;
+}
+
+/* Paragraph */
+.livehood-story-content p{
+    font-size:17px;
+   
+    color:var(--para);
+    margin:0;
+}
+
+/* Accessibility */
+.livehood-story-card,
+.livehood-view-btn,
+.livehood-arrow-btn{
+    cursor:pointer;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce){
+
+    .livehood-story-card,
+    .livehood-view-btn,
+    .livehood-arrow-btn{
+        transition:none;
+    }
+
+    html{
+        scroll-behavior:auto;
+    }
+}
+
+/* Responsive */
+@media(max-width:991px){
+
+    .livehood-section-heading h2{
+        font-size:2.4rem;
+    }
+
+    .livehood-btn-wrapper{
+        justify-content:flex-start;
+        margin-top:1.5rem;
+    }
+
+    .livehood-story-image{
+        height:22rem;
+    }
+}
+
+@media(max-width:767px){
+
+    .livehood-main-section{
+        padding:4rem 0;
+    }
+
+    .livehood-section-heading h2{
+        font-size:2rem;
+    }
+
+    .livehood-story-image{
+        height:20rem;
+    }
+
+    .livehood-story-content{
+        padding:1.25rem;
+    }
+
+    .livehood-story-content h3{
+        font-size:1.25rem;
+    }
+
+    .livehood-story-content p{
+        font-size:0.95rem;
+        line-height:1.7;
+    }
+
+    .livehood-arrow-btn{
+        width:3rem;
+        height:3rem;
+        font-size:1.25rem;
+    }
+}
+/*- livelyhood section end--> */
+
+
+
+
+/* partnership section start */
+
+
+.swat-partner-section{
+    background:#F6F3EE;
+   
+    overflow:hidden;
+}
+
+/* Heading */
+.swat-partner-heading{
+    margin-bottom:4.375rem;
+}
+
+.swat-partner-trusted{
+    display:inline-flex;
+    align-items:center;
+    gap:0.5rem;
+    font-size:16px;
+    font-weight:500;
+    color:#2E2E2E;
+    margin-bottom:1rem;
+      font-family: "Montserrat", sans-serif;
+}
+
+.swat-partner-trusted i{
+    color:#CF118B;
+    font-size:18px;
+}
+
+.swat-partner-heading h2{
+    font-size:40px;
+    font-weight:600;
+    color:var(--hea);
+    margin-bottom:2rem;
+    line-height:1.2;
+}
+
+/* Logo Cards */
+.swat-partner-logo-row{
+    margin-bottom:2rem;
+    row-gap:1.25rem;
+}
+
+
+.swat-partner-logo-card:hover,
+.swat-partner-logo-card:focus-within{
+   
+    border-color:transparent;
+}
+
+.swat-partner-logo-card:focus,
+.swat-partner-logo-card:focus-visible{
+    outline:0.188rem solid transparent;
+    outline-offset:0.313rem;
+    border-radius:1rem;
+}
+
+.swat-partner-logo-card img{
+    width: 100%;
+    object-fit:contain;
+}
+
+/* Description */
+.swat-partner-description{
+    font-size:17px;
+    
+    color:#4A4A4A;
+
+    margin:0 auto;
+}
+
+.Retail-mangemnt-section{
+    background-color: #F6F3EE;
+}
+/* Main Row */
+.swat-partner-main-row{
+    row-gap:2.5rem;
+}
+
+/* Left Image */
+.swat-partner-image-wrapper{
+    border-radius:1.5rem;
+    overflow:hidden;
+}
+
+.swat-partner-main-image{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:1.5rem;
+    transition:0.4s ease;
+}
+
+.swat-partner-main-image:hover{
+    transform:scale(1.02);
+}
+
+/* Content */
+.swat-partner-content{
+    padding-left:1.25rem;
+}
+
+.swat-partner-title{
+    font-size:30px;
+    font-weight:600;
+    line-height:1.3;
+    color:var(--heablack);
+    margin-bottom:1.25rem;
+}
+
+.swat-partner-text{
+    font-size:17px;
+   
+    color:#4A4A4A;
+    margin-bottom:2rem;
+}
+
+/* Feature List */
+.swat-partner-feature-list{
+    display:flex;
+    flex-direction:column;
+    gap:1.25rem;
+}
+
+
+
+
+
+.swat-partner-feature-card{
+    background:#ffffff;
+    border-radius:1rem;
+    padding:1.42rem 1.5rem;
+    display:flex;
+    align-items:flex-start;
+    gap:1rem;
+    box-shadow:0 0.25rem 1rem rgba(0,0,0,0.05);
+    transition:0.3s ease;
+    border-left:0.25rem solid transparent;
+      outline:none;
+    transition:all 0.3s ease;
+}
+
+.swat-partner-feature-card:hover,
+.swat-partner-feature-card:focus-within{
+    transform:translateX(0.3125rem);
+    border-left-color:#d4148e;
+}
+
+.swat-partner-check-icon{
+    width:50px;
+    height:50px;
+    min-width:2.8rem;
+    border-radius:50%;
+    background:#fde8f4;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#d4148e;
+    font-size:1rem;
+}
+
+.swat-partner-feature-card p{
+    margin:0;
+    font-size:17px;
+    line-height:1.7;
+    color:#2E2E2E;
+  width: 70%;
+}
+
+/* Accessibility */
+.swat-partner-section *:focus{
+    outline:0.1875rem solid #000000;
+    outline-offset:0.1875rem;
+}
+
+/* Screen Reader Friendly */
+.swat-partner-feature-card,
+.swat-partner-logo-card{
+    position:relative;
+}
+
+/* Responsive */
+@media (max-width:991px){
+
+    .swat-partner-content{
+        padding-left:0;
+    }
+
+    .swat-partner-heading h2{
+        font-size:2rem;
+    }
+
+    .swat-partner-title{
+        font-size:1.75rem;
+    }
+}
+
+@media (max-width:767px){
+
+    .swat-partner-section{
+        padding:4.375rem 0;
+    }
+
+    .swat-partner-heading h2{
+        font-size:1.75rem;
+    }
+
+    .swat-partner-title{
+        font-size:1.5rem;
+    }
+
+    .swat-partner-feature-card{
+        padding:1rem;
+    }
+
+    .swat-partner-description{
+        font-size:0.95rem;
+    }
+}
+
+/* partnership section end */
+
+
+
+/* <!-- counter, placement, impact hightlight  section start --> */
+
+/* place ment marque */
+
+/* Marquee Wrapper */
+
+.swatha-placement-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.swatha-placement-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.swatha-control-btn {
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background: #CF118B;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.swatha-control-btn:hover {
+  background: #CF118B;
+}
+
+.swatha-control-btn:focus,
+.swatha-control-btn:focus-visible {
+  outline: 3px solid #CF118B;
+  outline-offset: 3px;
+}
+
+.swatha-placement-marquee {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin-top: 2rem;
+  padding: 0.5rem 0;
+
+    overflow-x: auto;
+  scrollbar-width: none;
+
+  scroll-behavior: smooth;
+  
+}
+.swatha-placement-marquee::-webkit-scrollbar {
+  display: none;
+}
+
+/* Track */
+.swatha-placement-track {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: max-content;
+
+}
+
+/* First Row Animation */
+.swatha-placement-marquee-left .swatha-placement-track {
+animation: none;
+}
+
+/* Second Row Animation */
+.swatha-placement-marquee-right .swatha-placement-track {
+animation: none;;
+}
+
+/* Hover Stop */
+.swatha-placement-marquee:hover .swatha-placement-track,
+.swatha-placement-marquee:focus-within .swatha-placement-track {
+  /* animation-play-state: paused; */
+   animation-play-state: paused;
+}
+
+/* Card */
+/* .swatha-placement-section-coldiv {
+  min-width: 260px;
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+  outline: none;
+} */
+
+.swatha-placement-section-coldiv {
+  min-width: 220px;
+  height: 120px;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+.swatha-placement-section-coldiv{
+    background:#ffffff;
+    border-radius:1rem;
+    min-height:8.5rem;
+    display:flex;
+    
+    align-items:center;
+    justify-content:center;
+    padding:48px;
+    transition:0.4s ease;
+    box-shadow:0 0.25rem 0.625rem rgba(0,0,0,0.04);
+}
+
+/* Keyboard Accessibility */
+.swatha-placement-section-coldiv:focus-visible {
+  outline: 0.1875rem solid #000;
+  outline-offset: 0.25rem;
+}
+
+/* Hover Effect */
+.swatha-placement-section-coldiv:hover {
+  transform: translateY(-0.3125rem);
+}
+
+/* Logo */
+.swatha-placement-section-coldiv img {
+  max-width: 100%;
+  max-height: 70px;
+  object-fit: contain;
+}
+
+.swatha-placement-section-coldiv:focus,
+.swatha-placement-section-coldiv:focus-visible {
+  outline: 3px solid #CF118B;
+  outline-offset: 3px;
+}
+
+/* Left to Right */
+@keyframes swathaLeftMove {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+/* Right to Left */
+@keyframes swathaRightMove {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Reduce Motion Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .swatha-placement-track {
+    animation: none !important;
+  }
+}
+
+
+
+/* place ment marque */
+
+
+.swatha-common-heading{
+    text-align:center;
+    font-size:30px;
+    font-weight:600;
+    color:var(--heablack);
+    margin-bottom:2.5rem;
+    line-height:1.4;
+}
+
+/* Focus Accessibility */
+.swatha-counter-section-coldiv:focus,
+.swatha-placement-section-coldiv:focus,
+.swatha-impact-high-coldiv:focus{
+    outline:0.1875rem solid #c81d87;
+    outline-offset:0.25rem;
+}
+
+
+/* =========================
+   COUNTER SECTION
+========================= */
+
+.swatha-counter-section{
+    padding:5rem 0 3rem;
+    background-color: #F6F3EE;
+}
+
+/* Main Card */
+/* =====================================
+   Premium Scale Rotate Hover Effect
+===================================== */
+
+.swatha-counter-section-coldiv{
+    background:#ffffff;
+    border-radius:1rem;
+    padding:28px;
+    text-align:center;
+    height:100%;
+
+    border-bottom:7px solid #CF118B;
+
+    transition:0.5s ease;
+
+    box-shadow:0 0.25rem 0.625rem rgba(0,0,0,0.04);
+
+    position:relative;
+    overflow:hidden;
+    z-index:1;
+}
+
+/* Animated Gradient Background */
+.swatha-counter-section-coldiv::before{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:linear-gradient(
+        135deg,
+        #ff7ac6 0%,
+        #f04aa9 25%,
+        #d4148e 55%,
+        #9b0f68 100%
+    );
+
+    transform:scale(0) rotate(45deg);
+    transform-origin:center;
+
+    opacity:0;
+
+    transition:all 0.7s ease;
+
+    z-index:-1;
+
+    border-radius:20px;
+}
+
+/* Hover Animation */
+.swatha-counter-section-coldiv:hover::before{
+    transform:scale(2) rotate(45deg);
+    opacity:1;
+}
+
+/* Card Hover */
+.swatha-counter-section-coldiv:hover{
+  
+    box-shadow:0 20px 40px rgba(212,20,142,0.18);
+}
+
+/* Text Transition */
+.swatha-counter-number,
+.swatha-counter-text{
+    transition:0.5s ease;
+    position:relative;
+    z-index:2;
+}
+
+/* White Text Hover */
+.swatha-counter-section-coldiv:hover 
+.swatha-counter-number,
+
+.swatha-counter-section-coldiv:hover 
+.swatha-counter-text{
+    color:#ffffff;
+}
+
+/* Icon Box */
+.swatha-counter-icon-box{
+  
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    margin:0 auto 20px;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,0.15);
+
+    transition:0.5s ease;
+
+    position:relative;
+    z-index:2;
+}
+
+/* Icon */
+.swatha-counter-icon-box-imgg{
+  
+    transition:0.6s ease;
+}
+
+/* Hover Icon Animation */
+.swatha-counter-section-coldiv:hover 
+.swatha-counter-icon-box-imgg{
+    animation:pushUp 0.6s ease;
+
+    filter:
+        brightness(0)
+        invert(1);
+}
+
+/* Hover Icon Box */
+.swatha-counter-section-coldiv:hover 
+.swatha-counter-icon-box{
+    background:rgba(255,255,255,0.18);
+    backdrop-filter:blur(10px);
+}
+
+/* Push Animation */
+@keyframes pushUp{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    40%{
+        transform:translateY(-10px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+}
+
+/* Accessibility */
+.swatha-counter-section-coldiv:focus-within::before{
+    transform:scale(2) rotate(45deg);
+    opacity:1;
+}
+
+.swatha-counter-section-coldiv:focus-within 
+.swatha-counter-number,
+
+.swatha-counter-section-coldiv:focus-within 
+.swatha-counter-text{
+    color:#ffffff;
+}
+
+.swatha-counter-section-coldiv:focus-within 
+.swatha-counter-icon-box-imgg{
+    filter:
+        brightness(0)
+        invert(1);
+}
+
+
+
+
+
+.swatha-counter-icon-box{
+    width:66px;
+    height:66px;
+    border-radius:50%;
+    background:#FCE4EC;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0 auto 1.25rem;
+}
+
+.swatha-counter-icon-box i{
+    color:#d81b8c;
+    font-size:1.5rem;
+}
+
+.swatha-counter-number{
+    font-size:2.2rem;
+    font-weight:600;
+    color:#2E2E2E;
+    margin-bottom:0.5rem;
+}
+
+.swatha-counter-text{
+    color:#2E2E2E;
+    font-size:18px;
+    line-height:1.7;
+    margin:0;
+}
+
+.swatha-counter-text span{
+    display:block;
+}
+
+/* =========================
+   PLACEMENT SECTION
+========================= */
+
+.swatha-placement-section{
+    padding:2rem 0 4rem;
+    background-color: #F6F3EE;
+}
+
+
+
+.swatha-placement-section-coldiv:hover{
+    transform:translateY(-0.3125rem);
+}
+
+.swatha-placement-section-coldiv img{
+    max-width:9.375rem;
+   
+    object-fit:contain;
+}
+
+/* =========================
+   IMPACT SECTION
+========================= */
+
+.swatha-impact-high-section{
+    padding:0 0 5rem;
+    background-color: #F6F3EE;
+}
+
+.swatha-impact-high-coldiv{
+    background:#ffffff;
+    border-left:0.3125rem solid #d81b8c;
+ 
+  padding: 32px  30px;
+    display:flex;
+    align-items:center;
+    gap:1rem;
+    height:100%;
+    transition:0.4s ease;
+}
+
+.swatha-impact-iconbox-imgicon{
+    width: 38px;
+    height: 38px;
+}
+
+.swatha-impact-high-coldiv:hover{
+    /* transform:translateY(-0.25rem); */
+}
+
+/* Icon Transition */
+.swatha-impact-iconbox-imgicon{
+    transition:0.6s ease;
+}
+
+/* Hover Animation */
+.swatha-impact-high-coldiv:hover 
+.swatha-impact-iconbox-imgicon{
+
+    animation:pushUp 0.6s ease;
+
+   
+}
+
+/* Push Animation */
+@keyframes pushUp{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    40%{
+        transform:translateY(-10px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+}
+
+.swatha-impact-iconbox{
+    width:4rem;
+    height:4rem;
+    min-width:4rem;
+    border-radius:50%;
+    background:#fde4f1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.swatha-impact-iconbox i{
+    font-size:1.4rem;
+    color:#d81b8c;
+}
+
+.swatha-impact-text{
+    margin:0;
+    font-size:18px;
+   
+    color:#1F1F1F;
+    font-weight:500;
+    width: 74%;
+}
+
+/* =========================
+   ACCESSIBILITY
+========================= */
+
+@media (prefers-reduced-motion: reduce){
+
+    .swatha-counter-section-coldiv,
+    .swatha-placement-section-coldiv,
+    .swatha-impact-high-coldiv{
+        transition:none;
+    }
+
+    .swatha-counter-section-coldiv:hover,
+    .swatha-placement-section-coldiv:hover,
+    .swatha-impact-high-coldiv:hover{
+        transform:none;
+    }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width:991px){
+
+    .swatha-counter-section{
+        padding:4rem 0 2rem;
+    }
+
+    .swatha-common-heading{
+        font-size:1.75rem;
+    }
+
+}
+
+@media (max-width:767px){
+
+    .swatha-counter-section,
+    .swatha-placement-section,
+    .swatha-impact-high-section{
+        padding-left:1rem;
+        padding-right:1rem;
+    }
+
+    .swatha-common-heading{
+        font-size:1.5rem;
+    }
+
+    .swatha-counter-number{
+        font-size:1.9rem;
+    }
+
+    .swatha-impact-high-coldiv{
+        flex-direction:column;
+        text-align:center;
+    }
+
+}
+
+/* <!-- counter, placement, impact hightlight  section end --> */
+
+/* footer section start */
+
+.visually-hiddena{
+  position:absolute;
+  width:1px;
+  height:1px;
+  padding:0;
+  margin:-1px;
+  overflow:hidden;
+  clip:rect(0,0,0,0);
+  white-space:nowrap;
+  border:0;
+}
+.swthar-main-footer-section{
+    background:#111111;
+    padding-top:70px;
+    color:#ffffff;
+  
+    position:relative;
+}
+
+/* Footer Columns */
+.swthar-main-footer-col{
+    height:100%;
+}
+
+.sepa-padd-quick{
+    padding-left: 25px;
+}
+/* Logo */
+.swthar-footer-logo{
+    max-width:150px;
+    margin-bottom:25px;
+}
+
+/* About Text */
+.swthar-footer-about{
+    color:#f1f1f1;
+    font-size:15px;
+    line-height:1.5;
+    margin-bottom:25px;
+    width: 85%;
+}
+
+/* Footer Titles */
+.swthar-footer-title{
+    color:#CF118B;
+    font-size:20px;
+    font-weight:600;
+    margin-bottom:20px;
+}
+
+/* Footer Links */
+.swthar-footer-links{
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+.swthar-footer-links li{
+    margin-bottom:12px;
+}
+
+.swthar-footer-links a{
+    color:#f1f1f1;
+    text-decoration:none;
+    font-size:15px;
+    transition:0.3s ease;
+    position:relative;
+     font-family: "Mulish", sans-serif;
+}
+
+.swthar-footer-links a:hover,
+.swthar-footer-links a:focus{
+    color:#ff0099;
+    padding-left:5px;
+}
+
+/* Accessibility Focus */
+.swthar-footer-links a:focus,
+.swthar-social-link:focus,
+.swthar-contact-text a:focus{
+    outline:3px solid #ffffff;
+    outline-offset:4px;
+    border-radius:6px;
+}
+
+/* Social */
+.swthar-social-list{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+.swthar-social-link{
+    width:46px;
+    height:46px;
+    background:#CF118B;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#ffffff;
+    text-decoration:none;
+    font-size:18px;
+    transition:0.3s ease;
+}
+
+.swthar-social-link:hover,
+.swthar-social-link:focus{
+    background:#ffffff;
+    color:#ff0099;
+    transform:translateY(-4px);
+}
+
+/* Contact */
+.swthar-contact-list{
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+.swthar-contact-list li{
+    display:flex;
+    gap:16px;
+    margin-bottom:12px;
+    align-items:flex-start;
+}
+
+.swthar-contact-icon{
+    color:#ffffff;
+    font-size:22px;
+    
+    flex-shrink:0;
+     
+}
+
+.swthar-contact-text{
+    color:#f1f1f1;
+    font-size:15px;
+    line-height:1.9;
+    font-style:normal;
+    font-family: "Mulish", sans-serif;
+}
+
+.swthar-contact-text a{
+    display:block;
+    color:#f1f1f1;
+    text-decoration:none;
+    transition:0.3s ease;
+}
+
+.swthar-contact-text a:hover,
+.swthar-contact-text a:focus{
+    color:#ff0099;
+}
+
+/* Bottom Footer */
+.swthar-footer-bottom{
+    background:#66004C;
+    margin-top:50px;
+    padding:9px 0;
+}
+
+.swthar-footer-bottom-flex{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.swthar-footer-copy{
+    color:#ffffff;
+    font-size:14px;
+    font-family: "Mulish", sans-serif;
+}
+
+.swthar-footer-copy a{
+    color:#ffffff;
+    text-decoration:none;
+}
+
+.swthar-footer-copy a:hover,
+.swthar-footer-copy a:focus{
+    text-decoration:underline;
+}
+
+.swthar-footer-powered{
+    color:#ffffff;
+  
+     padding: 0px;
+    margin: 0px;
+}
+
+.swthar-footer-powered-power{
+     color:#ffffff;
+    font-size:8px;
+     padding: 0px;
+    margin: 0px;
+    margin-bottom: -4px;
+}
+
+.swthar-footer-powered h6{
+     padding: 0px;
+    margin: 0px;
+}
+.swthar-footer-powered-aa {
+    color: #ffff;
+    font-size: 11px;
+    padding: 0px;
+    margin: 0px;
+}
+
+/* Screen Reader Only */
+.swthar-sr-only{
+    position:absolute;
+    width:1px;
+    height:1px;
+    padding:0;
+    margin:-1px;
+    overflow:hidden;
+    clip:rect(0,0,0,0);
+    border:0;
+}
+
+/* Responsive */
+@media(max-width:991px){
+
+    .swthar-main-footer-section{
+        padding-top:60px;
+    }
+
+    .swthar-footer-bottom-flex{
+        flex-direction:column;
+        text-align:center;
+    }
+}
+
+@media(max-width:767px){
+
+    .swthar-footer-title{
+        margin-top:10px;
+    }
+
+    .swthar-social-list{
+        flex-wrap:wrap;
+    }
+
+    .swthar-footer-about{
+        max-width:100%;
+    }
+}
+
+/* footer section end */
+
+
+
+/* aos accesbilty use code start */
+
+
+
+/* aos accesbilty use code end */
+
+
+/* media query */
+@media screen and (min-width: 1200px) and (max-width: 1400px) {
+
+       .swadhra-donate-btn  {
+        padding: 10px 15px;
+       
+        
+    }
+    .swadhra-desktop-menu{
+        gap: 25px;
+    }
+
+    .swadhra-desktop-menu li a, .swadhra-dropdown-btn {
+        font-size: 14px;
+    }
+    
+}
+
+@media screen and (max-width:1199px) and (min-width:992px){
+
+    .swadhra-donate-btn  {
+        padding: 10px 15px;
+        font-size: 12px;
+    }
+
+    .swadhra-desktop-menu li a, .swadhra-dropdown-btn {
+        font-size: 11px;
+    }
+    
+.swadhra-desktop-menu {
+    gap: 20px;
+}
+    
+
+ .swthar-main-footer-section .row .col-lg-3{
+        flex:0 0 50%;
+        max-width:50%;
+    }
+
+
+}
