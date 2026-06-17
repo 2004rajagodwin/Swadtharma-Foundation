@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+  html{
+            scroll-behavior:smooth;
+        }
+
+
+/* section{
+    overflow: hidden;
+} */
+
+:root {
+    --hea: #D11A8C;
+    --heablack:#2E2E2E;
+    --button:#CF118B;
+    --para:#4A4A4A;
+    --toppara:#1F1F1F;
+   
+}
+
+
+a{
+    text-decoration: none;
+}
+
+h1,h2,h3,h4,h5,h6{
+       font-family: "Montserrat", sans-serif;
+}
+
+p{
+    font-family: "Mulish", sans-serif;
+}
+
+/* achivement section */
+
+
+.sawa-achievement-detail-image-wrapper{
+    overflow: hidden;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.sawa-achievement-detail-section{
+    margin-top: 80px;
+}
+.sawa-achievement-detail-image{
+    max-width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+/* Hover Zoom */
+.sawa-achievement-detail-image-wrapper:hover .sawa-achievement-detail-image{
+    transform: scale(1.08);
+}
+
+.swa-sustainability-subtitle {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #0d6efd;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.acc-hes-secdfcc{
+    font-size: 40px;
+    color: var(--hea);
+    text-align: center;
+    
+   
+}
+
+
+
+.achi-sec-row-detail:focus,
+.achi-sec-row-detail:focus-visible {
+    outline: none;
+    box-shadow: none;
+}
+
+.acc-hes-secdfcc-p{
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    color: var(--para);
+    margin-bottom: 80px;
+}
+.swa-sustainability-heading {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+
+.sawa-achievement-detail-title{
+    font-size: 34px !important;
+    color: var(--hea);
+    margin-bottom: 15px;
+}
+
+.sawa-achievement-detail-org{
+    font-size: 22px !important;
+    color: var(--heablack);
+}
+
+.swa-sustainability-description {
+  color:var(--para);
+
+  margin-top: 15px;
+}
+.sawa-achievement-detail-description {
+    color: var(--para);
+    font-size: 17px;
+    margin-top: 15px;
+    width: 90%;
+    
+}
+
+.achi-sec-row-detail{
+    margin-top: 60px;
+    background-color: #f8fafc;
+    padding: 70px  45px;
+    border-radius: 20px;
+}
+
+.swa-sustainability-card {
+  background: #fff;
+  border: 1px solid #dbeafe;
+  border-radius: 12px;
+  padding: 24px;
+  transition: all 0.3s ease;
+}
+
+.swa-sustainability-card:hover,
+.swa-sustainability-card:focus-within {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+}
+
+.swa-sustainability-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: #eff6ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.swa-sustainability-icon i {
+  font-size: 24px;
+  color: #0d6efd;
+}
+
+.swa-sustainability-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 12px;
+}
+
+.swa-sustainability-card-text {
+  color: #4b5563;
+  margin-bottom: 0;
+  line-height: 1.8;
+}
+

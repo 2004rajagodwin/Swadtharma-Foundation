@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+  html{
+            scroll-behavior:smooth;
+        }
+
+
+/* section{
+    overflow: hidden;
+} */
+
+:root {
+    --hea: #D11A8C;
+    --heablack:#2E2E2E;
+    --button:#CF118B;
+    --para:#4A4A4A;
+    --toppara:#1F1F1F;
+   
+}
+
+
+a{
+    text-decoration: none;
+}
+
+h1,h2,h3,h4,h5,h6{
+       font-family: "Montserrat", sans-serif;
+}
+
+p{
+    font-family: "Mulish", sans-serif;
+}
+
+
+/* susbility section start */
+
+.swa-sustainability-section {
+  background: #F6F3EE;
+}
+
+.swa-sustainability-subtitle {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--hea);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.swa-sustainability-heading {
+  font-size: 40px;
+  font-weight: 600;
+  color: var(--hea);
+}
+
+.swa-sustainability-description {
+  color: var(--para);
+
+  margin: 0 auto;
+}
+
+.swa-sustainability-card{
+    position: relative;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #fde8f4;
+    border-radius: 20px;
+    padding: 24px;
+    transition: 0.6s ease;
+    z-index: 1;
+    height: 100%;
+}
+
+/* Animated Background */
+.swa-sustainability-card::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        #ff7ac6 0%,
+        #f04aa9 25%,
+        #d4148e 55%,
+        #9b0f68 100%
+    );
+
+    transform: scale(0) rotate(45deg);
+    transform-origin: center;
+    opacity: 0;
+    transition: all 0.7s ease;
+    z-index: -1;
+    border-radius: 16px;
+}
+
+/* Hover & Keyboard Focus Animation */
+.swa-sustainability-card:hover::before,
+.swa-sustainability-card:focus::before,
+.swa-sustainability-card:focus-visible::before{
+    transform: scale(2) rotate(45deg);
+    opacity: 1;
+}
+
+/* Card Shadow */
+.swa-sustainability-card:hover,
+.swa-sustainability-card:focus,
+.swa-sustainability-card:focus-visible{
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    border-color: transparent;
+}
+.swa-sustainability-card-title {
+    margin-top: 30px;
+    font-size: 24px;
+}
+
+/* Icon Circle */
+.swa-sustainability-icon{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #fde8f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+    transition: all 0.5s ease;
+}
+
+.swa-sustainability-icon i{
+    font-size: 26px;
+    color: var(--hea);
+    transition: all 0.5s ease;
+}
+
+/* Text Animation */
+.swa-sustainability-card-title
+{
+    transition: all 0.5s ease;
+    position: relative;
+    z-index: 2;
+   
+}
+
+.swa-sustainability-card-text{
+
+    transition: all 0.5s ease;
+    position: relative;
+    z-index: 2;
+    color: var(--para);
+}
+
+/* Hover Colors */
+.swa-sustainability-card:hover .swa-sustainability-card-title,
+.swa-sustainability-card:hover .swa-sustainability-card-text,
+.swa-sustainability-card:focus .swa-sustainability-card-title,
+.swa-sustainability-card:focus .swa-sustainability-card-text,
+.swa-sustainability-card:focus-visible .swa-sustainability-card-title,
+.swa-sustainability-card:focus-visible .swa-sustainability-card-text{
+    color: #fff;
+}
+
+/* Icon Hover Effect */
+.swa-sustainability-card:hover .swa-sustainability-icon,
+.swa-sustainability-card:focus .swa-sustainability-icon,
+.swa-sustainability-card:focus-visible .swa-sustainability-icon{
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(5px);
+}
+
+.swa-sustainability-card:hover .swa-sustainability-icon i,
+.swa-sustainability-card:focus .swa-sustainability-icon i,
+.swa-sustainability-card:focus-visible .swa-sustainability-icon i{
+    color: #fff;
+}
+
+/* Accessibility Focus */
+.swa-sustainability-card:focus,
+.swa-sustainability-card:focus-visible{
+    outline: 3px solid #fff;
+    outline-offset: 4px;
+}

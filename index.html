@@ -46,13 +46,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="js/index.js">
 
-    <!-- aos-->
 
-    <!-- AOS CSS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-
-    <!-- AOS JS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   </head>
   <body>
     <!-- nav menu -->
@@ -75,7 +69,7 @@
 
           <!-- NAVIGATION AREA -->
           <div class="col-md-10">
-            <nav class="swadhra-desktop-nav" aria-label="Primary Navigation">
+          <nav class="swadhra-desktop-nav" aria-label="Primary">
               <div class="row align-items-center">
                 <!-- MENU -->
                 <div class="col-md-12">
@@ -98,6 +92,7 @@
                         
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="founter.html">Our Founder</a></li>
+                          <li><a href="sustainability.html">Sustainability Goals</a></li>
                       </ul>
                     </li>
 
@@ -156,15 +151,15 @@
 
                       <ul class="swadhra-dropdown-menu">
                         <li><a href="voluteers.html">Volunteers</a></li>
-                        <li><a href="#">Payment</a></li>
+                        <li><a href="https://grance.in/swadharma-foundation/payment/">Payment</a></li>
                       </ul>
                     </li>
 
-                    <li><a href="#">Achievements</a></li>
+                    <li><a href="achievement.html">Achievements</a></li>
                     <li><a href="contatus.html">Contact Us</a></li>
 
                     <li>
-                      <a href="#" class="swadhra-donate-btn">
+                      <a href="https://grance.in/swadharma-foundation/payment/" class="swadhra-donate-btn">
                         Donate Now
                         <i class="fa-solid fa-heart" aria-hidden="true"></i>
                       </a>
@@ -183,7 +178,7 @@
       </div>
 
       <!-- Mobile Nav -->
-      <nav class="swadhra-mobile-nav" aria-label="Mobile Navigation">
+      <nav class="swadhra-mobile-nav" aria-label="Mobile">
         <div class="container">
           <div class="swadhra-mobile-wrapper">
             <!-- LOGO -->
@@ -232,7 +227,10 @@
                   </li>
 
                   <li>
-                    <a href="#"> Our Founder </a>
+                    <a href="footer.html"> Our Founder </a>
+                  </li>
+                    <li>
+                    <a href="sustainability.html"> Sustainability Goals </a>
                   </li>
                 </ul>
               </li>
@@ -299,9 +297,13 @@ Community Development </a>
                   </li>
 
                   <li>
-                    <a href="#"> Payments </a>
+                    <a href="https://grance.in/swadharma-foundation/payment/"> Payments </a>
                   </li>
                 </ul>
+              </li>
+
+                 <li>
+                <a href="achievement.html">Achievements</a>
               </li>
 
               <li>
@@ -309,7 +311,7 @@ Community Development </a>
               </li>
 
               <li>
-                <a href="#" class="swadhra-mobile-donate"> Donate Now </a>
+                <a href="https://grance.in/swadharma-foundation/payment/" class="swadhra-mobile-donate"> Donate Now </a>
               </li>
             </ul>
           </div>
@@ -402,519 +404,82 @@ mobileToggle.addEventListener("click", () => {
     <!-- banner slider section-->
     <!---- SCREEN READER LIVE REGION -->
 
-    <div
-      class="swadharma-sr-only"
-      id="swadharma-live-region"
-      aria-live="polite"
-      aria-atomic="true"
-    ></div>
+
 
     <!-- banner slider section end-->
 
-    <main id="main-content">
-      <section class="swadharma-banner-sec">
-        <div class="container-fluid">
-          <!-- Carousel Control -->
-          <button
-            id="carousel-toggle"
-            type="button"
-            aria-pressed="false"
-            aria-label="Pause carousel"
-          >
-            Pause
-          </button>
-          <div
-            class="owl-carousel swadharma-banner-slider"
-            aria-label="Homepage Slider"
-            aria-roledescription="carousel"
-          >
-            <!-- ===================================================
-               SLIDE 1
-          =================================================== -->
-            <div class="item" role="group" aria-label="Slide 1 of 4">
-              <div class="swadharma-banner-box">
-                <!-- Image -->
-                <div class="swadharma-banner-img">
-                  <img
-                    src="images/Empowering-Lives-Creating-Opportunities.png"
-                    alt="Differently abled support initiatives by Swadharma Foundation"
-                  />
-                </div>
 
-                <!-- Overlay -->
-                <div class="swadharma-banner-overlay"></div>
+<!-- Live Region -->
+<div
+  id="swa-live"
+  role="status"
+  aria-live="polite"
+  aria-atomic="false"
+  style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+         overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;"
+></div>
 
-                <!-- Content -->
-                <div class="container position-relative">
-                  <div class="row">
-                    <div class="col-xl-8 col-lg-9">
-                      <div
-                        class="swadharma-banner-content swa-banner-fade-right"
-                      >
-                        <h1>Empowering Lives, Creating Opportunities.</h1>
-                        <p>
-                          Swadharma Foundation supports differently abled
-                          individuals through sustainable community empowerment
-                          programs.
-                        </p>
+<main id="main-content">
+  <section class="swadharma-banner-sec">
+    <div class="container-fluid">
 
-                        <!-- Buttons -->
-                        <div class="swadharma-btn-wrap">
-                          <a
-                            href="#"
-                            class="swadharma-btn-primary"
-                            aria-label="Donate now to support Swadharma Foundation"
-                          >
-                            Donate Now
-                            <i class="fa-solid fa-heart" aria-hidden="true"></i>
-                          </a>
-                          <a
-                            href="#"
-                            class="swadharma-btn-outline"
-                            aria-label="Become a volunteer with Swadharma Foundation"
-                          >
-                            Become a Volunteer
-                          </a>
-                        </div>
+      <button
+        id="carousel-toggle"
+        type="button"
+        aria-label="Pause automatic slide rotation"
+      >Pause</button>
 
-                        <!-- Feature Tabs (REAL accessible tablist — ids required) -->
-                        <div
-                          class="swadharma-feature-slider"
-                          role="tablist"
-                          aria-label="Foundation Services"
-                        >
-                          <!-- TAB 1 -->
-                          <button
-                            id="tab-0"
-                            class="swadharma-feature-item active"
-                            role="tab"
-                            aria-selected="true"
-                            tabindex="0"
-                          >
-                            <img
-                              class="img-fluid"
-                              src="./images/Differently-Abled-Support.png"
-                              alt=""
-                              aria-hidden="true"
-                            />
-                            <span>Differently Abled Support</span>
-                          </button>
+      <div
+        class="owl-carousel swadharma-banner-slider"
+        aria-label="Homepage Slider"
+      >
 
-                          <!-- TAB 2 -->
-                          <button
-                            id="tab-1"
-                            class="swadharma-feature-item"
-                            role="tab"
-                            aria-selected="false"
-                            tabindex="-1"
-                          >
-                            <img
-                              class="img-fluid"
-                              src="images/Health-care.png"
-                              alt=""
-                              aria-hidden="true"
-                            />
-                            <span>Health Care</span>
-                          </button>
-
-                          <!-- TAB 3 -->
-                          <button
-                            id="tab-2"
-                            class="swadharma-feature-item"
-                            role="tab"
-                            aria-selected="false"
-                            tabindex="-1"
-                          >
-                            <img
-                              class="img-fluid"
-                              src="./images/Education.png"
-                              alt=""
-                              aria-hidden="true"
-                            />
-                            <span>Education</span>
-                          </button>
-
-                          <!-- TAB 4 -->
-                          <button
-                            id="tab-3"
-                            class="swadharma-feature-item"
-                            role="tab"
-                            aria-selected="false"
-                            tabindex="-1"
-                          >
-                            <img
-                              class="img-fluid"
-                              src="./images/Livelihood.png"
-                              alt=""
-                              aria-hidden="true"
-                            />
-                            <span>Livelihood</span>
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+        <!-- SLIDE 1 -->
+        <div class="item" role="group" aria-roledescription="slide" aria-label="Slide 1 of 4">
+          <div class="swadharma-banner-box">
+            <div class="swadharma-banner-img">
+              <img
+                src="images/Empowering-Lives-Creating-Opportunities.png"
+                alt="Differently abled support initiatives by Swadharma Foundation"
+              />
             </div>
-
-            <!-- ===================================================
-               SLIDE 2
-          =================================================== -->
-            <div class="item" role="group" aria-label="Slide 2 of 4">
-              <div class="swadharma-banner-box">
-                <!-- Image -->
-                <div class="swadharma-banner-img">
-                  <img
-                    src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&w=1920"
-                    alt="Healthcare support initiatives"
-                  />
-                </div>
-
-                <!-- Overlay -->
-                <div class="swadharma-banner-overlay"></div>
-
-                <!-- Content -->
-                <div class="container position-relative">
-                  <div class="row">
-                    <div class="col-xl-8 col-lg-9">
-                      <div class="swadharma-banner-content">
-                        <h2 class="swa-banner-heading-h2">
-                          Better Health, Better Communities.
-                        </h2>
-                        <p>
-                          Swadharma Foundation promotes healthcare awareness and
-                          medical support in rural areas.
-                        </p>
-
-                        <!-- Buttons -->
-                        <div class="swadharma-btn-wrap">
-                          <a
-                            href="#"
-                            class="swadharma-btn-primary"
-                            aria-label="Donate now to support healthcare initiatives"
-                          >
-                            Donate Now
-                            <i class="fa-solid fa-heart" aria-hidden="true"></i>
-                          </a>
-                          <a
-                            href="#"
-                            class="swadharma-btn-outline"
-                            aria-label="Become a volunteer for healthcare support"
-                          >
-                            Become a Volunteer
-                          </a>
-                        </div>
-
-                        <!-- Feature Tabs (VISUAL only — swa-visual-tabs class added) -->
-                        <div
-                          class="swadharma-feature-slider swa-visual-tabs"
-                          role="tablist"
-                          aria-label="Foundation Services"
-                        >
-                          <button
-                            class="swadharma-feature-item"
-                            role="tab"
-                            aria-selected="false"
-                            tabindex="-1"
-                          >
-                            <img
-                              class="img-fluid"
-                              src="./images/Differently-Abled-Support.png"
-                              alt=""
-                              aria-hidden="true"
-                            />
-                            <span>Differently Abled Support</span>
-                          </button>
-
-                          <button
-                            class="swadharma-feature-item active"
-                            role="tab"
-                            aria-selected="true"
-                            tabindex="0"
-                          >
-                            <img
-                              class="img-fluid"
-                              src="images/Health-care.png"
-                              alt=""
-                              aria-hidden="true"
-                            />
-                            <span>Health Care</span>
-                          </button>
-
-                          <button
-                            class="swadharma-feature-item"
-                            role="tab"
-                            aria-selected="false"
-                            tabindex="-1"
-                          >
-                            <img
-                              class="img-fluid"
-                              src="./images/Education.png"
-                              alt=""
-                              aria-hidden="true"
-                            />
-                            <span>Education</span>
-                          </button>
-
-                          <button
-                            class="swadharma-feature-item"
-                            role="tab"
-                            aria-selected="false"
-                            tabindex="-1"
-                          >
-                            <img
-                              class="img-fluid"
-                              src="./images/Livelihood.png"
-                              alt=""
-                              aria-hidden="true"
-                            />
-                            <span>Livelihood</span>
-                          </button>
-                        </div>
-                      </div>
+            <div class="swadharma-banner-overlay"></div>
+            <div class="container position-relative">
+              <div class="row">
+                <div class="col-xl-8 col-lg-9">
+                  <div class="swadharma-banner-content swa-banner-fade-right">
+                    <h2 class="swa-banner-heading-h2">Empowering Lives, Creating Opportunities.</h2>
+                    <p>Swadharma Foundation supports differently abled individuals through sustainable community empowerment programs.</p>
+                    <div class="swadharma-btn-wrap">
+                      <a href="#" class="swadharma-btn-primary" aria-label="Donate now to support Swadharma Foundation">
+                        Donate Now <i class="fa-solid fa-heart" aria-hidden="true"></i>
+                      </a>
+                      <a href="#" class="swadharma-btn-outline" aria-label="Become a volunteer with Swadharma Foundation">
+                        Become a Volunteer
+                      </a>
                     </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- ===================================================
-               SLIDE 3
-          =================================================== -->
-            <div class="item" role="group" aria-label="Slide 3 of 4">
-              <div class="swadharma-banner-box">
-                <!-- Image -->
-                <div class="swadharma-banner-img">
-                  <img
-                    src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1920"
-                    alt="Education support initiatives"
-                  />
-                </div>
-
-                <!-- Overlay -->
-                <div class="swadharma-banner-overlay"></div>
-
-                <!-- Content -->
-                <div class="container position-relative">
-                  <div class="row">
-                    <div class="col-xl-8 col-lg-9">
-                      <div class="swadharma-banner-content">
-                        <h2 class="swa-banner-heading-h2">
-                          Education Creates Brighter Futures.
-                        </h2>
-                        <p>
-                          Supporting children and communities through education
-                          development initiatives.
-                        </p>
-
-                        <!-- Buttons -->
-                        <div class="swadharma-btn-wrap">
-                          <a
-                            href="#"
-                            class="swadharma-btn-primary"
-                            aria-label="Donate now for education support"
-                          >
-                            Donate Now
-                            <i class="fa-solid fa-heart" aria-hidden="true"></i>
-                          </a>
-                          <a
-                            href="#"
-                            class="swadharma-btn-outline"
-                            aria-label="Become a volunteer for education initiatives"
-                          >
-                            Become a Volunteer
-                          </a>
-                        </div>
-
-                        <!-- Feature Tabs (VISUAL only — swa-visual-tabs class added) -->
-                        <div
-                          class="swadharma-feature-slider swa-visual-tabs"
-                          role="tablist"
-                          aria-label="Foundation Services"
-                        >
-                          <button
-                            class="swadharma-feature-item"
-                            role="tab"
-                            aria-selected="false"
-                            tabindex="-1"
-                          >
-                            <img
-                              class="img-fluid"
-                              src="./images/Differently-Abled-Support.png"
-                              alt=""
-                              aria-hidden="true"
-                            />
-                            <span>Differently Abled Support</span>
-                          </button>
-
-                          <button
-                            class="swadharma-feature-item"
-                            role="tab"
-                            aria-selected="false"
-                            tabindex="-1"
-                          >
-                            <img
-                              class="img-fluid"
-                              src="images/Health-care.png"
-                              alt=""
-                              aria-hidden="true"
-                            />
-                            <span>Health Care</span>
-                          </button>
-
-                          <button
-                            class="swadharma-feature-item active"
-                            role="tab"
-                            aria-selected="true"
-                            tabindex="0"
-                          >
-                            <img
-                              class="img-fluid"
-                              src="./images/Education.png"
-                              alt=""
-                              aria-hidden="true"
-                            />
-                            <span>Education</span>
-                          </button>
-
-                          <button
-                            class="swadharma-feature-item"
-                            role="tab"
-                            aria-selected="false"
-                            tabindex="-1"
-                          >
-                            <img
-                              class="img-fluid"
-                              src="./images/Livelihood.png"
-                              alt=""
-                              aria-hidden="true"
-                            />
-                            <span>Livelihood</span>
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- ===================================================
-               SLIDE 4
-          =================================================== -->
-            <div class="item" role="group" aria-label="Slide 4 of 4">
-              <div class="swadharma-banner-box">
-                <!-- Image -->
-                <div class="swadharma-banner-img">
-                  <img
-                    src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&w=1920"
-                    alt="Livelihood support initiatives"
-                  />
-                </div>
-
-                <!-- Overlay -->
-                <div class="swadharma-banner-overlay"></div>
-
-                <!-- Content -->
-                <div class="container position-relative">
-                  <div class="row">
-                    <div class="col-xl-8 col-lg-9">
-                      <div class="swadharma-banner-content">
-                        <h2 class="swa-banner-heading-h2">
-                          Support Livelihoods, Transform Lives.
-                        </h2>
-                        <p>
-                          Empowering communities with skills, opportunities, and
-                          resources to build a better future.
-                        </p>
-
-                        <!-- Buttons -->
-                        <div class="swadharma-btn-wrap">
-                          <a
-                            href="#"
-                            class="swadharma-btn-primary"
-                            aria-label="Donate now to support livelihood initiatives"
-                          >
-                            Donate Now
-                            <i class="fa-solid fa-heart" aria-hidden="true"></i>
-                          </a>
-                          <a
-                            href="#"
-                            class="swadharma-btn-outline"
-                            aria-label="Become a volunteer for livelihood support"
-                          >
-                            Become a Volunteer
-                          </a>
-                        </div>
-
-                        <!-- Feature Tabs (VISUAL only — swa-visual-tabs class added) -->
-                        <div
-                          class="swadharma-feature-slider swa-visual-tabs"
-                          role="tablist"
-                          aria-label="Foundation Services"
-                        >
-                          <button
-                            class="swadharma-feature-item"
-                            role="tab"
-                            aria-selected="false"
-                            tabindex="-1"
-                          >
-                            <img
-                              class="img-fluid"
-                              src="./images/Differently-Abled-Support.png"
-                              alt=""
-                              aria-hidden="true"
-                            />
-                            <span>Differently Abled Support</span>
-                          </button>
-
-                          <button
-                            class="swadharma-feature-item"
-                            role="tab"
-                            aria-selected="false"
-                            tabindex="-1"
-                          >
-                            <img
-                              class="img-fluid"
-                              src="images/Health-care.png"
-                              alt=""
-                              aria-hidden="true"
-                            />
-                            <span>Health Care</span>
-                          </button>
-
-                          <button
-                            class="swadharma-feature-item"
-                            role="tab"
-                            aria-selected="false"
-                            tabindex="-1"
-                          >
-                            <img
-                              class="img-fluid"
-                              src="./images/Education.png"
-                              alt=""
-                              aria-hidden="true"
-                            />
-                            <span>Education</span>
-                          </button>
-
-                          <button
-                            class="swadharma-feature-item active"
-                            role="tab"
-                            aria-selected="true"
-                            tabindex="0"
-                          >
-                            <img
-                              class="img-fluid"
-                              src="./images/Livelihood.png"
-                              alt=""
-                              aria-hidden="true"
-                            />
-                            <span>Livelihood</span>
-                          </button>
-                        </div>
-                      </div>
+                    <!-- REAL TABLIST — Slide 1 மட்டும் -->
+                    <div class="swadharma-feature-slider" role="tablist" aria-label="Select a slide">
+                      <button id="tab-0" class="swadharma-feature-item active" role="tab"
+                        aria-selected="true" tabindex="0" aria-label="Slide 1 of 4, Differently Abled Support">
+                        <img class="img-fluid" src="./images/Differently-Abled-Support.png" alt="" aria-hidden="true"/>
+                        <span aria-hidden="true">Differently Abled Support</span>
+                      </button>
+                      <button id="tab-1" class="swadharma-feature-item" role="tab"
+                        aria-selected="false" tabindex="-1" aria-label="Slide 2 of 4, Health Care">
+                        <img class="img-fluid" src="images/Health-care.png" alt="" aria-hidden="true"/>
+                        <span aria-hidden="true">Health Care</span>
+                      </button>
+                      <button id="tab-2" class="swadharma-feature-item" role="tab"
+                        aria-selected="false" tabindex="-1" aria-label="Slide 3 of 4, Education">
+                        <img class="img-fluid" src="./images/Education.png" alt="" aria-hidden="true"/>
+                        <span aria-hidden="true">Education</span>
+                      </button>
+                      <button id="tab-3" class="swadharma-feature-item" role="tab"
+                        aria-selected="false" tabindex="-1" aria-label="Slide 4 of 4, Livelihood">
+                        <img class="img-fluid" src="./images/Livelihood.png" alt="" aria-hidden="true"/>
+                        <span aria-hidden="true">Livelihood</span>
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -922,265 +487,354 @@ mobileToggle.addEventListener("click", () => {
             </div>
           </div>
         </div>
-      </section>
-    </main>
+        <!-- /SLIDE 1 -->
 
-    <!-- banner slider script start -->
-    <!-- jQuery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <!-- SLIDE 2 -->
+        <div class="item" role="group" aria-roledescription="slide" aria-label="Slide 2 of 4">
+          <div class="swadharma-banner-box">
+            <div class="swadharma-banner-img">
+              <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&w=1920" alt="Healthcare support initiatives"/>
+            </div>
+            <div class="swadharma-banner-overlay"></div>
+            <div class="container position-relative">
+              <div class="row">
+                <div class="col-xl-8 col-lg-9">
+                  <div class="swadharma-banner-content">
+                    <h2 class="swa-banner-heading-h2">Better Health, Better Communities.</h2>
+                    <p>Swadharma Foundation promotes healthcare awareness and medical support in rural areas.</p>
+                    <div class="swadharma-btn-wrap">
+                      <a href="#" class="swadharma-btn-primary" aria-label="Donate now to support healthcare initiatives">
+                        Donate Now <i class="fa-solid fa-heart" aria-hidden="true"></i>
+                      </a>
+                      <a href="#" class="swadharma-btn-outline" aria-label="Become a volunteer for healthcare support">
+                        Become a Volunteer
+                      </a>
+                    </div>
+                    <!-- Visual only -->
+                    <div class="swadharma-feature-slider swa-visual-tabs" aria-hidden="true">
+                      <button class="swadharma-feature-item" tabindex="-1">
+                        <img class="img-fluid" src="./images/Differently-Abled-Support.png" alt=""/><span>Differently Abled Support</span>
+                      </button>
+                      <button class="swadharma-feature-item active" tabindex="-1">
+                        <img class="img-fluid" src="images/Health-care.png" alt=""/><span>Health Care</span>
+                      </button>
+                      <button class="swadharma-feature-item" tabindex="-1">
+                        <img class="img-fluid" src="./images/Education.png" alt=""/><span>Education</span>
+                      </button>
+                      <button class="swadharma-feature-item" tabindex="-1">
+                        <img class="img-fluid" src="./images/Livelihood.png" alt=""/><span>Livelihood</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /SLIDE 2 -->
 
-    <!-- Owl Carousel -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+        <!-- SLIDE 3 -->
+        <div class="item" role="group" aria-roledescription="slide" aria-label="Slide 3 of 4">
+          <div class="swadharma-banner-box">
+            <div class="swadharma-banner-img">
+              <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1920" alt="Education support initiatives"/>
+            </div>
+            <div class="swadharma-banner-overlay"></div>
+            <div class="container position-relative">
+              <div class="row">
+                <div class="col-xl-8 col-lg-9">
+                  <div class="swadharma-banner-content">
+                    <h2 class="swa-banner-heading-h2">Education Creates Brighter Futures.</h2>
+                    <p>Supporting children and communities through education development initiatives.</p>
+                    <div class="swadharma-btn-wrap">
+                      <a href="#" class="swadharma-btn-primary" aria-label="Donate now for education support">
+                        Donate Now <i class="fa-solid fa-heart" aria-hidden="true"></i>
+                      </a>
+                      <a href="#" class="swadharma-btn-outline" aria-label="Become a volunteer for education initiatives">
+                        Become a Volunteer
+                      </a>
+                    </div>
+                    <!-- Visual only -->
+                    <div class="swadharma-feature-slider swa-visual-tabs" aria-hidden="true">
+                      <button class="swadharma-feature-item" tabindex="-1">
+                        <img class="img-fluid" src="./images/Differently-Abled-Support.png" alt=""/><span>Differently Abled Support</span>
+                      </button>
+                      <button class="swadharma-feature-item" tabindex="-1">
+                        <img class="img-fluid" src="images/Health-care.png" alt=""/><span>Health Care</span>
+                      </button>
+                      <button class="swadharma-feature-item active" tabindex="-1">
+                        <img class="img-fluid" src="./images/Education.png" alt=""/><span>Education</span>
+                      </button>
+                      <button class="swadharma-feature-item" tabindex="-1">
+                        <img class="img-fluid" src="./images/Livelihood.png" alt=""/><span>Livelihood</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /SLIDE 3 -->
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+        <!-- SLIDE 4 -->
+        <div class="item" role="group" aria-roledescription="slide" aria-label="Slide 4 of 4">
+          <div class="swadharma-banner-box">
+            <div class="swadharma-banner-img">
+              <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&w=1920" alt="Livelihood support initiatives"/>
+            </div>
+            <div class="swadharma-banner-overlay"></div>
+            <div class="container position-relative">
+              <div class="row">
+                <div class="col-xl-8 col-lg-9">
+                  <div class="swadharma-banner-content">
+                    <h2 class="swa-banner-heading-h2">Support Livelihoods, Transform Lives.</h2>
+                    <p>Empowering communities with skills, opportunities, and resources to build a better future.</p>
+                    <div class="swadharma-btn-wrap">
+                      <a href="#" class="swadharma-btn-primary" aria-label="Donate now to support livelihood initiatives">
+                        Donate Now <i class="fa-solid fa-heart" aria-hidden="true"></i>
+                      </a>
+                      <a href="#" class="swadharma-btn-outline" aria-label="Become a volunteer for livelihood support">
+                        Become a Volunteer
+                      </a>
+                    </div>
+                    <!-- Visual only -->
+                    <div class="swadharma-feature-slider swa-visual-tabs" aria-hidden="true">
+                      <button class="swadharma-feature-item" tabindex="-1">
+                        <img class="img-fluid" src="./images/Differently-Abled-Support.png" alt=""/><span>Differently Abled Support</span>
+                      </button>
+                      <button class="swadharma-feature-item" tabindex="-1">
+                        <img class="img-fluid" src="images/Health-care.png" alt=""/><span>Health Care</span>
+                      </button>
+                      <button class="swadharma-feature-item" tabindex="-1">
+                        <img class="img-fluid" src="./images/Education.png" alt=""/><span>Education</span>
+                      </button>
+                      <button class="swadharma-feature-item active" tabindex="-1">
+                        <img class="img-fluid" src="./images/Livelihood.png" alt=""/><span>Livelihood</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /SLIDE 4 -->
 
-    <!-- hide pause button script -->
+      </div><!-- /owl-carousel -->
+    </div><!-- /container-fluid -->
+  </section>
+</main>
 
-    <script>
-      let isPaused = false;
 
-      $("#carousel-toggle").on("click", function () {
-        isPaused = !isPaused;
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
-        if (isPaused) {
-          $(".swadharma-banner-slider").trigger("stop.owl.autoplay");
-          $(this)
-            .attr("aria-pressed", "true")
-            .attr("aria-label", "Play carousel")
-            .text("Play");
-        } else {
-          $(".swadharma-banner-slider").trigger("play.owl.autoplay");
-          $(this)
-            .attr("aria-pressed", "false")
-            .attr("aria-label", "Pause carousel")
-            .text("Pause");
-        }
-      });
-    </script>
 
-    <script>
-      $(document).ready(function () {
-        var $slider = $(".swadharma-banner-slider");
-        var TOTAL = 4;
-        var currentIdx = 0;
+<script>
+$(document).ready(function () {
 
-        /* ── Slide metadata ─────────────────────────────────────────── */
-        var slides = [
-          {
-            tabId: "tab-0",
-            announce:
-              "Slide 1 of 4. Empowering Lives, Creating Opportunities. Differently Abled Support selected.",
-          },
-          {
-            tabId: "tab-1",
-            announce:
-              "Slide 2 of 4. Better Health, Better Communities. Health Care selected.",
-          },
-          {
-            tabId: "tab-2",
-            announce:
-              "Slide 3 of 4. Education Creates Brighter Futures. Education selected.",
-          },
-          {
-            tabId: "tab-3",
-            announce:
-              "Slide 4 of 4. Support Livelihoods, Transform Lives. Livelihood selected.",
-          },
-        ];
+  var $slider         = $(".swadharma-banner-slider");
+  var TOTAL           = 4;
+  var currentIdx      = 0;
+  var carouselPaused  = false;
+  var userInteracting = false;
 
-        /* ── Screen-reader live region ──────────────────────────────── */
-        if (!$("#swa-live").length) {
-          $("body").append(
-            '<div id="swa-live" role="status" aria-live="assertive" aria-atomic="true"' +
-              ' style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;' +
-              'overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;"></div>',
-          );
-        }
+  var slides = [
+    { tabId: "tab-0", announce: "Slide 1 of 4. Empowering Lives, Creating Opportunities." },
+    { tabId: "tab-1", announce: "Slide 2 of 4. Better Health, Better Communities." },
+    { tabId: "tab-2", announce: "Slide 3 of 4. Education Creates Brighter Futures." },
+    { tabId: "tab-3", announce: "Slide 4 of 4. Support Livelihoods, Transform Lives." }
+  ];
 
-        function announce(msg) {
-          var $lr = $("#swa-live");
-          $lr.text("");
-          setTimeout(function () {
-            $lr.text(msg);
-          }, 80);
-        }
+  /* ── Pause / Resume — document.ready-க்கு உள்ளே ── */
+  $("#carousel-toggle").on("click", function () {
+    carouselPaused = !carouselPaused;
+    if (carouselPaused) {
+      $slider.trigger("stop.owl.autoplay");
+      $(this).attr("aria-label", "Resume automatic slide rotation").text("Resume");
+    } else {
+      $slider.trigger("play.owl.autoplay");
+      $(this).attr("aria-label", "Pause automatic slide rotation").text("Pause");
+    }
+  });
 
-        /* ── Init Owl Carousel ──────────────────────────────────────── */
-        $slider.owlCarousel({
-          loop: true,
-          margin: 0,
-          nav: true,
-          dots: false,
-          autoplay: false,
-          smartSpeed: 800,
-          items: 1,
-          navText: [
-            '<span aria-hidden="true">&#x2039;</span>',
-            '<span aria-hidden="true">&#x203A;</span>',
-          ],
-        });
+  /* ── Live region announce ── */
+  function announce(msg) {
+    if (!userInteracting) return;
+    var $lr = $("#swa-live");
+    $lr.text("");
+    setTimeout(function () { $lr.text(msg); }, 150);
+  }
 
-        /* ── After Owl renders DOM ──────────────────────────────────── */
-        setTimeout(function () {
-          // Hide Owl nav arrows from keyboard only
-          $slider.find(".owl-prev, .owl-next").attr({
-            tabindex: "-1",
-            "aria-hidden": "true",
-          });
+  /* ── Owl Carousel Init ── */
+  $slider.owlCarousel({
+    loop:               true,
+    margin:             0,
+    nav:                true,
+    dots:               false,
+    autoplay:           false,
+    autoplayTimeout:    5000,
+    autoplayHoverPause: true,
+    smartSpeed:         800,
+    items:              1,
+    navText: [
+      '<span aria-hidden="true">&#x2039;</span>',
+      '<span aria-hidden="true">&#x203A;</span>'
+    ]
+  });
 
-          // Overflow guard
-          $slider.find(".owl-stage-outer").css("overflow", "hidden");
+  /* ── After Owl renders DOM ── */
+  setTimeout(function () {
 
-          // All owl-items hidden by default; syncToSlide() reveals the active one
-          $slider.find(".owl-item").attr("aria-hidden", "true");
+    $slider.find(".owl-prev, .owl-next").attr({
+      tabindex: "-1", "aria-hidden": "true"
+    });
 
-          // Initial sync
-          syncToSlide(0);
-        }, 200);
+    $slider.find(".owl-stage-outer").css("overflow", "hidden");
 
-        /* ── Helper: count cloned items before real items ───────────── */
-        function getClonesBefore() {
-          var n = 0;
-          $slider.find(".owl-item").each(function () {
-            if ($(this).hasClass("cloned")) {
-              n++;
-            } else {
-              return false;
-            }
-          });
-          return n;
-        }
+    /* எல்லா slides-ஐயும் initially hide + inert */
+    $slider.find(".owl-item").attr("aria-hidden", "true");
+    $slider.find(".item").attr({ "aria-hidden": "true", "inert": "" });
 
-        /* ── Navigate Owl to a real slide index ─────────────────────── */
-      function goToSlide(idx) {
-  $slider.trigger("to.owl.carousel", [idx, 800]);
-}
+    syncToSlide(0);
 
-        /* ── Sync real tablist (Slide 1 buttons #tab-0..3) ──────────── */
-        function syncTabs(idx) {
-          // Reset all real tabs
-          $("#tab-0, #tab-1, #tab-2, #tab-3")
-            .removeClass("active")
-            .attr({ "aria-selected": "false", tabindex: "-1" });
+  }, 200);
 
-          // Activate current real tab
-          $("#" + slides[idx].tabId)
-            .addClass("active")
-            .attr({ "aria-selected": "true", tabindex: "0" });
+  /* ── Clone count ── */
+  function getClonesBefore() {
+    var n = 0;
+    $slider.find(".owl-item").each(function () {
+      if ($(this).hasClass("cloned")) { n++; } else { return false; }
+    });
+    return n;
+  }
 
-          // Visual-only tabs in slides 2-4: toggle .active class only
-          $(".swa-visual-tabs").each(function () {
-            $(this)
-              .find(".swadharma-feature-item")
-              .removeClass("active")
-              .eq(idx)
-              .addClass("active");
-          });
-        }
+  /* ── Owl navigate ── */
+  function goToSlide(idx) {
+    $slider.trigger("to.owl.carousel", [idx, 800]);
+  }
 
-        /* ── Sync aria-hidden on Owl DOM items ──────────────────────── */
-        function syncAriaHidden(idx) {
-          $slider.find(".owl-item").attr("aria-hidden", "true");
-          var pos = getClonesBefore() + idx;
-          $slider.find(".owl-item").eq(pos).attr("aria-hidden", "false");
-        }
+  /* ── Tab sync ── */
+  function syncTabs(idx) {
+    $("#tab-0, #tab-1, #tab-2, #tab-3")
+      .removeClass("active")
+      .attr({ "aria-selected": "false", tabindex: "-1" });
 
-        /* ── Master sync ────────────────────────────────────────────── */
-        function syncToSlide(idx) {
-          currentIdx = idx;
-          syncTabs(idx);
-          syncAriaHidden(idx);
-          announce(slides[idx].announce);
-        }
+    $("#" + slides[idx].tabId)
+      .addClass("active")
+      .attr({ "aria-selected": "true", tabindex: "0" });
 
-        /* ── Real index from Owl changed event ──────────────────────── */
-        function realIndex(event) {
-          var idx = event.item.index;
-          var count = event.item.count;
-          return ((idx % count) + count) % count;
-        }
+    $(".swa-visual-tabs").each(function () {
+      $(this).find(".swadharma-feature-item")
+        .removeClass("active").eq(idx).addClass("active");
+    });
+  }
 
-        /* ── Real tablist: click ────────────────────────────────────── */
-        $("#tab-0, #tab-1, #tab-2, #tab-3").on("click", function () {
-          var idx = parseInt($(this).attr("id").replace("tab-", ""), 10);
-          goToSlide(idx);
-          syncToSlide(idx);
-        });
+  /* ── aria-hidden + inert sync ── */
+  function syncAriaHidden(idx) {
+    /* Layer 1: owl-item wrappers */
+    $slider.find(".owl-item").attr("aria-hidden", "true");
+    $slider.find(".owl-item").eq(getClonesBefore() + idx).removeAttr("aria-hidden");
 
-        /* ── Real tablist: keyboard (ARIA tab pattern) ──────────────── */
-        $("#tab-0, #tab-1, #tab-2, #tab-3").on("keydown", function (e) {
-          var idx = parseInt($(this).attr("id").replace("tab-", ""), 10);
+    /* Layer 2: real .item — inert blocks NVDA virtual cursor */
+    $slider.find(".item").attr({ "aria-hidden": "true", "inert": "" });
+    $slider.find(".item").eq(idx).attr("aria-hidden", "false").removeAttr("inert");
+  }
 
-          switch (e.key) {
-            case "ArrowRight": {
-              e.preventDefault();
-              var next = (idx + 1) % TOTAL;
-              goToSlide(next);
-              syncToSlide(next);
-              $("#tab-" + next).focus();
-              break;
-            }
-            case "ArrowLeft": {
-              e.preventDefault();
-              var prev = (idx - 1 + TOTAL) % TOTAL;
-              goToSlide(prev);
-              syncToSlide(prev);
-              $("#tab-" + prev).focus();
-              break;
-            }
-            case "Home": {
-              e.preventDefault();
-              goToSlide(0);
-              syncToSlide(0);
-              $("#tab-0").focus();
-              break;
-            }
-            case "End": {
-              e.preventDefault();
-              goToSlide(TOTAL - 1);
-              syncToSlide(TOTAL - 1);
-              $("#tab-" + (TOTAL - 1)).focus();
-              break;
-            }
-            case "Enter":
-            case " ": {
-              e.preventDefault();
-              $(this).trigger("click");
-              break;
-            }
-          }
-        });
+  /* ── Master sync ── */
+  function syncToSlide(idx) {
+    currentIdx = idx;
+    syncTabs(idx);
+    syncAriaHidden(idx);
+    announce(slides[idx].announce);
+  }
 
-        /* ── Visual tabs in slides 2-4 (mouse only) ─────────────────── */
-        $(document).on(
-          "click",
-          ".swa-visual-tabs .swadharma-feature-item",
-          function () {
-            var idx = $(this)
-              .closest(".swa-visual-tabs")
-              .find(".swadharma-feature-item")
-              .index(this);
-            goToSlide(idx);
-            syncToSlide(idx);
-          },
-        );
+  /* ── Real index from Owl event ── */
+  function realIndex(event) {
+    var idx = event.item.index, count = event.item.count;
+    return ((idx % count) + count) % count;
+  }
 
-        /* ── Owl changed event (prev/next arrow clicks) ─────────────── */
-        $slider.on("changed.owl.carousel", function (event) {
-          var idx = realIndex(event);
-          syncToSlide(idx);
-        });
-      });
-    </script>
+  /* ── Tab: click ── */
+  $("#tab-0, #tab-1, #tab-2, #tab-3").on("click", function () {
+    userInteracting = true;
+    var idx = parseInt($(this).attr("id").replace("tab-", ""), 10);
+    goToSlide(idx);
+    syncToSlide(idx);
+    setTimeout(function () { userInteracting = false; }, 600);
+  });
 
+  /* ── Tab: keyboard ── */
+  $("#tab-0, #tab-1, #tab-2, #tab-3").on("keydown", function (e) {
+    var idx = parseInt($(this).attr("id").replace("tab-", ""), 10);
+    userInteracting = true;
+
+    switch (e.key) {
+      case "ArrowRight": {
+        e.preventDefault();
+        var next = (idx + 1) % TOTAL;
+        goToSlide(next); syncToSlide(next);
+        $("#tab-" + next).focus();
+        break;
+      }
+      case "ArrowLeft": {
+        e.preventDefault();
+        var prev = (idx - 1 + TOTAL) % TOTAL;
+        goToSlide(prev); syncToSlide(prev);
+        $("#tab-" + prev).focus();
+        break;
+      }
+      case "Home": {
+        e.preventDefault();
+        goToSlide(0); syncToSlide(0);
+        $("#tab-0").focus();
+        break;
+      }
+      case "End": {
+        e.preventDefault();
+        goToSlide(TOTAL - 1); syncToSlide(TOTAL - 1);
+        $("#tab-" + (TOTAL - 1)).focus();
+        break;
+      }
+      case "Enter":
+      case " ": {
+        e.preventDefault();
+        $(this).trigger("click");
+        break;
+      }
+    }
+    setTimeout(function () { userInteracting = false; }, 600);
+  });
+
+  /* ── Visual tabs slides 2-4 ── */
+  $(document).on("click", ".swa-visual-tabs .swadharma-feature-item", function () {
+    userInteracting = true;
+    var idx = $(this).closest(".swa-visual-tabs")
+      .find(".swadharma-feature-item").index(this);
+    goToSlide(idx);
+    syncToSlide(idx);
+    setTimeout(function () { userInteracting = false; }, 600);
+  });
+
+  /* ── Owl changed event ── */
+  $slider.on("changed.owl.carousel", function (event) {
+    var idx = realIndex(event);
+    syncToSlide(idx);
+    userInteracting = false;
+  });
+
+}); /* end document.ready */
+</script>
+ 
+    
     <!-- banner slider script end-->
 
     <!-- Together we create tab section start-->
 
     <section
       class="swatha-main-tab-section"
-      aria-labelledby="swatha-section-title"
+      
     >
       <div class="container">
         <!-- Heading -->
@@ -1285,7 +939,7 @@ mobileToggle.addEventListener("click", () => {
               </p>
 
               <a
-                href="#"
+                href="about.html"
                 class="swatha-learn-btn"
                 aria-label="Learn more about Swadharma Foundation"
               >
@@ -1333,7 +987,7 @@ mobileToggle.addEventListener("click", () => {
                 sustainable livelihood programs.
               </p>
               <a
-                href="#"
+                href="about.html"
                 class="swatha-learn-btn"
                 aria-label="Learn more about our mission"
               >
@@ -1381,7 +1035,7 @@ mobileToggle.addEventListener("click", () => {
                 sustainable livelihood programs.
               </p>
               <a
-                href="#"
+                href="about.html"
                 class="swatha-learn-btn"
                 aria-label="Learn more about our vision"
               >
@@ -1483,7 +1137,7 @@ mobileToggle.addEventListener("click", () => {
     <!-- our community section start-->
     <section
       class="swadharma-program-sec"
-      aria-labelledby="swadharmaProgramHeading"
+      
     >
       <div class="container">
         <div class="row g-4 align-items-stretch">
@@ -1548,7 +1202,7 @@ mobileToggle.addEventListener("click", () => {
 
                 <!-- Button -->
                 <a
-                  href="#"
+                  href="program.html"
                   class="swa-testi-link-a"
                   aria-label="Read more about persons with disabilities program"
                 >
@@ -1594,7 +1248,7 @@ mobileToggle.addEventListener("click", () => {
                 </p>
 
                 <a
-                  href="#"
+                  href="program.html"
                   class="swa-testi-link-a"
                   aria-label="Read more about education support program"
                 >
@@ -1639,7 +1293,7 @@ mobileToggle.addEventListener("click", () => {
                 </p>
 
                 <a
-                  href="#"
+                  href="program.html"
                   class="swa-testi-link-a"
                   aria-label="Read more about healthcare support program"
                 >
@@ -1684,7 +1338,7 @@ mobileToggle.addEventListener("click", () => {
                 </p>
 
                 <a
-                  href="#"
+                  href="program.html"
                   class="swa-testi-link-a"
                   aria-label="Read more about women empowerment program"
                 >
@@ -1729,7 +1383,7 @@ mobileToggle.addEventListener("click", () => {
                 </p>
 
                 <a
-                  href="#"
+                  href="program.html"
                   class="swa-testi-link-a"
                   aria-label="Read more about community development program"
                 >
@@ -1747,303 +1401,259 @@ mobileToggle.addEventListener("click", () => {
 
     <!--Recentt activity section start-->
 
-    <section
-      class="swa-testi-section"
-      aria-labelledby="swaRecentActivitiesHeading"
-    >
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="swa-testi-top">
-              <div>
-                <div class="swa-testi-subtitle">
-                  <i class="fa-solid fa-heart" aria-hidden="true"></i>
-                  <span>On The Ground</span>
-                </div>
-
-                <h2 class="swa-testi-title" id="swaRecentActivitiesHeading">
-                  Recent Activities
-                </h2>
-              </div>
-
-              <div class="swa-testi-nav" aria-label="Slider Navigation">
-                <button
-                  class="swa-testi-btn swa-prev-btn"
-                  type="button"
-                  aria-label="Show previous activity slide"
-                >
-                  <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
-                </button>
-
-                <button
-                  class="swa-testi-btn swa-next-btn"
-                  type="button"
-                  aria-label="Show next activity slide"
-                >
-                  <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
-                </button>
-              </div>
+  <section class="swa-testi-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="swa-testi-top">
+          <div>
+            <div class="swa-testi-subtitle">
+              <i class="fa-solid fa-heart" aria-hidden="true"></i>
+              <span>On The Ground</span>
             </div>
+            <h2 class="swa-testi-title" id="swaRecentActivitiesHeading">
+              Recent Activities
+            </h2>
           </div>
-        </div>
-
-        <div class="row">
-          <div class="col-12">
-            <div
-              id="swa-activity-live"
-              aria-live="polite"
-              aria-atomic="true"
-              class="swadharma-sr-only"
-            ></div>
-
-            <div
-              class="owl-carousel swa-testi-slider"
-              aria-label="Recent Activities Slider"
-              aria-live="polite"
-            >
-              <!-- CARD 1 -->
-              <article class="item" aria-label="Monthly Home Visits Activity">
-                <div class="swa-testi-card">
-                  <div class="swa-testi-img">
-                    <img
-                      src="images/Monthly-Home-Visits.webp"
-                      alt="Healthcare volunteer visiting a differently abled person at home and providing monthly support services"
-                    />
-                  </div>
-
-                  <div class="swa-testi-tags" aria-label="Activity categories">
-                    <span>Personalized Care</span>
-                    <span>Essential Support</span>
-                  </div>
-
-                  <h3>Monthly Home Visits</h3>
-
-                  <p>
-                    Empower persons with differently abled through structured
-                    skill development programs that enhance employability,
-                    independence, and dignity.
-                  </p>
-
-                  <div class="swa-testi-line" aria-hidden="true"></div>
-
-                  <a
-                    href="#"
-                    class="swa-testi-link"
-                    aria-label="Read more about Monthly Home Visits"
-                  >
-                    <span>Read More</span>
-
-                    <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-                  </a>
-                </div>
-              </article>
-
-              <!-- CARD 2 -->
-              <article
-                class="item"
-                aria-label="Wheelchair Support Initiative Activity"
-              >
-                <div class="swa-testi-card">
-                  <div class="swa-testi-img">
-                    <img
-                      src="images/Wheelchair-Support-Initiative.webp"
-                      alt="Volunteer providing wheelchair assistance to differently abled people"
-                    />
-                  </div>
-
-                  <div class="swa-testi-tags" aria-label="Activity categories">
-                    <span>Mobility</span>
-                    <span>Independence</span>
-                  </div>
-
-                  <h3>Wheelchair Support Initiative</h3>
-
-                  <p>
-                    Providing wheelchairs and mobility assistance that improve
-                    accessibility, independence, confidence, and overall quality
-                    of everyday life.
-                  </p>
-
-                  <div class="swa-testi-line" aria-hidden="true"></div>
-
-                  <a
-                    href="#"
-                    class="swa-testi-link"
-                    aria-label="Read more about Wheelchair Support Initiative"
-                  >
-                    <span>Read More</span>
-
-                    <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-                  </a>
-                </div>
-              </article>
-
-              <!-- CARD 3 -->
-              <article
-                class="item"
-                aria-label="Crowdfunding for Medical Support Activity"
-              >
-                <div class="swa-testi-card">
-                  <div class="swa-testi-img">
-                    <img
-                      src="images/Crowdfunding-for-Medical-Support.webp"
-                      alt="Medical fundraising support program helping families with healthcare needs"
-                    />
-                  </div>
-
-                  <div class="swa-testi-tags" aria-label="Activity categories">
-                    <span>Personalized Care</span>
-                    <span>Essential Support</span>
-                  </div>
-
-                  <h3>Crowdfunding for Medical Support</h3>
-
-                  <p>
-                    Helping families access critical medical treatments through
-                    community fundraising campaigns, healthcare assistance, and
-                    compassionate support.
-                  </p>
-
-                  <div class="swa-testi-line" aria-hidden="true"></div>
-
-                  <a
-                    href="#"
-                    class="swa-testi-link"
-                    aria-label="Read more about Crowdfunding for Medical Support"
-                  >
-                    <span>Read More</span>
-
-                    <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-                  </a>
-                </div>
-              </article>
-
-              <!-- CARD 4 -->
-              <article
-                class="item"
-                aria-label="Community Outreach Program Activity"
-              >
-                <div class="swa-testi-card">
-                  <div class="swa-testi-img">
-                    <img
-                      src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=1200&auto=format&fit=crop"
-                      alt="Community outreach awareness and educational support activities"
-                    />
-                  </div>
-
-                  <div class="swa-testi-tags" aria-label="Activity categories">
-                    <span>Community</span>
-                    <span>Support</span>
-                  </div>
-
-                  <h3>Community Outreach Program</h3>
-
-                  <p>
-                    Strengthening local communities with awareness campaigns,
-                    educational workshops, and social welfare support
-                    initiatives.
-                  </p>
-
-                  <div class="swa-testi-line" aria-hidden="true"></div>
-
-                  <a
-                    href="#"
-                    class="swa-testi-link"
-                    aria-label="Read more about Community Outreach Program"
-                  >
-                    <span>Read More</span>
-
-                    <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-                  </a>
-                </div>
-              </article>
-            </div>
+          <div class="swa-testi-nav" aria-label="Slider Navigation">
+            <button class="swa-testi-btn swa-prev-btn" type="button" aria-label="Show previous activity slide">
+              <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+            </button>
+            <button class="swa-testi-btn swa-next-btn" type="button" aria-label="Show next activity slide">
+              <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+            </button>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <!-- Live region with role="status" for reliable announcements -->
+        <div id="swa-activity-live" role="status" aria-live="polite" aria-atomic="true" class="sr-only"></div>
 
-    <script>
-      const swaSlider = $(".swa-testi-slider");
+        <!-- Carousel container with proper ARIA roles and description -->
+        <div class="owl-carousel swa-testi-slider" role="region" aria-roledescription="carousel" aria-labelledby="swaRecentActivitiesHeading">
+          <!-- CARD 1 -->
+          <article class="item" aria-label="Monthly Home Visits Activity">
+            <div class="swa-testi-card">
+              <div class="swa-testi-img">
+                <img src="images/Monthly-Home-Visits.webp" alt="Healthcare volunteer visiting a differently abled person at home">
+              </div>
+              <div class="swa-testi-tags" aria-label="Activity categories">
+                <span>Personalized Care</span>
+                <span>Essential Support</span>
+              </div>
+              <h3>Monthly Home Visits</h3>
+              <p>Empower persons with differently abled through structured skill development programs that enhance employability, independence, and dignity.</p>
+              <div class="swa-testi-line" aria-hidden="true"></div>
+              <a href="recent-activities.html" class="swa-testi-link" aria-label="Read more about Monthly Home Visits">
+                <span>Read More</span>
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
 
-      swaSlider.owlCarousel({
-        loop: true,
-        margin: 24,
-        nav: false,
-        dots: false,
-        autoplay: false,
-        smartSpeed: 900,
+          <!-- CARD 2 -->
+          <article class="item" aria-label="Wheelchair Support Initiative Activity">
+            <div class="swa-testi-card">
+              <div class="swa-testi-img">
+                <img src="images/Wheelchair-Support-Initiative.webp" alt="Volunteer providing wheelchair assistance">
+              </div>
+              <div class="swa-testi-tags" aria-label="Activity categories">
+                <span>Mobility</span>
+                <span>Independence</span>
+              </div>
+              <h3>Wheelchair Support Initiative</h3>
+              <p>Providing wheelchairs and mobility assistance that improve accessibility, independence, confidence, and overall quality of everyday life.</p>
+              <div class="swa-testi-line" aria-hidden="true"></div>
+              <a href="recent-activities.html" class="swa-testi-link" aria-label="Read more about Wheelchair Support Initiative">
+                <span>Read More</span>
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
 
-        responsive: {
-          0: {
-            items: 1,
-          },
-          768: {
-            items: 2,
-          },
-          1200: {
-            items: 3,
-          },
-        },
+          <!-- CARD 3 -->
+          <article class="item" aria-label="Crowdfunding for Medical Support Activity">
+            <div class="swa-testi-card">
+              <div class="swa-testi-img">
+                <img src="images/Crowdfunding-for-Medical-Support.webp" alt="Medical fundraising support program">
+              </div>
+              <div class="swa-testi-tags" aria-label="Activity categories">
+                <span>Personalized Care</span>
+                <span>Essential Support</span>
+              </div>
+              <h3>Crowdfunding for Medical Support</h3>
+              <p>Helping families access critical medical treatments through community fundraising campaigns, healthcare assistance, and compassionate support.</p>
+              <div class="swa-testi-line" aria-hidden="true"></div>
+              <a href="recent-activities.html" class="swa-testi-link" aria-label="Read more about Crowdfunding for Medical Support">
+                <span>Read More</span>
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- CARD 4 -->
+          <article class="item" aria-label="Community Outreach Program Activity">
+            <div class="swa-testi-card">
+              <div class="swa-testi-img">
+                <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=1200&auto=format&fit=crop" alt="Community outreach awareness activities">
+              </div>
+              <div class="swa-testi-tags" aria-label="Activity categories">
+                <span>Community</span>
+                <span>Support</span>
+              </div>
+              <h3>Community Outreach Program</h3>
+              <p>Strengthening local communities with awareness campaigns, educational workshops, and social welfare support initiatives.</p>
+              <div class="swa-testi-line" aria-hidden="true"></div>
+              <a href="recent-activities.html" class="swa-testi-link" aria-label="Read more about Community Outreach Program">
+                <span>Read More</span>
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Visually hidden but accessible to screen readers */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+</style>
+
+<script>
+  $(document).ready(function () {
+    const $slider = $(".swa-testi-slider");
+    const $liveRegion = $("#swa-activity-live");
+
+    // ----- Fix #1: Bind events BEFORE initializing carousel -----
+    $slider.on("initialized.owl.carousel", function () {
+      setAriaHiddenOnInactiveSlides();
+      announceCurrentSlide();
+    });
+
+    $slider.on("changed.owl.carousel", function () {
+      setAriaHiddenOnInactiveSlides();
+      announceCurrentSlide();
+    });
+
+    // Initialize Owl Carousel
+    $slider.owlCarousel({
+      loop: true,
+      margin: 24,
+      nav: false,
+      dots: false,
+      autoplay: false,
+      smartSpeed: 900,
+      responsive: {
+        0: { items: 1 },
+        768: { items: 2 },
+        1200: { items: 3 }
+      }
+    });
+
+    // ----- Fix #2: Apply aria-hidden to both .owl-item AND .item -----
+    function setAriaHiddenOnInactiveSlides() {
+      const $allItems = $(".owl-item", $slider);
+      const $activeItems = $(".owl-item.active", $slider);
+
+      // Hide all slides (container + content)
+      $allItems.attr("aria-hidden", "true");
+      $allItems.find(".item").attr("aria-hidden", "true");
+
+      // Expose only active slides
+      $activeItems.attr("aria-hidden", "false");
+      $activeItems.find(".item").attr("aria-hidden", "false");
+
+      // Disable focusable elements inside inactive slides
+      $allItems.not($activeItems).each(function () {
+        $(this).find("a, button, [tabindex]").each(function () {
+          if ($(this).attr("tabindex") !== "-1") {
+            $(this).attr("data-original-tabindex", $(this).attr("tabindex") || "0");
+            $(this).attr("tabindex", "-1");
+          }
+        });
       });
 
-      /* Screen Reader - Active Slides Only */
+      // Restore focus for active slides
+      $activeItems.each(function () {
+        $(this).find("a, button").each(function () {
+          const original = $(this).attr("data-original-tabindex");
+          if (original) {
+            $(this).attr("tabindex", original);
+            $(this).removeAttr("data-original-tabindex");
+          } else if ($(this).attr("tabindex") === "-1") {
+            $(this).removeAttr("tabindex");
+          }
+        });
+      });
+    }
 
-      function updateActivityAria() {
-        $(".swa-testi-slider .owl-item").attr("aria-hidden", "true");
+    // ----- Fix #4: Force announcement with empty() + timeout for NVDA -----
+    function announceCurrentSlide() {
+      const $activeSlide = $(".owl-item.active .item", $slider).first();
+      let announcementText = "";
 
-        $(".swa-testi-slider .owl-item.active").attr("aria-hidden", "false");
+      if ($activeSlide.length) {
+        const title = $activeSlide.find("h3").text().trim();
+        const description = $activeSlide.find("p").text().trim();
+        const shortDesc = description.length > 120 ? description.substring(0, 120) + "…" : description;
+        announcementText = `Current activity: ${title}. ${shortDesc}`;
+      } else {
+        const activeIndex = $(".owl-item.active", $slider).index() + 1;
+        announcementText = `Recent Activities slide ${activeIndex}`;
       }
 
-      /* Initial Load */
+      // Clear and re-set with delay to force NVDA/JAWS to speak
+      $liveRegion.empty();
+      setTimeout(() => {
+        $liveRegion.text(announcementText);
+      }, 100);
+    }
 
-      swaSlider.on("initialized.owl.carousel", function () {
-        updateActivityAria();
-      });
+    // Manual navigation buttons
+    $(".swa-next-btn").on("click", function () {
+      $slider.trigger("next.owl.carousel");
+    });
+    $(".swa-prev-btn").on("click", function () {
+      $slider.trigger("prev.owl.carousel");
+    });
 
-      /* Slide Change */
+    // Keyboard arrow support
+    $(document).on("keydown", function (e) {
+      if (e.key === "ArrowRight") {
+        $slider.trigger("next.owl.carousel");
+        e.preventDefault();
+      } else if (e.key === "ArrowLeft") {
+        $slider.trigger("prev.owl.carousel");
+        e.preventDefault();
+      }
+    });
 
-      swaSlider.on("changed.owl.carousel", function (e) {
-        updateActivityAria();
-
-        let currentSlide = e.item.index + 1;
-
-        $("#swa-activity-live").text("Recent Activities slide " + currentSlide);
-      });
-
-      /* Next Button */
-
-      $(".swa-next-btn").click(function () {
-        swaSlider.trigger("next.owl.carousel");
-      });
-
-      /* Previous Button */
-
-      $(".swa-prev-btn").click(function () {
-        swaSlider.trigger("prev.owl.carousel");
-      });
-
-      /* Keyboard Accessibility */
-
-      $(document).on("keydown", function (e) {
-        if (e.key === "ArrowRight") {
-          swaSlider.trigger("next.owl.carousel");
-        }
-
-        if (e.key === "ArrowLeft") {
-          swaSlider.trigger("prev.owl.carousel");
-        }
-      });
-
-      /* First Run */
-
-      updateActivityAria();
-    </script>
+    // Initial run to be safe (in case event fires late)
+    setTimeout(() => {
+      setAriaHiddenOnInactiveSlides();
+      announceCurrentSlide();
+    }, 200);
+  });
+</script>
 
     <!--Recentt activity section end-->
 
     <!-- livelyhood section start-->
-    <section id="livehoodid" class="livehood-main-section" aria-labelledby="livehood-heading">
+    <section id="livehoodid" class="livehood-main-section" >
       <div class="container">
         <!-- Top Heading Row -->
         <div class="row align-items-center livehood-top-row">
@@ -2153,185 +1763,112 @@ mobileToggle.addEventListener("click", () => {
     <!-- livelyhood section end-->
 
     <!-- mesurable impact section start-->
-    <section
-      class="swatha-mesurable-section"
-      aria-labelledby="swatha-impact-heading"
-    >
-      <div class="container">
-        <div class="row align-items-center swatha-measureable-top-row">
-          <div class="col-lg-7">
-            <div class="swatha-measureable-heading-wrap">
-              <span class="swatha-measureable-subtitle">
-                <i class="fa-solid fa-heart" aria-hidden="true"></i>
-                Media
-              </span>
-
-              <h2 id="swatha-impact-heading" class="swatha-measureable-heading">
-                Measurable Impact, Meaningful Change
-              </h2>
-            </div>
-          </div>
-
-          <div class="col-lg-5 text-lg-end">
-            <a
-              href="#"
-              class="swadhra-donate-btn"
-              aria-label="Explore more impact stories and success stories"
-            >
-              Explore More
-              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-            </a>
-          </div>
-        </div>
-
-        <div class="row g-4">
-          <!-- Card 1 -->
-          <div class="col-lg-4 col-md-6">
-            <article
-              class="swatha-mesurable-coldiv"
-              tabindex="0"
-              role="group"
-              aria-labelledby="impactTitle1"
-            >
-              <a href="">
-                <img
-                  src="images/client-1.webp"
-                  class="img-fluid-swatha"
-                  alt="Woman employee standing confidently in front of office entrance"
-                  loading="lazy"
-                />
-
-                <div class="swatha-measureable-overlay">
-                  <h3 id="impactTitle1">Employment Support</h3>
-                </div>
-              </a>
-            </article>
-          </div>
-
-          <!-- Card 2 -->
-          <div class="col-lg-4 col-md-6">
-            <article
-              class="swatha-mesurable-coldiv"
-              tabindex="0"
-              role="group"
-              aria-labelledby="impactTitle2"
-            >
-              <a href="">
-                <img
-                  src="images/client-44.png"
-                  class="img-fluid-swatha"
-                  alt="Visually impaired woman working with assistive technology and headphones"
-                  loading="lazy"
-                />
-
-                <div class="swatha-measureable-overlay">
-                  <h3 id="impactTitle2">Assistive Technology</h3>
-                </div>
-              </a>
-            </article>
-          </div>
-
-          <!-- Card 3 -->
-          <div class="col-lg-4 col-md-6">
-            <article
-              class="swatha-mesurable-coldiv"
-              tabindex="0"
-              role="group"
-              aria-labelledby="impactTitle3"
-            >
-              <a href="">
-                <img
-                  src="images/client-3.webp"
-                  class="img-fluid-swatha"
-                  alt="Worker standing inside inclusive workplace environment"
-                  loading="lazy"
-                />
-
-                <div class="swatha-measureable-overlay">
-                  <h3 id="impactTitle3">Inclusive Workplace</h3>
-                </div>
-              </a>
-            </article>
-          </div>
-
-          <!-- Card 4 -->
-          <div class="col-lg-4 col-md-6">
-            <article
-              class="swatha-mesurable-coldiv"
-              tabindex="0"
-              role="group"
-              aria-labelledby="impactTitle4"
-            >
-              <a href="">
-                <img
-                  src="images/client-7.webp"
-                  class="img-fluid-swatha"
-                  alt="Young man standing proudly in front of company logo"
-                  loading="lazy"
-                />
-
-                <div class="swatha-measureable-overlay">
-                  <h3 id="impactTitle4">Career Growth</h3>
-                </div>
-              </a>
-            </article>
-          </div>
-
-          <!-- Card 5 -->
-          <div class="col-lg-4 col-md-6">
-            <article
-              class="swatha-mesurable-coldiv"
-              tabindex="0"
-              role="group"
-              aria-labelledby="impactTitle5"
-            >
-              <a href="">
-                <img
-                  src="images/client-5.webp"
-                  class="img-fluid-swatha"
-                  alt="Woman employee posing confidently at workplace"
-                  loading="lazy"
-                />
-
-                <div class="swatha-measureable-overlay">
-                  <h3 id="impactTitle5">Skill Development</h3>
-                </div>
-              </a>
-            </article>
-          </div>
-
-          <!-- Card 6 -->
-          <div class="col-lg-4 col-md-6">
-            <article
-              class="swatha-mesurable-coldiv"
-              tabindex="0"
-              role="group"
-              aria-labelledby="impactTitle6"
-            >
-              <a href="">
-                <img
-                  src="images/client-6.webp"
-                  class="img-fluid-swatha"
-                  alt="Young man standing outdoors near community support center"
-                  loading="lazy"
-                />
-
-                <div class="swatha-measureable-overlay">
-                  <h3 id="impactTitle6">Community Empowerment</h3>
-                </div>
-              </a>
-            </article>
-          </div>
+<section class="swatha-mesurable-section py-5">
+   <div class="container">
+    <!-- Header row -->
+    <div class="row align-items-center swatha-measureable-top-row mb-5">
+      <div class="col-lg-7">
+        <div class="swatha-measureable-heading-wrap">
+          <span class="swatha-measureable-subtitle">
+            <i class="fa-solid fa-heart" aria-hidden="true"></i>
+            Media
+          </span>
+          <h2 id="swatha-impact-heading" class="swatha-measureable-heading">
+            Measurable Impact, Meaningful Change
+          </h2>
         </div>
       </div>
-    </section>
+      <div class="col-lg-5 text-lg-end mt-3 mt-lg-0">
+        <a href="#" class="swadhra-donate-btn" aria-label="Explore more impact stories and success stories">
+          Explore More
+          <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Cards grid - exactly your images and titles -->
+    <div class="row g-4">
+      <!-- Card 1: Employment Support -->
+      <div class="col-lg-4 col-md-6">
+        <article class="swatha-mesurable-coldiv">
+          <a href="#" aria-label="Read more about Employment Support">
+            <img src="images/client-1.webp" class="img-fluid-swatha" alt="Woman employee standing confidently in front of office entrance" loading="lazy">
+            <div class="swatha-measureable-overlay">
+              <h3>Employment Support</h3>
+            </div>
+          </a>
+        </article>
+      </div>
+
+      <!-- Card 2: Assistive Technology -->
+      <div class="col-lg-4 col-md-6">
+        <article class="swatha-mesurable-coldiv">
+          <a href="#" aria-label="Read more about Assistive Technology">
+            <img src="images/client-44.png" class="img-fluid-swatha" alt="Visually impaired woman working with assistive technology and headphones" loading="lazy">
+            <div class="swatha-measureable-overlay">
+              <h3>Assistive Technology</h3>
+            </div>
+          </a>
+        </article>
+      </div>
+
+      <!-- Card 3: Inclusive Workplace -->
+      <div class="col-lg-4 col-md-6">
+        <article class="swatha-mesurable-coldiv">
+          <a href="#" aria-label="Read more about Inclusive Workplace">
+            <img src="images/client-3.webp" class="img-fluid-swatha" alt="Worker standing inside inclusive workplace environment" loading="lazy">
+            <div class="swatha-measureable-overlay">
+              <h3>Inclusive Workplace</h3>
+            </div>
+          </a>
+        </article>
+      </div>
+
+      <!-- Card 4: Career Growth -->
+      <div class="col-lg-4 col-md-6">
+        <article class="swatha-mesurable-coldiv">
+          <a href="#" aria-label="Read more about Career Growth">
+            <img src="images/client-7.webp" class="img-fluid-swatha" alt="Young man standing proudly in front of company logo" loading="lazy">
+            <div class="swatha-measureable-overlay">
+              <h3>Career Growth</h3>
+            </div>
+          </a>
+        </article>
+      </div>
+
+      <!-- Card 5: Skill Development -->
+      <div class="col-lg-4 col-md-6">
+        <article class="swatha-mesurable-coldiv">
+          <a href="#" aria-label="Read more about Skill Development">
+            <img src="images/client-5.webp" class="img-fluid-swatha" alt="Woman employee posing confidently at workplace" loading="lazy">
+            <div class="swatha-measureable-overlay">
+              <h3>Skill Development</h3>
+            </div>
+          </a>
+        </article>
+      </div>
+
+      <!-- Card 6: Community Empowerment -->
+      <div class="col-lg-4 col-md-6">
+        <article class="swatha-mesurable-coldiv">
+          <a href="#" aria-label="Read more about Community Empowerment">
+            <img src="images/client-6.webp" class="img-fluid-swatha" alt="Young man standing outdoors near community support center" loading="lazy">
+            <div class="swatha-measureable-overlay">
+              <h3>Community Empowerment</h3>
+            </div>
+          </a>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
 
     <!-- mesurable impact section end-->
 
     <!-- partnership section start-->
   <section
   class="swat-partner-section"
-  aria-labelledby="swat-partner-heading"
+ 
 >
   <div class="container">
     <div class="row justify-content-center">
@@ -2413,7 +1950,7 @@ mobileToggle.addEventListener("click", () => {
 
  <section
   class="Retail-mangemnt-section"
-  aria-labelledby="retailManagementHeading"
+ 
 >
   <div class="container">
     <div class="row align-items-center swat-partner-main-row">
@@ -2544,7 +2081,7 @@ mobileToggle.addEventListener("click", () => {
 
     <section
       class="swatha-counter-section"
-      aria-labelledby="swatha-counter-heading"
+      
     >
       <div class="container">
         <div class="row g-4">
@@ -2712,187 +2249,124 @@ mobileToggle.addEventListener("click", () => {
     <!-- =========================
      PLACEMENT PARTNER SECTION
 ========================= -->
-    <section
-      class="swatha-placement-section"
-      aria-labelledby="swatha-placement-heading"
-    >
-      <div class="container">
-        <div class="swatha-placement-header">
-          <h2 id="swatha-placement-heading" class="swatha-common-heading">
-            Our Placement Partners
-          </h2>
-
-          <div class="swatha-placement-controls">
-            <button
-              type="button"
-              class="swatha-control-btn"
-              id="scrollLeftBtn"
-              aria-label="Show previous placement partner"
-            >
-              <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
-            </button>
-
-            <button
-              type="button"
-              class="swatha-control-btn"
-              id="scrollRightBtn"
-              aria-label="Show next placement partner"
-            >
-              <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
-            </button>
-          </div>
-        </div>
-
-        <div
-          class="swatha-placement-marquee"
-          id="placementMarquee"
-           aria-labelledby="swatha-placement-heading"
-        >
-          <div class="swatha-placement-track">
-            <div
-              class="swatha-placement-section-coldiv"
-              tabindex="0"
-              role="group"
-              aria-label="Zudio Placement Partner"
-            >
-              <img
-                src="images/zudio.png"
-                alt="Zudio company logo"
-                class="img-fluid"
-              />
-            </div>
-
-            <div
-              class="swatha-placement-section-coldiv"
-              tabindex="0"
-              role="group"
-              aria-label="SPAR Placement Partner"
-            >
-              <img
-                src="images/spar-logo.png"
-                alt="SPAR company logo"
-                class="img-fluid"
-              />
-            </div>
-
-            <div
-              class="swatha-placement-section-coldiv"
-              tabindex="0"
-              role="group"
-              aria-label="Reliance Retail Placement Partner"
-            >
-              <img
-                src="images/reliance-logo.png"
-                alt="Reliance Retail company logo"
-                class="img-fluid"
-              />
-            </div>
-
-            <div
-              class="swatha-placement-section-coldiv"
-              tabindex="0"
-              role="group"
-              aria-label="Trends Placement Partner"
-            >
-              <img
-                src="images/trends-logo.png"
-                alt="Trends company logo"
-                class="img-fluid"
-              />
-            </div>
-
-            <div
-              class="swatha-placement-section-coldiv"
-              tabindex="0"
-              role="group"
-              aria-label="Zudio Placement Partner"
-            >
-              <img
-                src="images/zudio.png"
-                alt="Zudio company logo"
-                class="img-fluid"
-              />
-            </div>
-
-            <div
-              class="swatha-placement-section-coldiv"
-              tabindex="0"
-              role="group"
-              aria-label="SPAR Placement Partner"
-            >
-              <img
-                src="images/spar-logo.png"
-                alt="SPAR company logo"
-                class="img-fluid"
-              />
-            </div>
-
-            <div
-              class="swatha-placement-section-coldiv"
-              tabindex="0"
-              role="group"
-              aria-label="Reliance Retail Placement Partner"
-            >
-              <img
-                src="images/reliance-logo.png"
-                alt="Reliance Retail company logo"
-                class="img-fluid"
-              />
-            </div>
-
-            <div
-              class="swatha-placement-section-coldiv"
-              tabindex="0"
-              role="group"
-              aria-label="Trends Placement Partner"
-            >
-              <img
-                src="images/trends-logo.png"
-                alt="Trends company logo"
-                class="img-fluid"
-              />
-            </div>
-          </div>
-        </div>
+<section class="swatha-placement-section" aria-labelledby="swatha-placement-heading">
+  <div class="container">
+    <div class="swatha-placement-header">
+      <h2 id="swatha-placement-heading" class="swatha-common-heading">
+        Our Placement Partners
+      </h2>
+      <div class="swatha-placement-controls">
+        <button type="button" class="swatha-control-btn" id="scrollLeftBtn" aria-label="Show previous placement partner">
+          <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+        </button>
+        <button type="button" class="swatha-control-btn" id="scrollRightBtn" aria-label="Show next placement partner">
+          <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+        </button>
       </div>
-    </section>
+    </div>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const marquee = document.getElementById("placementMarquee");
-        const leftBtn = document.getElementById("scrollLeftBtn");
-        const rightBtn = document.getElementById("scrollRightBtn");
+    <!-- Single visually-hidden instruction (no duplicate) -->
+    <div class="visually-hidden" id="placementInstructions">
+      Use Left and Right Arrow keys to navigate placement partners.
+    </div>
 
-        const card = document.querySelector(".swatha-placement-section-coldiv");
+    <div class="swatha-placement-marquee" aria-describedby="placementInstructions" id="placementMarquee">
+      <div class="swatha-placement-track">
+        <!-- Original set: Zudio, SPAR, Reliance, TRENDS, MENLO (5 unique now) -->
+        <div class="swatha-placement-section-coldiv" tabindex="0" role="group" data-name="Zudio">
+          <img src="images/zudio.png" alt="Zudio company logo" class="img-fluid">
+        </div>
+        <div class="swatha-placement-section-coldiv" tabindex="0" role="group" data-name="SPAR">
+          <img src="images/spar-logo.png" alt="SPAR company logo" class="img-fluid">
+        </div>
+        <div class="swatha-placement-section-coldiv" tabindex="0" role="group" data-name="Reliance Retail">
+          <img src="images/reliance-logo.png" alt="Reliance Retail company logo" class="img-fluid">
+        </div>
+        <div class="swatha-placement-section-coldiv" tabindex="0" role="group" data-name="Trends">
+          <img src="images/trends-logo.png" alt="Trends company logo" class="img-fluid">
+        </div>
+        <!-- 👇 MENLO added here -->
+       
 
-        const cardWidth = card.offsetWidth + 20;
+        <!-- Duplicate set (same 5 partners for continuous scroll) -->
+        <div class="swatha-placement-section-coldiv" tabindex="0" role="group" data-name="Zudio">
+          <img src="images/zudio.png" alt="Zudio company logo" class="img-fluid">
+        </div>
+        <div class="swatha-placement-section-coldiv" tabindex="0" role="group" data-name="SPAR">
+          <img src="images/spar-logo.png" alt="SPAR company logo" class="img-fluid">
+        </div>
+        <div class="swatha-placement-section-coldiv" tabindex="0" role="group" data-name="Reliance Retail">
+          <img src="images/reliance-logo.png" alt="Reliance Retail company logo" class="img-fluid">
+        </div>
+        <div class="swatha-placement-section-coldiv" tabindex="0" role="group" data-name="Trends">
+          <img src="images/trends-logo.png" alt="Trends company logo" class="img-fluid">
+        </div>
+       
+      </div>
+    </div>
+  </div>
+</section>
 
-        rightBtn.addEventListener("click", () => {
-          marquee.scrollBy({
-            left: cardWidth,
-            behavior: "smooth",
-          });
-        });
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const marquee = document.getElementById("placementMarquee");
+    const leftBtn = document.getElementById("scrollLeftBtn");
+    const rightBtn = document.getElementById("scrollRightBtn");
+    const cards = document.querySelectorAll(".swatha-placement-section-coldiv");
+    if (!cards.length) return;
 
-        leftBtn.addEventListener("click", () => {
-          marquee.scrollBy({
-            left: -cardWidth,
-            behavior: "smooth",
-          });
-        });
+    const cardWidth = cards[0].offsetWidth + 20;
+
+    // 1. Dynamic aria-label with position and name (e.g., "Placement Partner 1 of 10, Zudio")
+    const total = cards.length;
+    cards.forEach((card, idx) => {
+      const name = card.getAttribute("data-name") || "Placement Partner";
+      card.setAttribute("aria-label", `Placement Partner ${idx + 1} of ${total}, ${name}`);
+    });
+
+    // 2. Scroll buttons
+    rightBtn.addEventListener("click", () => {
+      marquee.scrollBy({ left: cardWidth, behavior: "smooth" });
+    });
+    leftBtn.addEventListener("click", () => {
+      marquee.scrollBy({ left: -cardWidth, behavior: "smooth" });
+    });
+
+    // 3. Arrow key navigation with wrap-around
+    cards.forEach((card, index) => {
+      card.addEventListener("keydown", (e) => {
+        let targetCard = null;
+        if (e.key === "ArrowRight") {
+          e.preventDefault();
+          targetCard = cards[index + 1] || cards[0]; // wrap to first
+          if (targetCard) {
+            targetCard.focus();
+            targetCard.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+          }
+        } else if (e.key === "ArrowLeft") {
+          e.preventDefault();
+          targetCard = cards[index - 1] || cards[cards.length - 1]; // wrap to last
+          if (targetCard) {
+            targetCard.focus();
+            targetCard.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+          }
+        }
       });
-    </script>
+    });
+  });
+</script>
+   <!----  PLACEMENT PARTNER SECTION -->
     <!-- =========================
      IMPACT HIGHLIGHT SECTION
 ========================= -->
     <section
       class="swatha-impact-high-section"
-      aria-labelledby="swatha-impact-heading"
+      
     >
       <div class="container">
         <div class="row">
           <div class="col-12">
-            <h2 id="swatha-impact-heading" class="swatha-common-heading">
+            <h2 id="swatha-impact-highlights-heading" class="swatha-common-heading">
               Impact Highlights
             </h2>
           </div>
@@ -2969,203 +2443,205 @@ mobileToggle.addEventListener("click", () => {
           </li>
         </ul>
       </div>
-    </section>
+    </section>+
 
     <!-- counter, placement, impact hightlight  section end -->
 
     <!-- cta section start-->
 
-    <section class="swatha-cta-section" aria-labelledby="swatha-cta-heading">
-      <div class="container-fluid">
-        <div class="row g-0 align-items-stretch">
-          <!-- Left Content -->
-          <div class="col-md-7">
-            <div class="swatha-cta-section-left">
-              <!-- Decorative Shape -->
-              <span class="swatha-cta-decorative" aria-hidden="true">
-                <img
-                  class="swatha-cta-decorative-flo"
-                  src="images/flower-4.png"
-                  alt=""
-                />
-              </span>
+ <div class="swatha-cta-section">
+  <div class="container-fluid">
+    <div class="row g-0 align-items-stretch">
 
-              <div class="swatha-cta-content">
-                <h2 id="swatha-cta-heading">
-                  Your Small Help Can Change Someone’s Life Forever.
-                </h2>
+      <!-- Left Content -->
+      <div class="col-md-7">
+        <div class="swatha-cta-section-left">
 
-                <p>
-                  Every contribution brings hope, dignity, and new opportunities
-                  to children, families, and differently abled individuals in
-                  need.
-                </p>
+          <!-- Decorative Shape -->
+          <span class="swatha-cta-decorative" aria-hidden="true">
+            <img
+              class="swatha-cta-decorative-flo"
+              src="images/flower-4.png"
+              alt=""
+            />
+          </span>
 
-                <a
-                  href="#"
-                  class="swatha-cta-btn"
-                  aria-label="Donate now and support people in need"
-                >
-                  Donate Now
-                  <i class="fa-solid fa-heart" aria-hidden="true"></i>
-                </a>
-              </div>
-            </div>
+          <div class="swatha-cta-content">
+            <h2 id="swatha-cta-heading">
+              Your Small Help Can Change Someone's Life Forever.
+            </h2>
+
+            <p>
+              Every contribution brings hope, dignity, and new opportunities
+              to children, families, and differently abled individuals in
+              need.
+            </p>
+
+            
+            <a   href="#"
+              class="swatha-cta-btn"
+              aria-label="Donate now and support people in need"
+            >
+              Donate Now
+              <i class="fa-solid fa-heart" aria-hidden="true"></i>  
+            </a>
           </div>
 
-          <!-- Right Image -->
-          <div class="col-md-5">
-            <div class="swatha-cta-section-right">
-              <img
-                src="images/trust-family-1.webp"
-                class="img-fluid-mail-imgg"
-                alt="Families and children smiling together with hope and support from community help"
-              />
-            </div>
-          </div>
         </div>
       </div>
-    </section>
+
+      <!-- Right Image -->
+      <div class="col-md-5">
+        <div class="swatha-cta-section-right">
+          <img
+            src="images/trust-family-1.webp"
+            class="img-fluid-mail-imgg"
+            alt="Families and children smiling together with hope and support from community help"
+          />
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
 
     <!-- cta section end-->
 
     <!-- achievement section st -->
 
-    <section class="sawa-achiev-section" aria-labelledby="sawa-achiev-heading">
-      <div class="container">
-        <!-- Top Heading Row -->
-        <div class="row align-items-center mb-5">
-          <div class="col-lg-8">
-            <!-- Accessible Subtitle -->
-            <div class="sawa-achiev-subtitle" aria-label="Achievements Section">
-              <i class="fa-solid fa-heart" aria-hidden="true"></i>
-              <span>Achievements</span>
+<section class="sawa-achiev-section" >
+  <div class="container">
+    <!-- Top Heading Row -->
+    <div class="row align-items-center mb-5">
+      <div class="col-lg-8">
+        <!-- Accessible Subtitle -->
+        <div class="sawa-achiev-subtitle" aria-hidden="true">
+          <i class="fa-solid fa-heart" aria-hidden="true"></i>
+          <span>Achievements</span>
+        </div>
+
+        <!-- Main Heading -->
+        <h2 class="sawa-achiev-title" id="sawa-achiev-heading">
+          Achievements & Recognition
+        </h2>
+      </div>
+
+      <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+        
+        <a  href="#"
+          class="swadhra-donate-btn"
+          aria-label="Explore more achievements and recognition"
+        >
+          <span>Explore More</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Achievement Cards -->
+    <div class="row g-4">
+      <!-- Card 1 -->
+      <div class="col-md-4">
+        <article class="sawa-achiev-card">
+          
+         <a    href="achievement.html"
+            aria-labelledby="award-title-1"
+            aria-describedby="award-desc-1"
+          >
+            <div class="sawa-achiev-img">
+              <img
+                src="images/Best Social-Activist-ward.webp"
+                alt=""
+                aria-hidden="true"
+                class="img-fluid"
+              />
             </div>
 
-            <!-- Main Heading -->
-            <h2 class="sawa-achiev-title" id="sawa-achiev-heading">
-              Achievements & Recognition
-            </h2>
-          </div>
-
-          <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
-            <!-- Accessible Button -->
-            <a
-              href="#"
-              class="swadhra-donate-btn"
-              aria-label="Explore more achievements and recognition"
-            >
-              <span>Explore More</span>
-              <!-- <span aria-hidden="true">→</span> -->
-            </a>
-          </div>
-        </div>
-
-        <!-- Achievement Cards -->
-        <div class="row g-4">
-          <!-- Card 1 -->
-          <div class="col-md-4">
-            <article class="sawa-achiev-card">
-              <a
-                href="#"
-                aria-labelledby="award-title-1"
-                aria-describedby="award-desc-1"
-              >
-                <div class="sawa-achiev-img">
-                  <img
-                    src="images/Best Social-Activist-ward.webp"
-                    alt="Woman receiving Best Social Activist Award on stage"
-                    class="img-fluid"
-                  />
-                </div>
-
-                <div class="sawa-achiev-content">
-                  <h3 id="award-title-1">Best Social Activist Award</h3>
-
-                  <p id="award-desc-1">Parmporul Foundation</p>
-                </div>
-              </a>
-            </article>
-          </div>
-
-          <!-- Card 2 -->
-          <div class="col-md-4">
-            <article class="sawa-achiev-card">
-              <a
-                href="#"
-                aria-labelledby="award-title-2"
-                aria-describedby="award-desc-2"
-              >
-                <div class="sawa-achiev-img">
-                  <img
-                    src="images/Great-Humanitarian-Service.webp"
-                    alt="Humanitarian award presentation ceremony"
-                    class="img-fluid"
-                  />
-                </div>
-
-                <div class="sawa-achiev-content">
-                  <h3 id="award-title-2">Great Humanitarian Service Award</h3>
-
-                  <p id="award-desc-2">Nizhal Maiyam</p>
-                </div>
-              </a>
-            </article>
-          </div>
-
-          <!-- Card 3 -->
-          <div class="col-md-4">
-            <article class="sawa-achiev-card">
-              <a
-                href="#"
-                aria-labelledby="award-title-3"
-                aria-describedby="award-desc-3"
-              >
-                <div class="sawa-achiev-img">
-                  <img
-                    src="images/Agnichiragukal.webp"
-                    alt="People receiving Agnichiragukal award on stage"
-                    class="img-fluid"
-                  />
-                </div>
-
-                <div class="sawa-achiev-content">
-                  <h3 id="award-title-3">Agnichiragukal</h3>
-
-                  <p id="award-desc-3">Thangamal Award</p>
-                </div>
-              </a>
-            </article>
-          </div>
-        </div>
+            <div class="sawa-achiev-content">
+              <h3 id="award-title-1">Best Social Activist Award</h3>
+              <p id="award-desc-1">Parmporul Foundation</p>
+            </div>
+          </a>
+        </article>
       </div>
-    </section>
+
+      <!-- Card 2 -->
+      <div class="col-md-4">
+        <article class="sawa-achiev-card">
+          
+           <a  href="achievement.html"
+            aria-labelledby="award-title-2"
+            aria-describedby="award-desc-2"
+          >
+            <div class="sawa-achiev-img">
+              <img
+                src="images/Great-Humanitarian-Service.webp"
+                alt=""
+                aria-hidden="true"
+                class="img-fluid"
+              />
+            </div>
+
+            <div class="sawa-achiev-content">
+              <h3 id="award-title-2">Great Humanitarian Service Award</h3>
+              <p id="award-desc-2">Nizhal Maiyam</p>
+            </div>
+          </a>
+        </article>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-md-4">
+        <article class="sawa-achiev-card">
+          
+         <a    href="achievement.html"
+            aria-labelledby="award-title-3"
+            aria-describedby="award-desc-3"
+          >
+            <div class="sawa-achiev-img">
+              <img
+                src="images/Agnichiragukal.webp"
+                alt=""
+                aria-hidden="true"
+                class="img-fluid"
+              />
+            </div>
+
+            <div class="sawa-achiev-content">
+              <h3 id="award-title-3">Agnichiragukal</h3>
+              <p id="award-desc-3">Thangamal Award</p>
+            </div>
+          </a>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
 
     <!-- achievement section end -->
 
     <!-- feature impact section start-->
     <section
       class="sawa-featureimpact-section"
-      aria-labelledby="sawa-featureimpact-main-title"
+    
     >
       <div class="container">
         <!-- Heading -->
-        <div class="text-center mb-5">
-          <div
-            class="sawa-featureimpact-subtitle"
-            aria-label="Upcoming Projects"
-          >
-            <i class="fa-solid fa-heart" aria-hidden="true"></i>
-            Upcoming Projects
-          </div>
+       <div class="text-center mb-5">
 
-          <h2
-            class="sawa-featureimpact-title"
-            id="sawa-featureimpact-main-title"
-          >
-            Future Impact Initiatives
-          </h2>
-        </div>
+  <p class="sawa-featureimpact-subtitle">
+    <i class="fa-solid fa-heart" aria-hidden="true"></i>
+    <span>Upcoming Projects</span>
+  </p>
+
+  <!-- Main Heading -->
+  <h2
+    class="sawa-featureimpact-title"
+    id="sawa-featureimpact-main-title"
+  >
+    Future Impact Initiatives
+  </h2>
+
+</div>
 
         <div class="row g-4">
           <!-- Card 1 -->
@@ -3199,7 +2675,7 @@ mobileToggle.addEventListener("click", () => {
                 </p>
 
                 <a
-                  href="#"
+                  href="feature-impact.html"
                   class="sawa-featureimpact-link"
                   aria-label="Read more about Pediatric Palliative Care Centre project"
                 >
@@ -3242,7 +2718,7 @@ mobileToggle.addEventListener("click", () => {
                 </p>
 
                 <a
-                  href="#"
+                  href="feature-impact.html"
                   class="sawa-featureimpact-link"
                   aria-label="Read more about Tribal Education and Digital Learning Support Programme"
                 >
@@ -3313,12 +2789,14 @@ mobileToggle.addEventListener("click", () => {
     </p>
 
     <!-- Accessibility Instructions -->
-    <p
-      class="sawa-form-instruction"
-      id="sawa-form-instructions"
-    >
-      Fields marked with <span aria-hidden="true">*</span> are required.
-    </p>
+<p
+  class="sawa-form-instruction"
+  id="sawa-form-instructions"
+>
+  Fields marked with
+  <span class="sawa-required-mark" aria-hidden="true">*</span>
+  are required. Fields marked as (Optional) do not need to be completed.
+</p>
 
     <form
       aria-labelledby="volunteer-form-title"
@@ -3330,7 +2808,7 @@ mobileToggle.addEventListener("click", () => {
         <!-- Name -->
         <div class="col-md-6">
           <label for="sawa-name" class="sawa-form-label">
-            Name <span aria-hidden="true">*</span>
+            Name <span class="sawa-required-mark" aria-hidden="true">*</span>
           </label>
 
           <input
@@ -3340,6 +2818,7 @@ mobileToggle.addEventListener("click", () => {
             class="form-control sawa-form-control"
             placeholder="Enter Your Full Name"
             autocomplete="name"
+             aria-required="true"
             required
           />
         </div>
@@ -3347,7 +2826,7 @@ mobileToggle.addEventListener("click", () => {
         <!-- Email -->
         <div class="col-md-6">
           <label for="sawa-email" class="sawa-form-label">
-            Email Id <span aria-hidden="true">*</span>
+            Email Id <span class="sawa-required-mark"  aria-hidden="true">*</span>
           </label>
 
           <input
@@ -3356,6 +2835,7 @@ mobileToggle.addEventListener("click", () => {
             name="email"
             class="form-control sawa-form-control"
             placeholder="Enter Your Email Id"
+             aria-required="true"
             autocomplete="email"
             required
           />
@@ -3364,7 +2844,7 @@ mobileToggle.addEventListener("click", () => {
         <!-- Phone -->
         <div class="col-md-6">
           <label for="sawa-phone" class="sawa-form-label">
-            Phone Number <span aria-hidden="true">*</span>
+            Phone Number <span class="sawa-required-mark"  aria-hidden="true">*</span>
           </label>
 
           <input
@@ -3375,6 +2855,7 @@ mobileToggle.addEventListener("click", () => {
             placeholder="Enter Your Phone Number"
             autocomplete="tel"
             inputmode="numeric"
+             aria-required="true"
             required
           />
         </div>
@@ -3382,13 +2863,14 @@ mobileToggle.addEventListener("click", () => {
         <!-- Location -->
         <div class="col-md-6">
           <label for="sawa-location" class="sawa-form-label">
-            Location <span aria-hidden="true">*</span>
+            Location <span class="sawa-required-mark"  aria-hidden="true">*</span>
           </label>
 
           <select
             id="sawa-location"
             name="location"
             class="form-select sawa-form-control"
+            aria-required="true"
             required
           >
             <option value="">Select Location</option>
@@ -3425,7 +2907,7 @@ mobileToggle.addEventListener("click", () => {
           <button
             type="submit"
             class="sawa-submit-btn"
-            aria-label="Submit volunteer enquiry form"
+           
           >
             <span>Submit</span>
 
@@ -3466,7 +2948,7 @@ mobileToggle.addEventListener("click", () => {
         <div class="swthar-main-footer-col">
 
           <a
-            href="#"
+            href="index.html"
             class="swthar-footer-logo-link"
             aria-label="Swadharma Foundation Home"
           >

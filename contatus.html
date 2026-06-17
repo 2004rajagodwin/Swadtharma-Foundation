@@ -229,13 +229,14 @@
     </p>
 
     <!-- Accessibility Instructions -->
-    <p
-      class="sawa-form-instruction"
-      id="sawa-form-instructions"
-    >
-      Fields marked with <span aria-hidden="true">*</span> are required.
-    </p>
-
+<p
+  class="sawa-form-instruction"
+  id="sawa-form-instructions"
+>
+  Fields marked with
+  <span class="sawa-required-mark" aria-hidden="true">*</span>
+  are required. Fields marked as (Optional) do not need to be completed.
+</p>
     <form
       aria-labelledby="volunteer-form-title"
       aria-describedby="sawa-form-instructions"
@@ -245,9 +246,9 @@
 
         <!-- Name -->
         <div class="col-md-6">
-          <label for="sawa-name" class="sawa-form-label">
-            Name <span aria-hidden="true">*</span>
-          </label>
+        <label for="sawa-name" class="sawa-form-label">
+  Name <span class="sawa-required-mark" aria-hidden="true">*</span>
+</label>
 
           <input
             type="text"
@@ -256,15 +257,16 @@
             class="form-control sawa-form-control"
             placeholder="Enter Your Full Name"
             autocomplete="name"
+             aria-required="true"
             required
           />
         </div>
 
         <!-- Email -->
         <div class="col-md-6">
-          <label for="sawa-email" class="sawa-form-label">
-            Email Id <span aria-hidden="true">*</span>
-          </label>
+        <label for="sawa-email" class="sawa-form-label">
+  Email Id <span class="sawa-required-mark" aria-hidden="true">*</span>
+</label>
 
           <input
             type="email"
@@ -273,15 +275,16 @@
             class="form-control sawa-form-control"
             placeholder="Enter Your Email Id"
             autocomplete="email"
+             aria-required="true"
             required
           />
         </div>
 
         <!-- Phone -->
         <div class="col-md-6">
-          <label for="sawa-phone" class="sawa-form-label">
-            Phone Number <span aria-hidden="true">*</span>
-          </label>
+         <label for="sawa-phone" class="sawa-form-label">
+  Phone Number <span class="sawa-required-mark" aria-hidden="true">*</span>
+</label>
 
           <input
             type="tel"
@@ -292,20 +295,22 @@
             autocomplete="tel"
             inputmode="numeric"
             pattern="[0-9]{10}"
+             aria-required="true"
             required
           />
         </div>
 
         <!-- Location -->
         <div class="col-md-6">
-          <label for="sawa-location" class="sawa-form-label">
-            Location <span aria-hidden="true">*</span>
-          </label>
+         <label for="sawa-location" class="sawa-form-label">
+  Location <span class="sawa-required-mark" aria-hidden="true">*</span>
+</label>
 
           <select
             id="sawa-location"
             name="location"
             class="form-select sawa-form-control"
+              aria-required="true"
             required
           >
             <option value="">Select Location</option>
@@ -315,10 +320,9 @@
           </select>
         </div>
   <div class="col-md-12">
-          <label for="sawa-organization" class="sawa-form-label">
-            Organization Name  (Optional) <span aria-hidden="true"></span>
-          </label>
-
+         <label for="sawa-organization" class="sawa-form-label">
+  Organization Name (Optional)
+</label>
           <input
             type="text"
             id="sawa-organization"

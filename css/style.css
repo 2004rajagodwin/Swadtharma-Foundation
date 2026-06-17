@@ -536,6 +536,7 @@ p{
             overflow:hidden;
             clip:rect(0,0,0,0);
             border:0;
+              white-space: nowrap;
         }
 
         /* ===================================================
@@ -976,51 +977,51 @@ CARD
    Premium Hover Animation Effect
 ===================================== */
 
-.swadharma-pro-items-content{
-    position:relative;
-    overflow:hidden;
-    padding:30px;
-    border-radius:20px;
-    background:#ffffff;
-    transition:0.6s ease;
-    z-index:1;
-}
+    .swadharma-pro-items-content{
+        position:relative;
+        overflow:hidden;
+        padding:30px;
+        border-radius:20px;
+        background:#ffffff;
+        transition:0.6s ease;
+        z-index:1;
+    }
 
-/* Animated Background */
-.swadharma-pro-items-content::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    /* background:linear-gradient(135deg,#00a859,#006644); */
+    /* Animated Background */
+    .swadharma-pro-items-content::before{
+        content:"";
+        position:absolute;
+        inset:0;
+        /* background:linear-gradient(135deg,#00a859,#006644); */
 
-    background: linear-gradient(
-    135deg,
-    #ff7ac6 0%,
-    #f04aa9 25%,
-    #d4148e 55%,
-    #9b0f68 100%
-);
-    transform:scale(0) rotate(45deg);
-    transform-origin:center;
-    opacity:0;
-    transition:all 0.7s ease;
-    z-index:-1;
-    border-radius:20px;
-}
+        background: linear-gradient(
+        135deg,
+        #ff7ac6 0%,
+        #f04aa9 25%,
+        #d4148e 55%,
+        #9b0f68 100%
+    );
+        transform:scale(0) rotate(45deg);
+        transform-origin:center;
+        opacity:0;
+        transition:all 0.7s ease;
+        z-index:-1;
+        border-radius:20px;
+    }
 
-/* Hover Animation */
-.swadharma-pro-items:hover 
-.swadharma-pro-items-content::before{
-    transform:scale(2) rotate(45deg);
-    opacity:1;
-}
+    /* Hover Animation */
+    .swadharma-pro-items:hover 
+    .swadharma-pro-items-content::before{
+        transform:scale(2) rotate(45deg);
+        opacity:1;
+    }
 
-/* Text Color Change */
-.swadharma-pro-items-content h3,
-.swadharma-pro-items-content p,
-.swadharma-pro-items-content .swa-testi-link-a{
-    transition:0.5s ease;
-}
+    /* Text Color Change */
+    .swadharma-pro-items-content h3,
+    .swadharma-pro-items-content p,
+    .swadharma-pro-items-content .swa-testi-link-a{
+        transition:0.5s ease;
+    }
 
 .swadharma-pro-items:hover h3,
 .swadharma-pro-items:hover p,
@@ -1468,6 +1469,11 @@ RESPONSIVE
  padding-bottom: 60px;
     color: #222;
 }
+.sawa-featureimpact-section-sub {
+    background: #f7f7f7;
+ padding: 60px 0px;
+    color: #222;
+}
 
 /* Screen Reader Hidden Text */
 .sawa-sr-only {
@@ -1523,9 +1529,11 @@ RESPONSIVE
 }
 
 .fea-card-seond-sec{
+    margin-top: 60px;
+}
 
-    margin-top: 50px;
-
+.sawa-featureimpact-section-sub .sawa-featureimpact-card{
+    margin: 0px 13px;
 }
 
 /* Keyboard Focus */
@@ -1821,7 +1829,7 @@ RESPONSIVE
 /* Form */
 .sawa-contact-form-wrapper {
     background: #fff;
-    padding: 31px;
+    padding: 36px;
     border-radius: 22px;
     border: 1px solid #efd9eb;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
@@ -2085,6 +2093,11 @@ RESPONSIVE
     transform 0.4s ease,
     box-shadow 0.4s ease;
     isolation:isolate;
+}
+.swatha-mesurable-coldiv > a{
+    display:block;
+    position:relative;
+    text-decoration:none;
 }
 
 /* Hover Card */
@@ -3650,7 +3663,33 @@ background-color: #A30472;
 
 /* place ment marque */
 
+/* Add to your CSS */
+.swatha-placement-viewport {
+  overflow: hidden;        /* hide overflow — no scrollbar */
+  width: 100%;
+}
+.swatha-placement-track {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.35s ease;  /* smooth slide via transform */
+    align-items: center;
+      width: max-content;
+}
+
+
 /* Marquee Wrapper */
+
+ .visually-hiddenz {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
 
 .swatha-placement-header {
   display: flex;
@@ -3705,13 +3744,7 @@ background-color: #A30472;
 }
 
 /* Track */
-.swatha-placement-track {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  width: max-content;
 
-}
 
 /* First Row Animation */
 .swatha-placement-marquee-left .swatha-placement-track {
@@ -3743,6 +3776,15 @@ animation: none;;
   outline: none;
 } */
 
+.up-pro-ppp{
+    color: var(--para);
+    font-size: 17px;
+  padding-bottom: 60px;
+    width:80% ;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 12px;
+}
 .swatha-placement-section-coldiv {
   min-width: 220px;
   height: 120px;
