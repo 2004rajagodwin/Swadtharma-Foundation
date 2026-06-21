@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Swadharma Foundation</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
+  <style>
+    /* ── Screen-reader only utility ── */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /* ── Carousel toggle button ── */
+    #carousel-toggle {
+      position: absolute;
+      top: 12px;
+      right: 16px;
+      z-index: 100;
+      background: rgba(0,0,0,0.5);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.4);
+      padding: 6px 14px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    /* ── Banner section ── */
+    .swadharma-banner-sec {
+      position: relative;
+    }
+
+    .swadharma-banner-box {
+      position: relative;
+      overflow: hidden;
+      min-height: 500px;
+    }
+
+    .swadharma-banner-img {
+      position: absolute;
+      inset: 0;
+    }
+
+    .swadharma-banner-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .swadharma-banner-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    .container-fluid {
+      position: relative;
+    }
+
+    .position-relative {
+      position: relative;
+      z-index: 2;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .col-xl-8 {
+      width: 66.666%;
+      padding: 80px 0 60px;
+    }
+
+    /* ── Banner content ── */
+    .swadharma-banner-content {
+      color: #fff;
+    }
+
+    .swa-banner-heading-h2 {
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 700;
+      margin: 0 0 16px;
+      line-height: 1.2;
+      color: #fff;
+    }
+
+    .swadharma-banner-content p {
+      font-size: 18px;
+      margin: 0 0 28px;
+      opacity: 0.9;
+      line-height: 1.6;
+    }
+
+    /* ── Buttons ── */
+    .swadharma-btn-wrap {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+
+    .swadharma-btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #e63946;
+      color: #fff;
+      padding: 12px 28px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      transition: background .2s;
+    }
+
+    .swadharma-btn-primary:hover { background: #c1121f; }
+
+    .swadharma-btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: #fff;
+      border: 2px solid rgba(255,255,255,0.7);
+      padding: 12px 28px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      transition: background .2s, border-color .2s;
+    }
+
+    .swadharma-btn-outline:hover {
+      background: rgba(255,255,255,0.15);
+      border-color: #fff;
+    }
+
+    /* ── Feature / tab buttons ── */
+    .swadharma-feature-slider {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    .swadharma-feature-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,0.15);
+      border: 2px solid rgba(255,255,255,0.3);
+      border-radius: 8px;
+      padding: 10px 16px;
+      color: #fff;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 500;
+      transition: background .2s, border-color .2s;
+      min-width: 80px;
+    }
+
+    .swadharma-feature-item img {
+      width: 36px;
+      height: 36px;
+      object-fit: contain;
+    }
+
+    .swadharma-feature-item.active,
+    .swadharma-feature-item:focus {
+      background: rgba(255,255,255,0.3);
+      border-color: #fff;
+      outline: none;
+    }
+
+    .swadharma-feature-item:focus-visible {
+      outline: 3px solid #fff;
+      outline-offset: 2px;
+    }
+
+    /* ── Owl nav arrows ── */
+    .owl-nav button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.2) !important;
+      border: 1px solid rgba(255,255,255,0.4) !important;
+      color: #fff !important;
+      width: 44px;
+      height: 44px;
+      border-radius: 50% !important;
+      font-size: 28px !important;
+      line-height: 1 !important;
+    }
+
+    .owl-prev { left: 16px; }
+    .owl-next { right: 16px; }
+
+    /* ── Fade animation for slide 1 ── */
+    @keyframes swaFadeRight {
+      from { opacity: 0; transform: translateX(-30px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+
+    .swa-banner-fade-right {
+      animation: swaFadeRight 0.7s ease both;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 991px) {
+      .col-xl-8 { width: 100%; padding: 60px 0 40px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════
+     FIX 1 — ARIA live region (must exist in DOM
+     before JS writes to it)
+═══════════════════════════════════════════════ -->
+<div
+  id="swa-live"
+  role="status"
+  aria-live="polite"
+  aria-atomic="true"
+  class="sr-only"
+></div>
+
+<main id="main-content">
+  <section class="swadharma-banner-sec">
+    <div class="container-fluid">
+
+      <button
+        id="carousel-toggle"
+        type="button"
+        aria-label="Pause automatic slide rotation"
+      >Pause</button>
+
+      <div
+        class="owl-carousel swadharma-banner-slider"
+        aria-label="Homepage Slider"
+      >
+
+        <!-- SLIDE 1 -->
+        <div class="item" aria-roledescription="slide" aria-label="Slide 1 of 4">
+          <div class="swadharma-banner-box">
+            <div class="swadharma-banner-img">
+              <img
+                src="images/Empowering-Lives-Creating-Opportunities.png"
+                alt="Differently abled support initiatives by Swadharma Foundation"
+              />
+            </div>
+            <div class="swadharma-banner-overlay"></div>
+            <div class="container position-relative">
+              <div class="row">
+                <div class="col-xl-8 col-lg-9">
+                  <div class="swadharma-banner-content swa-banner-fade-right">
+                    <h2 class="swa-banner-heading-h2">Empowering Lives, Creating Opportunities.</h2>
+                    <p>Swadharma Foundation supports differently abled individuals through sustainable community empowerment programs.</p>
+                    <div class="swadharma-btn-wrap">
+                      <a href="#" class="swadharma-btn-primary" aria-label="Donate now to support Swadharma Foundation">
+                        Donate Now <i class="fa-solid fa-heart" aria-hidden="true"></i>
+                      </a>
+                      <a href="#" class="swadharma-btn-outline" aria-label="Become a volunteer with Swadharma Foundation">
+                        Become a Volunteer
+                      </a>
+                    </div>
+
+                    <!-- REAL TABLIST — Slide 1 only -->
+                    <div class="swadharma-feature-slider" role="tablist" aria-label="Select a slide">
+                      <button id="tab-0" class="swadharma-feature-item active" role="tab"
+                        aria-selected="true" tabindex="0" aria-label="Slide 1 of 4, Differently Abled Support">
+                        <img class="img-fluid" src="./images/Differently-Abled-Support.png" alt="" aria-hidden="true"/>
+                        <span aria-hidden="true">Differently Abled Support</span>
+                      </button>
+                      <button id="tab-1" class="swadharma-feature-item" role="tab"
+                        aria-selected="false" tabindex="-1" aria-label="Slide 2 of 4, Health Care">
+                        <img class="img-fluid" src="images/Health-care.png" alt="" aria-hidden="true"/>
+                        <span aria-hidden="true">Health Care</span>
+                      </button>
+                      <button id="tab-2" class="swadharma-feature-item" role="tab"
+                        aria-selected="false" tabindex="-1" aria-label="Slide 3 of 4, Education">
+                        <img class="img-fluid" src="./images/Education.png" alt="" aria-hidden="true"/>
+                        <span aria-hidden="true">Education</span>
+                      </button>
+                      <button id="tab-3" class="swadharma-feature-item" role="tab"
+                        aria-selected="false" tabindex="-1" aria-label="Slide 4 of 4, Livelihood">
+                        <img class="img-fluid" src="./images/Livelihood.png" alt="" aria-hidden="true"/>
+                        <span aria-hidden="true">Livelihood</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /SLIDE 1 -->
+
+        <!-- SLIDE 2 -->
+        <div class="item" aria-roledescription="slide" aria-label="Slide 2 of 4">
+          <div class="swadharma-banner-box">
+            <div class="swadharma-banner-img">
+              <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&w=1920" alt="Healthcare support initiatives"/>
+            </div>
+            <div class="swadharma-banner-overlay"></div>
+            <div class="container position-relative">
+              <div class="row">
+                <div class="col-xl-8 col-lg-9">
+                  <div class="swadharma-banner-content">
+                    <h2 class="swa-banner-heading-h2">Better Health, Better Communities.</h2>
+                    <p>Swadharma Foundation promotes healthcare awareness and medical support in rural areas.</p>
+                    <div class="swadharma-btn-wrap">
+                      <a href="#" class="swadharma-btn-primary" aria-label="Donate now to support healthcare initiatives">
+                        Donate Now <i class="fa-solid fa-heart" aria-hidden="true"></i>
+                      </a>
+                      <a href="#" class="swadharma-btn-outline" aria-label="Become a volunteer for healthcare support">
+                        Become a Volunteer
+                      </a>
+                    </div>
+                    <!-- Visual only — aria-hidden, no tab interaction -->
+                    <div class="swadharma-feature-slider swa-visual-tabs" aria-hidden="true">
+                      <button class="swadharma-feature-item" tabindex="-1">
+                        <img class="img-fluid" src="./images/Differently-Abled-Support.png" alt=""/><span>Differently Abled Support</span>
+                      </button>
+                      <button class="swadharma-feature-item active" tabindex="-1">
+                        <img class="img-fluid" src="images/Health-care.png" alt=""/><span>Health Care</span>
+                      </button>
+                      <button class="swadharma-feature-item" tabindex="-1">
+                        <img class="img-fluid" src="./images/Education.png" alt=""/><span>Education</span>
+                      </button>
+                      <button class="swadharma-feature-item" tabindex="-1">
+                        <img class="img-fluid" src="./images/Livelihood.png" alt=""/><span>Livelihood</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /SLIDE 2 -->
+
+        <!-- SLIDE 3 -->
+        <div class="item" aria-roledescription="slide" aria-label="Slide 3 of 4">
+          <div class="swadharma-banner-box">
+            <div class="swadharma-banner-img">
+              <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1920" alt="Education support initiatives"/>
+            </div>
+            <div class="swadharma-banner-overlay"></div>
+            <div class="container position-relative">
+              <div class="row">
+                <div class="col-xl-8 col-lg-9">
+                  <div class="swadharma-banner-content">
+                    <h2 class="swa-banner-heading-h2">Education Creates Brighter Futures.</h2>
+                    <p>Supporting children and communities through education development initiatives.</p>
+                    <div class="swadharma-btn-wrap">
+                      <a href="#" class="swadharma-btn-primary" aria-label="Donate now for education support">
+                        Donate Now <i class="fa-solid fa-heart" aria-hidden="true"></i>
+                      </a>
+                      <a href="#" class="swadharma-btn-outline" aria-label="Become a volunteer for education initiatives">
+                        Become a Volunteer
+                      </a>
+                    </div>
+                    <!-- Visual only -->
+                    <div class="swadharma-feature-slider swa-visual-tabs" aria-hidden="true">
+                      <button class="swadharma-feature-item" tabindex="-1">
+                        <img class="img-fluid" src="./images/Differently-Abled-Support.png" alt=""/><span>Differently Abled Support</span>
+                      </button>
+                      <button class="swadharma-feature-item" tabindex="-1">
+                        <img class="img-fluid" src="images/Health-care.png" alt=""/><span>Health Care</span>
+                      </button>
+                      <button class="swadharma-feature-item active" tabindex="-1">
+                        <img class="img-fluid" src="./images/Education.png" alt=""/><span>Education</span>
+                      </button>
+                      <button class="swadharma-feature-item" tabindex="-1">
+                        <img class="img-fluid" src="./images/Livelihood.png" alt=""/><span>Livelihood</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /SLIDE 3 -->
+
+        <!-- SLIDE 4 -->
+        <div class="item" aria-roledescription="slide" aria-label="Slide 4 of 4">
+          <div class="swadharma-banner-box">
+            <div class="swadharma-banner-img">
+              <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&w=1920" alt="Livelihood support initiatives"/>
+            </div>
+            <div class="swadharma-banner-overlay"></div>
+            <div class="container position-relative">
+              <div class="row">
+                <div class="col-xl-8 col-lg-9">
+                  <div class="swadharma-banner-content">
+                    <h2 class="swa-banner-heading-h2">Support Livelihoods, Transform Lives.</h2>
+                    <p>Empowering communities with skills, opportunities, and resources to build a better future.</p>
+                    <div class="swadharma-btn-wrap">
+                      <a href="#" class="swadharma-btn-primary" aria-label="Donate now to support livelihood initiatives">
+                        Donate Now <i class="fa-solid fa-heart" aria-hidden="true"></i>
+                      </a>
+                      <a href="#" class="swadharma-btn-outline" aria-label="Become a volunteer for livelihood support">
+                        Become a Volunteer
+                      </a>
+                    </div>
+                    <!-- Visual only -->
+                    <div class="swadharma-feature-slider swa-visual-tabs" aria-hidden="true">
+                      <button class="swadharma-feature-item" tabindex="-1">
+                        <img class="img-fluid" src="./images/Differently-Abled-Support.png" alt=""/><span>Differently Abled Support</span>
+                      </button>
+                      <button class="swadharma-feature-item" tabindex="-1">
+                        <img class="img-fluid" src="images/Health-care.png" alt=""/><span>Health Care</span>
+                      </button>
+                      <button class="swadharma-feature-item" tabindex="-1">
+                        <img class="img-fluid" src="./images/Education.png" alt=""/><span>Education</span>
+                      </button>
+                      <button class="swadharma-feature-item active" tabindex="-1">
+                        <img class="img-fluid" src="./images/Livelihood.png" alt=""/><span>Livelihood</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /SLIDE 4 -->
+
+      </div><!-- /owl-carousel -->
+    </div><!-- /container-fluid -->
+  </section>
+</main>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+<script>
+$(document).ready(function () {
+
+  var $slider         = $(".swadharma-banner-slider");
+  var TOTAL           = 4;
+  var currentIdx      = 0;
+  var carouselPaused  = false;
+  var userInteracting = false;
+
+  var slides = [
+    { tabId: "tab-0", announce: "Slide 1 of 4. Empowering Lives, Creating Opportunities." },
+    { tabId: "tab-1", announce: "Slide 2 of 4. Better Health, Better Communities." },
+    { tabId: "tab-2", announce: "Slide 3 of 4. Education Creates Brighter Futures." },
+    { tabId: "tab-3", announce: "Slide 4 of 4. Support Livelihoods, Transform Lives." }
+  ];
+
+  /* ── Pause / Resume ── */
+  $("#carousel-toggle").on("click", function () {
+    carouselPaused = !carouselPaused;
+    if (carouselPaused) {
+      $slider.trigger("stop.owl.autoplay");
+      $(this).attr("aria-label", "Resume automatic slide rotation").text("Resume");
+    } else {
+      $slider.trigger("play.owl.autoplay");
+      $(this).attr("aria-label", "Pause automatic slide rotation").text("Pause");
+    }
+  });
+
+  /* ══════════════════════════════════════════════
+     FIX 2 — Remove the `userInteracting` guard.
+     Original code had:  if (!userInteracting) return;
+     That blocked ALL auto-play announcements.
+     Now every slide change — auto or manual — is
+     announced to NVDA via the live region.
+  ══════════════════════════════════════════════ */
+  function announce(msg) {
+    var $lr = $("#swa-live");
+    $lr.text("");                                  /* clear first so repeat announcements re-fire */
+    setTimeout(function () { $lr.text(msg); }, 150);
+  }
+
+  /* ── Owl Carousel Init ── */
+  $slider.owlCarousel({
+    loop:               true,
+    margin:             0,
+    nav:                true,
+    dots:               false,
+    autoplay:           true,
+    autoplayTimeout:    5000,
+    autoplayHoverPause: true,
+    smartSpeed:         800,
+    items:              1,
+    navText: [
+      '<span aria-hidden="true">&#x2039;</span>',
+      '<span aria-hidden="true">&#x203A;</span>'
+    ]
+  });
+
+  /* ── After Owl renders DOM ── */
+  setTimeout(function () {
+
+    /* Hide Owl nav arrows from AT — keyboard tabs handle navigation */
+    $slider.find(".owl-prev, .owl-next").attr({
+      tabindex: "-1",
+      "aria-hidden": "true"
+    });
+
+    $slider.find(".owl-stage-outer").css("overflow", "hidden");
+
+    /* Initially hide + inert all slides */
+    $slider.find(".owl-item").attr("aria-hidden", "true");
+    $slider.find(".item").attr({ "aria-hidden": "true", "inert": "" });
+
+    /* Activate slide 1 */
+    syncToSlide(0);
+
+    /* ══════════════════════════════════════════
+       FIX 3 — Announce slide 1 heading on load.
+       Without this, NVDA users hear nothing when
+       the page first loads.
+    ════════════════════════════════════════════ */
+    setTimeout(function () {
+      announce(slides[0].announce);
+    }, 400);
+
+  }, 200);
+
+  /* ── Count cloned items before real slides ── */
+  function getClonesBefore() {
+    var n = 0;
+    $slider.find(".owl-item").each(function () {
+      if ($(this).hasClass("cloned")) { n++; } else { return false; }
+    });
+    return n;
+  }
+
+  /* ── Navigate Owl to a real index ── */
+  function goToSlide(idx) {
+    $slider.trigger("to.owl.carousel", [idx, 800]);
+  }
+
+  /* ── Sync real tab list (slide 1 tablist) ── */
+  function syncTabs(idx) {
+    $("#tab-0, #tab-1, #tab-2, #tab-3")
+      .removeClass("active")
+      .attr({ "aria-selected": "false", tabindex: "-1" });
+
+    $("#" + slides[idx].tabId)
+      .addClass("active")
+      .attr({ "aria-selected": "true", tabindex: "0" });
+
+    /* Sync decorative visual tabs on slides 2-4 */
+    $(".swa-visual-tabs").each(function () {
+      $(this).find(".swadharma-feature-item")
+        .removeClass("active")
+        .eq(idx)
+        .addClass("active");
+    });
+  }
+
+  /* ── Sync aria-hidden + inert ── */
+  function syncAriaHidden(idx) {
+    /* Layer 1: owl-item wrappers */
+    $slider.find(".owl-item").attr("aria-hidden", "true");
+    $slider.find(".owl-item").eq(getClonesBefore() + idx).removeAttr("aria-hidden");
+
+    /* Layer 2: .item — inert blocks NVDA virtual cursor on inactive slides */
+    $slider.find(".item").attr({ "aria-hidden": "true", "inert": "" });
+    $slider.find(".item").eq(idx)
+      .attr("aria-hidden", "false")
+      .removeAttr("inert");     /* ← FIX: confirmed present so h2 is reachable */
+  }
+
+  /* ── Master sync called on every slide change ── */
+  function syncToSlide(idx) {
+    currentIdx = idx;
+    syncTabs(idx);
+    syncAriaHidden(idx);
+    announce(slides[idx].announce);   /* FIX 2: always announce, no guard */
+  }
+
+  /* ── Extract real index from Owl event ── */
+  function realIndex(event) {
+    var idx = event.item.index, count = event.item.count;
+    return ((idx % count) + count) % count;
+  }
+
+  /* ── Tab: click ── */
+  $("#tab-0, #tab-1, #tab-2, #tab-3").on("click", function () {
+    userInteracting = true;
+    var idx = parseInt($(this).attr("id").replace("tab-", ""), 10);
+    goToSlide(idx);
+    syncToSlide(idx);
+    setTimeout(function () { userInteracting = false; }, 600);
+  });
+
+  /* ── Tab: keyboard (arrow, Home, End, Enter, Space) ── */
+  $("#tab-0, #tab-1, #tab-2, #tab-3").on("keydown", function (e) {
+    var idx = parseInt($(this).attr("id").replace("tab-", ""), 10);
+    userInteracting = true;
+
+    switch (e.key) {
+      case "ArrowRight": {
+        e.preventDefault();
+        var next = (idx + 1) % TOTAL;
+        goToSlide(next);
+        syncToSlide(next);
+        $("#tab-" + next).focus();
+        break;
+      }
+      case "ArrowLeft": {
+        e.preventDefault();
+        var prev = (idx - 1 + TOTAL) % TOTAL;
+        goToSlide(prev);
+        syncToSlide(prev);
+        $("#tab-" + prev).focus();
+        break;
+      }
+      case "Home": {
+        e.preventDefault();
+        goToSlide(0);
+        syncToSlide(0);
+        $("#tab-0").focus();
+        break;
+      }
+      case "End": {
+        e.preventDefault();
+        goToSlide(TOTAL - 1);
+        syncToSlide(TOTAL - 1);
+        $("#tab-" + (TOTAL - 1)).focus();
+        break;
+      }
+      case "Enter":
+      case " ": {
+        e.preventDefault();
+        $(this).trigger("click");
+        break;
+      }
+    }
+    setTimeout(function () { userInteracting = false; }, 600);
+  });
+
+  /* ── Visual tabs on slides 2–4 (decorative, but clickable) ── */
+  $(document).on("click", ".swa-visual-tabs .swadharma-feature-item", function () {
+    userInteracting = true;
+    var idx = $(this).closest(".swa-visual-tabs")
+      .find(".swadharma-feature-item").index(this);
+    goToSlide(idx);
+    syncToSlide(idx);
+    setTimeout(function () { userInteracting = false; }, 600);
+  });
+
+  /* ── Owl changed event — fires on auto-play AND manual nav ── */
+  $slider.on("changed.owl.carousel", function (event) {
+    var idx = realIndex(event);
+    syncToSlide(idx);           /* FIX 2: syncToSlide now always announces */
+    userInteracting = false;
+  });
+
+}); /* end document.ready */
+</script>
+
+</body>
+</html>

@@ -59,8 +59,7 @@
 <!-- Breadcrumb Banner Section -->
 <section
     class="swf-breadcrumb-banner"
-    role="region"
-    aria-labelledby="breadcrumb-heading"
+   
     style="background-image: url(images/aboutus-brudcrum.webp);">
 
     <!-- Background Image -->
@@ -71,7 +70,7 @@
         <!-- Breadcrumb Navigation -->
         <nav
             class="swf-breadcrumb-nav"
-            aria-label="Breadcrumb Navigation">
+            aria-label="Breadcrumb">
 
             <ol class="swf-breadcrumb-list">
 
@@ -113,8 +112,7 @@
 
 <section
   class="Swadharmar-contact-form-section"
-  role="region"
-  aria-labelledby="contact-section-heading">
+ >
 
   <div class="container">
     <div class="row">
@@ -122,35 +120,36 @@
       <!-- Left Content -->
       <div class="col-md-5">
 
-        <aside
+        <div
           class="Swadharmar-contact-left"
           aria-labelledby="contact-section-heading">
 
           <figure class="Swadharmar-contact-image-wrapper">
             <img
+            aria-hidden="true"
               src="images/volunteer-interacting-image.png"
-              alt="Volunteer interacting with children during a community outreach program"
+              alt=""
               class="Swadharmar-contact-image">
           </figure>
 
           <div class="Swadharmar-contact-content">
 
-            <span
+            <h2
               class="Swadharmar-contact-tag"
               aria-label="Reach Out To Us">
 
               Reach Out To Us
 
-            </span>
+          </h2>
 
-            <h2
+            <h3
               id="contact-section-heading"
               class="Swadharmar-contact-title">
 
               We Would Love To
               <span>Hear From You</span>
 
-            </h2>
+            </h3>
 
             <p class="Swadharmar-contact-description">
               Our team is here to answer your questions and explore
@@ -211,17 +210,17 @@
 </ul>
           </div>
 
-        </aside>
+        </div>
 
       </div>
 
       <div class="col-md-7">
 
         <div>
-            <div class="sawa-contact-form-wrapper">
+              <div class="sawa-contact-form-wrapper">
 
     <h3 class="sawa-form-title" id="volunteer-form-title">
-      Send Us A Message
+     Send Us A Message
     </h3>
 
     <p class="sawa-form-text">
@@ -234,9 +233,10 @@
   id="sawa-form-instructions"
 >
   Fields marked with
-  <span class="sawa-required-mark" aria-hidden="true">*</span>
-  are required. Fields marked as (Optional) do not need to be completed.
+  <span class="sawa-required-mark" >*</span>
+  are mandatory.
 </p>
+
     <form
       aria-labelledby="volunteer-form-title"
       aria-describedby="sawa-form-instructions"
@@ -246,9 +246,9 @@
 
         <!-- Name -->
         <div class="col-md-6">
-        <label for="sawa-name" class="sawa-form-label">
-  Name <span class="sawa-required-mark" aria-hidden="true">*</span>
-</label>
+          <label for="sawa-name" class="sawa-form-label">
+            Name <span class="sawa-required-mark" >*</span>
+          </label>
 
           <input
             type="text"
@@ -264,9 +264,9 @@
 
         <!-- Email -->
         <div class="col-md-6">
-        <label for="sawa-email" class="sawa-form-label">
-  Email Id <span class="sawa-required-mark" aria-hidden="true">*</span>
-</label>
+          <label for="sawa-email" class="sawa-form-label">
+            Email Id <span class="sawa-required-mark" >*</span>
+          </label>
 
           <input
             type="email"
@@ -274,17 +274,17 @@
             name="email"
             class="form-control sawa-form-control"
             placeholder="Enter Your Email Id"
-            autocomplete="email"
              aria-required="true"
+            autocomplete="email"
             required
           />
         </div>
 
         <!-- Phone -->
         <div class="col-md-6">
-         <label for="sawa-phone" class="sawa-form-label">
-  Phone Number <span class="sawa-required-mark" aria-hidden="true">*</span>
-</label>
+          <label for="sawa-phone" class="sawa-form-label">
+            Phone Number <span class="sawa-required-mark" >*</span>
+          </label>
 
           <input
             type="tel"
@@ -294,7 +294,6 @@
             placeholder="Enter Your Phone Number"
             autocomplete="tel"
             inputmode="numeric"
-            pattern="[0-9]{10}"
              aria-required="true"
             required
           />
@@ -302,15 +301,15 @@
 
         <!-- Location -->
         <div class="col-md-6">
-         <label for="sawa-location" class="sawa-form-label">
-  Location <span class="sawa-required-mark" aria-hidden="true">*</span>
-</label>
+          <label for="sawa-location" class="sawa-form-label">
+            Location <span class="sawa-required-mark"  >*</span>
+          </label>
 
           <select
             id="sawa-location"
             name="location"
             class="form-select sawa-form-control"
-              aria-required="true"
+            aria-required="true"
             required
           >
             <option value="">Select Location</option>
@@ -319,22 +318,6 @@
             <option>Madurai</option>
           </select>
         </div>
-  <div class="col-md-12">
-         <label for="sawa-organization" class="sawa-form-label">
-  Organization Name (Optional)
-</label>
-          <input
-            type="text"
-            id="sawa-organization"
-            name="organization"
-            class="form-control sawa-form-control"
-            placeholder="Enter Organization Name"
-           
-          
-            
-          />
-        </div>
-
 
         <!-- Message -->
         <div class="col-12">
@@ -363,11 +346,14 @@
           <button
             type="submit"
             class="sawa-submit-btn"
-            aria-label="Submit contact form"
-          >
-            <span>Send Message</span>
-<i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
            
+          >
+            <span>Submit</span>
+
+            <i
+              class="fa-solid fa-arrow-right"
+              aria-hidden="true"
+            ></i>
           </button>
         </div>
 
@@ -390,8 +376,7 @@
 <!-- FAQ Section -->
 <section
     class="swf-faq-section"
-    role="region"
-    aria-labelledby="swf-faq-heading">
+    >
 
     <div class="container">
 
@@ -437,8 +422,7 @@
                 <div
                     id="swf-faq-panel-1"
                     class="swf-faq-answer"
-                    role="region"
-                    aria-labelledby="swf-faq-btn-1"
+                   
                     aria-live="polite"
                     tabindex="-1"
                     hidden>
@@ -476,8 +460,7 @@
                 <div
                     id="swf-faq-panel-2"
                     class="swf-faq-answer"
-                    role="region"
-                    aria-labelledby="swf-faq-btn-2"
+                  
                     aria-live="polite"
                     tabindex="-1"
                     hidden>
@@ -515,8 +498,7 @@
                 <div
                     id="swf-faq-panel-3"
                     class="swf-faq-answer"
-                    role="region"
-                    aria-labelledby="swf-faq-btn-3"
+                   
                     aria-live="polite"
                     tabindex="-1"
                     hidden>
@@ -554,8 +536,7 @@
                 <div
                     id="swf-faq-panel-4"
                     class="swf-faq-answer"
-                    role="region"
-                    aria-labelledby="swf-faq-btn-4"
+                   
                     aria-live="polite"
                     tabindex="-1"
                     hidden>
@@ -592,8 +573,7 @@
                 <div
                     id="swf-faq-panel-5"
                     class="swf-faq-answer"
-                    role="region"
-                    aria-labelledby="swf-faq-btn-5"
+                   
                     aria-live="polite"
                     tabindex="-1"
                     hidden>
@@ -682,8 +662,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 <section
     class="swf-map-section"
-    role="region"
-    aria-labelledby="swf-map-heading">
+   >
 
     <h2
         id="swf-map-heading"

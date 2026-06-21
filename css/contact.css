@@ -174,10 +174,10 @@ p{
 .Swadharmar-contact-form-section{
     margin: 80px 0px;
 }
-.Swadharmar-contact-tag::before {
+/* .Swadharmar-contact-tag::before {
     content: "•";
     font-size: 20px;
-}
+} */
 
 .Swadharmar-contact-title {
     margin-top: 25px;
@@ -190,6 +190,7 @@ p{
 
 .Swadharmar-contact-title span {
     color: var(--hea);
+    font-size: 35px;
 }
 
 .Swadharmar-contact-description {

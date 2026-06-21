@@ -76,7 +76,9 @@ p{
     z-index: 1;
     height: 100%;
 }
-
+.su-ab-swaa{
+    font-size: 16px;
+}
 /* Animated Background */
 .swa-sustainability-card::before{
     content: "";

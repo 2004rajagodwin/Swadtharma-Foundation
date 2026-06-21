@@ -435,7 +435,7 @@ mobileToggle.addEventListener("click", () => {
       >
 
         <!-- SLIDE 1 -->
-        <div class="item" role="group" aria-roledescription="slide" aria-label="Slide 1 of 4">
+        <div class="item" aria-roledescription="slide" aria-label="Slide 1 of 4">
           <div class="swadharma-banner-box">
             <div class="swadharma-banner-img">
               <img
@@ -490,7 +490,7 @@ mobileToggle.addEventListener("click", () => {
         <!-- /SLIDE 1 -->
 
         <!-- SLIDE 2 -->
-        <div class="item" role="group" aria-roledescription="slide" aria-label="Slide 2 of 4">
+        <div class="item"  aria-roledescription="slide" aria-label="Slide 2 of 4">
           <div class="swadharma-banner-box">
             <div class="swadharma-banner-img">
               <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&w=1920" alt="Healthcare support initiatives"/>
@@ -534,7 +534,7 @@ mobileToggle.addEventListener("click", () => {
         <!-- /SLIDE 2 -->
 
         <!-- SLIDE 3 -->
-        <div class="item" role="group" aria-roledescription="slide" aria-label="Slide 3 of 4">
+        <div class="item"  aria-roledescription="slide" aria-label="Slide 3 of 4">
           <div class="swadharma-banner-box">
             <div class="swadharma-banner-img">
               <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1920" alt="Education support initiatives"/>
@@ -578,7 +578,7 @@ mobileToggle.addEventListener("click", () => {
         <!-- /SLIDE 3 -->
 
         <!-- SLIDE 4 -->
-        <div class="item" role="group" aria-roledescription="slide" aria-label="Slide 4 of 4">
+        <div class="item"  aria-roledescription="slide" aria-label="Slide 4 of 4">
           <div class="swadharma-banner-box">
             <div class="swadharma-banner-img">
               <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&w=1920" alt="Livelihood support initiatives"/>
@@ -627,6 +627,17 @@ mobileToggle.addEventListener("click", () => {
 </main>
 
 
+<!-- FIX 1: Live region added here — must be in DOM before JS writes to it.
+     No CSS needed: the inline style hides it visually without a stylesheet. -->
+<div
+  id="swa-live"
+  role="status"
+  aria-live="polite"
+  aria-atomic="true"
+  style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;"
+></div>
+
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
@@ -647,7 +658,7 @@ $(document).ready(function () {
     { tabId: "tab-3", announce: "Slide 4 of 4. Support Livelihoods, Transform Lives." }
   ];
 
-  /* ── Pause / Resume — document.ready-க்கு உள்ளே ── */
+  /* ── Pause / Resume ── */
   $("#carousel-toggle").on("click", function () {
     carouselPaused = !carouselPaused;
     if (carouselPaused) {
@@ -659,9 +670,10 @@ $(document).ready(function () {
     }
   });
 
-  /* ── Live region announce ── */
+  /* ── FIX 2: Removed "if (!userInteracting) return" guard.
+     Old code blocked ALL auto-play announcements.
+     Now every slide change announces to NVDA. ── */
   function announce(msg) {
-    if (!userInteracting) return;
     var $lr = $("#swa-live");
     $lr.text("");
     setTimeout(function () { $lr.text(msg); }, 150);
@@ -673,7 +685,7 @@ $(document).ready(function () {
     margin:             0,
     nav:                true,
     dots:               false,
-    autoplay:           false,
+    autoplay:           true,
     autoplayTimeout:    5000,
     autoplayHoverPause: true,
     smartSpeed:         800,
@@ -693,11 +705,13 @@ $(document).ready(function () {
 
     $slider.find(".owl-stage-outer").css("overflow", "hidden");
 
-    /* எல்லா slides-ஐயும் initially hide + inert */
     $slider.find(".owl-item").attr("aria-hidden", "true");
     $slider.find(".item").attr({ "aria-hidden": "true", "inert": "" });
 
     syncToSlide(0);
+
+    /* ── FIX 3: Announce slide 1 heading on page load ── */
+    setTimeout(function () { announce(slides[0].announce); }, 400);
 
   }, 200);
 
@@ -733,11 +747,9 @@ $(document).ready(function () {
 
   /* ── aria-hidden + inert sync ── */
   function syncAriaHidden(idx) {
-    /* Layer 1: owl-item wrappers */
     $slider.find(".owl-item").attr("aria-hidden", "true");
     $slider.find(".owl-item").eq(getClonesBefore() + idx).removeAttr("aria-hidden");
 
-    /* Layer 2: real .item — inert blocks NVDA virtual cursor */
     $slider.find(".item").attr({ "aria-hidden": "true", "inert": "" });
     $slider.find(".item").eq(idx).attr("aria-hidden", "false").removeAttr("inert");
   }
@@ -846,9 +858,9 @@ $(document).ready(function () {
               What We Believe
             </div>
 
-            <h2 class="swatha-section-heading" id="swatha-section-title">
+            <h1 class="swatha-section-heading" id="swatha-section-title">
               Together We Create Meaningful Change
-            </h2>
+            </h1>
           </div>
         </div>
 
@@ -1148,8 +1160,7 @@ $(document).ready(function () {
           <div class="col-lg-4 col-md-12">
             <div
               class="swadharma-program-content swadharma-pro-items"
-              role="group"
-              aria-label="Community programs introduction"
+             
             >
               <!-- Subtitle -->
               <span class="swadharma-program-subtitle">
@@ -2090,7 +2101,7 @@ $(document).ready(function () {
             <div
               class="swatha-counter-section-coldiv"
               tabindex="0"
-              role="group"
+             
               aria-label="7 plus training batches completed from 2024 to 2026"
             >
               <div class="swatha-counter-icon-box" aria-hidden="true">
@@ -2114,8 +2125,7 @@ $(document).ready(function () {
             <div
               class="swatha-counter-section-coldiv"
               tabindex="0"
-              role="group"
-              aria-label="100 plus inclusive training model"
+             
             >
               <div class="swatha-counter-icon-box" aria-hidden="true">
                 <img
@@ -2136,8 +2146,7 @@ $(document).ready(function () {
             <div
               class="swatha-counter-section-coldiv"
               tabindex="0"
-              role="group"
-              aria-label="85 plus skill and communication focus"
+             
             >
               <div class="swatha-counter-icon-box" aria-hidden="true">
                 <img
@@ -2158,8 +2167,7 @@ $(document).ready(function () {
             <div
               class="swatha-counter-section-coldiv"
               tabindex="0"
-              role="group"
-              aria-label="100 plus CSR collaborations"
+             
             >
               <div class="swatha-counter-icon-box" aria-hidden="true">
                 <img
@@ -2250,111 +2258,44 @@ $(document).ready(function () {
      PLACEMENT PARTNER SECTION
 ========================= -->
 <section class="swatha-placement-section" aria-labelledby="swatha-placement-heading">
-  <div class="container">
-    <div class="swatha-placement-header">
-      <h2 id="swatha-placement-heading" class="swatha-common-heading">
-        Our Placement Partners
-      </h2>
-      <div class="swatha-placement-controls">
-        <button type="button" class="swatha-control-btn" id="scrollLeftBtn" aria-label="Show previous placement partner">
-          <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
-        </button>
-        <button type="button" class="swatha-control-btn" id="scrollRightBtn" aria-label="Show next placement partner">
-          <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
-        </button>
-      </div>
-    </div>
+    <div class="container">
 
-    <!-- Single visually-hidden instruction (no duplicate) -->
-    <div class="visually-hidden" id="placementInstructions">
-      Use Left and Right Arrow keys to navigate placement partners.
-    </div>
+        <div class="swatha-placement-header">
+            <h2 id="swatha-placement-heading" class="swatha-common-heading">
+                Our Placement Partners
+            </h2>
+        </div>
 
-    <div class="swatha-placement-marquee" aria-describedby="placementInstructions" id="placementMarquee">
-      <div class="swatha-placement-track">
-        <!-- Original set: Zudio, SPAR, Reliance, TRENDS, MENLO (5 unique now) -->
-        <div class="swatha-placement-section-coldiv" tabindex="0" role="group" data-name="Zudio">
-          <img src="images/zudio.png" alt="Zudio company logo" class="img-fluid">
-        </div>
-        <div class="swatha-placement-section-coldiv" tabindex="0" role="group" data-name="SPAR">
-          <img src="images/spar-logo.png" alt="SPAR company logo" class="img-fluid">
-        </div>
-        <div class="swatha-placement-section-coldiv" tabindex="0" role="group" data-name="Reliance Retail">
-          <img src="images/reliance-logo.png" alt="Reliance Retail company logo" class="img-fluid">
-        </div>
-        <div class="swatha-placement-section-coldiv" tabindex="0" role="group" data-name="Trends">
-          <img src="images/trends-logo.png" alt="Trends company logo" class="img-fluid">
-        </div>
-        <!-- 👇 MENLO added here -->
-       
+        <div class="swatha-placement-viewport">
+            <div class="swatha-placement-track" role="list">
 
-        <!-- Duplicate set (same 5 partners for continuous scroll) -->
-        <div class="swatha-placement-section-coldiv" tabindex="0" role="group" data-name="Zudio">
-          <img src="images/zudio.png" alt="Zudio company logo" class="img-fluid">
+                <div class="swatha-placement-section-coldiv" role="listitem">
+                    <img src="images/zudio.png" alt="Zudio logo" class="img-fluid">
+                </div>
+
+                <div class="swatha-placement-section-coldiv" role="listitem">
+                    <img src="images/spar-logo.png" alt="SPAR logo" class="img-fluid">
+                </div>
+
+                <div class="swatha-placement-section-coldiv" role="listitem">
+                    <img src="images/reliance-logo.png" alt="Reliance Retail logo" class="img-fluid">
+                </div>
+
+                <div class="swatha-placement-section-coldiv" role="listitem">
+                    <img src="images/trends-logo.png" alt="Trends logo" class="img-fluid">
+                </div>
+
+                <div class="swatha-placement-section-coldiv" role="listitem">
+                    <img src="images/menlo-logo.png" alt="Menlo logo" class="img-fluid">
+                </div>
+
+            </div>
         </div>
-        <div class="swatha-placement-section-coldiv" tabindex="0" role="group" data-name="SPAR">
-          <img src="images/spar-logo.png" alt="SPAR company logo" class="img-fluid">
-        </div>
-        <div class="swatha-placement-section-coldiv" tabindex="0" role="group" data-name="Reliance Retail">
-          <img src="images/reliance-logo.png" alt="Reliance Retail company logo" class="img-fluid">
-        </div>
-        <div class="swatha-placement-section-coldiv" tabindex="0" role="group" data-name="Trends">
-          <img src="images/trends-logo.png" alt="Trends company logo" class="img-fluid">
-        </div>
-       
-      </div>
+
     </div>
-  </div>
 </section>
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const marquee = document.getElementById("placementMarquee");
-    const leftBtn = document.getElementById("scrollLeftBtn");
-    const rightBtn = document.getElementById("scrollRightBtn");
-    const cards = document.querySelectorAll(".swatha-placement-section-coldiv");
-    if (!cards.length) return;
 
-    const cardWidth = cards[0].offsetWidth + 20;
-
-    // 1. Dynamic aria-label with position and name (e.g., "Placement Partner 1 of 10, Zudio")
-    const total = cards.length;
-    cards.forEach((card, idx) => {
-      const name = card.getAttribute("data-name") || "Placement Partner";
-      card.setAttribute("aria-label", `Placement Partner ${idx + 1} of ${total}, ${name}`);
-    });
-
-    // 2. Scroll buttons
-    rightBtn.addEventListener("click", () => {
-      marquee.scrollBy({ left: cardWidth, behavior: "smooth" });
-    });
-    leftBtn.addEventListener("click", () => {
-      marquee.scrollBy({ left: -cardWidth, behavior: "smooth" });
-    });
-
-    // 3. Arrow key navigation with wrap-around
-    cards.forEach((card, index) => {
-      card.addEventListener("keydown", (e) => {
-        let targetCard = null;
-        if (e.key === "ArrowRight") {
-          e.preventDefault();
-          targetCard = cards[index + 1] || cards[0]; // wrap to first
-          if (targetCard) {
-            targetCard.focus();
-            targetCard.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
-          }
-        } else if (e.key === "ArrowLeft") {
-          e.preventDefault();
-          targetCard = cards[index - 1] || cards[cards.length - 1]; // wrap to last
-          if (targetCard) {
-            targetCard.focus();
-            targetCard.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
-          }
-        }
-      });
-    });
-  });
-</script>
    <!----  PLACEMENT PARTNER SECTION -->
     <!-- =========================
      IMPACT HIGHLIGHT SECTION
@@ -2750,7 +2691,7 @@ $(document).ready(function () {
     <!-- contact form section start-->
     <section
       class="sawa-contactform-section"
-      aria-labelledby="sawa-contact-heading"
+     
     >
       <div class="container">
         <div class="sawa-contact-tag" aria-label="Volunteer invitation">
@@ -2794,8 +2735,8 @@ $(document).ready(function () {
   id="sawa-form-instructions"
 >
   Fields marked with
-  <span class="sawa-required-mark" aria-hidden="true">*</span>
-  are required. Fields marked as (Optional) do not need to be completed.
+  <span class="sawa-required-mark" >*</span>
+  are mandatory.
 </p>
 
     <form
@@ -2808,7 +2749,7 @@ $(document).ready(function () {
         <!-- Name -->
         <div class="col-md-6">
           <label for="sawa-name" class="sawa-form-label">
-            Name <span class="sawa-required-mark" aria-hidden="true">*</span>
+            Name <span class="sawa-required-mark" >*</span>
           </label>
 
           <input
@@ -2826,7 +2767,7 @@ $(document).ready(function () {
         <!-- Email -->
         <div class="col-md-6">
           <label for="sawa-email" class="sawa-form-label">
-            Email Id <span class="sawa-required-mark"  aria-hidden="true">*</span>
+            Email Id <span class="sawa-required-mark" >*</span>
           </label>
 
           <input
@@ -2844,7 +2785,7 @@ $(document).ready(function () {
         <!-- Phone -->
         <div class="col-md-6">
           <label for="sawa-phone" class="sawa-form-label">
-            Phone Number <span class="sawa-required-mark"  aria-hidden="true">*</span>
+            Phone Number <span class="sawa-required-mark" >*</span>
           </label>
 
           <input
@@ -2863,7 +2804,7 @@ $(document).ready(function () {
         <!-- Location -->
         <div class="col-md-6">
           <label for="sawa-location" class="sawa-form-label">
-            Location <span class="sawa-required-mark"  aria-hidden="true">*</span>
+            Location <span class="sawa-required-mark"  >*</span>
           </label>
 
           <select
@@ -2950,7 +2891,7 @@ $(document).ready(function () {
           <a
             href="index.html"
             class="swthar-footer-logo-link"
-            aria-label="Swadharma Foundation Home"
+           
           >
             <img
               src="images/Swadharma-Foundation-Logo.png"
@@ -3026,7 +2967,7 @@ $(document).ready(function () {
             Quick Links
           </h3>
 
-          <nav aria-labelledby="footer-quick-links">
+         
             <ul class="swthar-footer-links">
               <li><a href="index.html">Home</a></li>
               <li><a href="about.html">About Us</a></li>
@@ -3036,7 +2977,7 @@ $(document).ready(function () {
               <li><a href="media.html">Media</a></li>
               <li><a href="card.html">Contact Us</a></li>
             </ul>
-          </nav>
+          
 
         </div>
       </div>
@@ -3052,7 +2993,7 @@ $(document).ready(function () {
             Programs
           </h3>
 
-          <nav aria-labelledby="footer-programs">
+        
             <ul class="swthar-footer-links">
               <li><a href="program.html">Differently Abled Support</a></li>
               <li><a href="program.html">Education Support</a></li>
@@ -3061,7 +3002,7 @@ $(document).ready(function () {
 </a></li>
               <li><a href="program.html">Community Development</a></li>
             </ul>
-          </nav>
+          
 
         </div>
       </div>
